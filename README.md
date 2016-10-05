@@ -100,7 +100,7 @@ export default {
 }
 ```
 
-# More Config
+# API
 Swiper官网中的API及配置均可使用
 [Swiper apis](http://www.swiper.com.cn/api/index.html)
 
