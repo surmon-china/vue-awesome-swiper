@@ -1,0 +1,34 @@
+{
+  "name": "vue-awesome-swiper",
+  "version": "1.0.0",
+  "description": "Swiper(slide) component for Vue.js(1.x ~ 2.x)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/surmon-china/vue-awesome-swiper.git"
+  },
+  "keywords": [
+    "vue-awesome-swiper",
+    "vue awesome swiper",
+    "awesome-swiper",
+    "vue swiper",
+    "vue slide",
+    "swiper"
+  ],
+  "author": {
+    "name": "Surmon",
+    "email": "surmon@foxmail.com",
+    "url": "http://surmon.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/surmon-china/vue-awesome-swiper/issues"
+  },
+  "homepage": "https://github.com/surmon-china/vue-awesome-swiper#readme",
+  "dependencies": {
+    "swiper": "^3.3.1"
+  }
+}
