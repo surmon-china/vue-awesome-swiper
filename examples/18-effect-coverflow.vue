@@ -1,6 +1,7 @@
 <style scoped>
   .swiper-container {
     width: 100%;
+    height: 400px;
     padding-top: 50px;
     padding-bottom: 50px;
   }
@@ -13,17 +14,20 @@
 </style>
 
 <template>
-  <div style="position: relative;overflow: hidden;height: 300px;">
+  <div style="position: relative;overflow: hidden;">
     <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">默认设置</button>
-      <a href="http://www.swiper.com.cn/demo/01-default.html" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
+      <button class="btn btn-default btn-xs btn-title">effect-coverflow</button>
+      <button class="btn btn-default btn-xs btn-title">3D覆盖流效果</button>
+      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/18-effect-coverflow.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
     </div>
     <swiper :options="swiperOption">
-      <swiper-slide style="background-image:url(http://lorempixel.com/600/600/nature/1)">Slide 1</swiper-slide>
+      <swiper-slide>Slide 1</swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
       <swiper-slide>Slide 3</swiper-slide>
       <swiper-slide>Slide 4</swiper-slide>
       <swiper-slide>Slide 5</swiper-slide>
+      <swiper-slide>Slide 6</swiper-slide>
+      <swiper-slide>Slide 7</swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>

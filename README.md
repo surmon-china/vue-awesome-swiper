@@ -7,7 +7,7 @@
 
 
 # Vue-Awesome-Swiper
-Swiper(slides) component for Vue.js(1.X ~ 2.X)，本组件基于 [Swiper3](http://www.swiper.com.cn) 支持Vue全版本，支持移动端 + PC端使用
+Swiper(slides) component for Vue.js(1.X ~ 2.X)，本组件基于 [Swiper3](http://www.swiper.com.cn)构建， 支持Vue全版本，支持移动端 + PC端使用
 
 
 # Example
@@ -18,7 +18,7 @@ Swiper(slides) component for Vue.js(1.X ~ 2.X)，本组件基于 [Swiper3](http:
 # Use Setup
 
 
-# npm install vue-awesome-swiper
+### npm install vue-awesome-swiper
 
 ``` bash
 npm install vue-awesome-swiper --save

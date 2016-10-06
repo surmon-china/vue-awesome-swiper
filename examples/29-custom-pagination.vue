@@ -1,25 +1,26 @@
-<style scoped>
-  .swiper-pagination-bullet {
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      line-height: 20px;
-      font-size: 12px;
-      color:#000;
-      opacity: 1;
-      background: rgba(0,0,0,0.2);
+<style>
+ .swiper-pagination-bullet-custom {
+    width: 20px!important;
+    height: 20px!important;
+    text-align: center!important;
+    line-height: 20px!important;
+    font-size: 12px!important;
+    color: #000!important;
+    opacity: 1!important;
+    background: rgba(0,0,0,0.2)!important;
   }
-  .swiper-pagination-bullet-active {
-      color:#fff;
-      background: #007aff;
+  .swiper-pagination-bullet-custom.swiper-pagination-bullet-active {
+    color:#fff!important;
+    background: #007aff!important;
   }
 </style>
 
 <template>
   <div>
     <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">默认设置</button>
-      <a href="http://www.swiper.com.cn/demo/01-default.html" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
+      <button class="btn btn-default btn-xs btn-title">custom-pagination</button>
+      <button class="btn btn-default btn-xs btn-title">自定义导航样式</button>
+      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/29-custom-pagination.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
     </div>
     <swiper :options="swiperOption">
       <swiper-slide>Slide 1</swiper-slide>
@@ -32,7 +33,7 @@
       <swiper-slide>Slide 8</swiper-slide>
       <swiper-slide>Slide 9</swiper-slide>
       <swiper-slide>Slide 10</swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-pagination swiper-pagination-bullets" slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -45,7 +46,7 @@
           pagination: '.swiper-pagination',
           paginationClickable: true,
           paginationBulletRender: (index, className) => {
-            return '<span class="' + className + '">' + (index + 1) + '</span>';
+            return '<span class="' + className + ' swiper-pagination-bullet-custom' + '">' + (index + 1) + '</span>';
           }
         }
       }

@@ -1,5 +1,6 @@
 <template>
   <div class="swiper-container">
+    <slot name="parallax-bg"></slot>
     <div class="swiper-wrapper">
       <slot></slot>
     </div>
@@ -33,7 +34,6 @@
     },
     beforeDestroy: function() {
       if (!!this.swiper) {
-        this.swiper.destroy(true, true)
         this.swiper = null
         delete this.swiper
       }

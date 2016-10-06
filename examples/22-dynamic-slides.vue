@@ -12,8 +12,9 @@
 <template>
   <div>
     <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">默认设置</button>
-      <a href="http://www.swiper.com.cn/demo/01-default.html" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
+      <button class="btn btn-default btn-xs btn-title">dynamic-slides</button>
+      <button class="btn btn-default btn-xs btn-title">动态加载Slides</button>
+      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/22-dynamic-slides.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
     </div>
     <swiper :options="swiperOption">
       <swiper-slide v-for="slide in swiperSlides">Slide {{ slide }}</swiper-slide>

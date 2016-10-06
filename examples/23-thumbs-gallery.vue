@@ -28,24 +28,25 @@
 <template>
   <div style="height: 500px">
     <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">默认设置</button>
-      <a href="http://www.swiper.com.cn/demo/01-default.html" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
+      <button class="btn btn-default btn-xs btn-title">thumbs-gallery</button>
+      <button class="btn btn-default btn-xs btn-title">缩略图控制</button>
+      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/23-thumbs-gallery.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
     </div>
     <swiper :options="swiperOptionTop" class="gallery-top">
-      <swiper-slide style="background-image:url(http://img.bizhi.sogou.com/images/2014/02/12/517391.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://www.bz55.com/uploads/allimg/160922/139-160922103434.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://photo.enterdesk.com/2008-8-15/200808150041385460.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://pic.pp3.cn/uploads//201509/2015100208.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://photo.enterdesk.com/2011-9-26/enterdesk.com-DD29A2D21361EF22A70B115EA52F1AE6.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/kennedy_meadows_0.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/mount_rainier.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/snoqualmie_pass_0.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/three_sisters_wilderness_0.jpg)"></swiper-slide>
       <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
       <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
     </swiper>
     <swiper :options="swiperOptionThumbs" class="gallery-thumbs">
-      <swiper-slide style="background-image:url(http://img.bizhi.sogou.com/images/2014/02/12/517391.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://www.bz55.com/uploads/allimg/160922/139-160922103434.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://photo.enterdesk.com/2008-8-15/200808150041385460.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://pic.pp3.cn/uploads//201509/2015100208.jpg)"></swiper-slide>
-      <swiper-slide style="background-image:url(http://photo.enterdesk.com/2011-9-26/enterdesk.com-DD29A2D21361EF22A70B115EA52F1AE6.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/kennedy_meadows_0.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/mount_rainier.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/snoqualmie_pass_0.jpg)"></swiper-slide>
+      <swiper-slide style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/three_sisters_wilderness_0.jpg)"></swiper-slide>
     </swiper>
   </div>
 </template>

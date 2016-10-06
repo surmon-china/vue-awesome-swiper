@@ -7,8 +7,9 @@
 <template>
   <div>
     <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">默认设置</button>
-      <a href="http://www.swiper.com.cn/demo/01-default.html" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
+      <button class="btn btn-default btn-xs btn-title">nested</button>
+      <button class="btn btn-default btn-xs btn-title">Swipers嵌套</button>
+      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/11-nested.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
     </div>
     <swiper :options="swiperOptionh">
       <swiper-slide>Horizontal Slide 1</swiper-slide>

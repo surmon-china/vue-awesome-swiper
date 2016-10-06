@@ -1,22 +1,20 @@
 <style scoped>
   .swiper-container {
-      width: 500px;
-      height: 300px;
-      margin: 20px auto;
+    width: 500px;
+      /*height: 300px;*/
+      /*margin: 20px auto;*/
   }
   .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      line-height: 300px;
+    line-height: 300px;
   }
 </style>
 
 <template>
   <div>
     <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">默认设置</button>
-      <a href="http://www.swiper.com.cn/demo/01-default.html" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
+      <button class="btn btn-default btn-xs btn-title">pagination-fraction</button>
+      <button class="btn btn-default btn-xs btn-title">分页导航</button>
+      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/36-pagination-fraction.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
     </div>
     <swiper :options="swiperOption">
       <swiper-slide>Slide 1</swiper-slide>

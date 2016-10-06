@@ -2,7 +2,7 @@
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #000;
+    background: #444;
   }
   .swiper-slide img {
     width: auto;
@@ -22,32 +22,33 @@
 <template>
   <div>
     <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">默认设置</button>
-      <a href="http://www.swiper.com.cn/demo/01-default.html" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
+      <button class="btn btn-default btn-xs btn-title">lazy-load-images</button>
+      <button class="btn btn-default btn-xs btn-title">延迟加载</button>
+      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/30-lazy-load-images.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
     </div>
     <swiper :options="swiperOption">
       <swiper-slide>
-        <img data-src="http://lorempixel.com/1600/1200/nature/1" class="swiper-lazy">
+        <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/kennedy_meadows_0.jpg" class="swiper-lazy">
         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </swiper-slide>
       <swiper-slide>
-          <img data-src="http://lorempixel.com/1600/1200/nature/2" class="swiper-lazy">
+          <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/three_sisters_wilderness_0.jpg" class="swiper-lazy">
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </swiper-slide>
       <swiper-slide>
-        <img data-src="http://lorempixel.com/1600/1200/nature/3" class="swiper-lazy">
+        <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/snoqualmie_pass_0.jpg" class="swiper-lazy">
         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </swiper-slide>
       <swiper-slide>
-        <img data-src="http://lorempixel.com/1600/1200/nature/4" class="swiper-lazy">
+        <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/mount_rainier.jpg" class="swiper-lazy">
         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </swiper-slide>
       <swiper-slide>
-        <img data-src="http://lorempixel.com/1600/1200/nature/5" class="swiper-lazy">
+        <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg" class="swiper-lazy">
         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </swiper-slide>
       <swiper-slide>
-        <img data-src="http://lorempixel.com/1600/1200/nature/6" class="swiper-lazy">
+        <img data-src="https://avatars3.githubusercontent.com/u/14019524?v=3&s=466" class="swiper-lazy">
         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
