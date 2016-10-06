@@ -1,6 +1,6 @@
 {
   "name": "vue-awesome-swiper",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "Swiper(slide) component for Vue.js(1.x ~ 2.x)",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,10 @@
     "vue-awesome-swiper",
     "vue awesome swiper",
     "awesome-swiper",
+    "vue carrousel",
     "vue swiper",
     "vue slide",
+    "carrousel",
     "swiper"
   ],
   "author": {

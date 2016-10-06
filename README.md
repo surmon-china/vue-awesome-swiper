@@ -47,13 +47,31 @@ Vue.use(awesomeSwiper)
 // or use with component(ES6)
 import Vue from 'vue'
 // ...
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide, swiperPlugins } from 'vue-awesome-swiper'
 
 // use
 export default {
   components: {
     swiper,
     swiperSlide
+  }
+}
+
+// if you need to custom swiper plugins
+swiperPlugins.debugger = function(swiper, params) {
+  if (!params) return;
+  // Need to return object with properties that names are the same as callbacks
+  return {
+    onInit: function(swiper) {
+      console.log('onInit');
+    },
+    onClick: function(swiper, e) {
+      console.log('onClick');
+    },
+    onTap: function(swiper, e) {
+      console.log('onTap');
+    },
+    // something callback...
   }
 }
 ```
@@ -64,13 +82,13 @@ export default {
 <swiper :options="swiperOption">
   <!-- 幻灯内容 -->
   <swiper-slide>
-    <div>我是Swiper实例slide1</div>
+    <div>I'm Slide 1</div>
   </swiper-slide>
   <swiper-slid>
-    <div>我是Swiper实例slide2</div>
+    <div>I'm Slide 2</div>
   </swiper-slide>
   <swiper-slid>
-    <div>我是Swiper实例slide3</div>
+    <div>I'm Slide 3</div>
   </swiper-slide>
   <!-- ... -->
   <!-- 以下配置均为可选（使用具名slot来确定并应用一些操作控件元素） -->
@@ -89,19 +107,23 @@ export default {
   data() {
     return {
       swiperOption: {
+        // 自定义配置别名
+        name: 'currentSwiper',
         // 所有配置均为可选（同Swiper配置）
         autoplay: 3000,
-        // direction : 'vertical',
-        // grabCursor : true,
+        direction : 'vertical',
+        grabCursor : true,
         setWrapperSize :true,
         autoHeight: true,
         pagination : '.swiper-pagination',
         paginationClickable :true,
-        // prevButton:'.swiper-button-prev',
-        // nextButton:'.swiper-button-next',
-        // scrollbar:'.swiper-scrollbar',
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        scrollbar:'.swiper-scrollbar',
         mousewheelControl : true,
         observeParents:true,
+        // if you need use plugins in the swiper, you can config in this
+        debugger: true,
         // more callbacks
         onTransitionStart: function(swiper){
           console.log(swiper)
@@ -111,15 +133,16 @@ export default {
       }
     }
   },
-  // example (if you need to get the swiper object)
+  // example (if you need to get the current swiper object)
   mounted() {
-    console.log(this)
     this.getSwiper()
   },
-  // example (this swiperOption is the swiper object on component mounted)
+  // find the swiper object in current component(vm) childrens
   methods: {
     getSwiper() {
-      console.log(this.swiperOption)
+      let currentSwiper = this.$children.find((children) => children.options.name == 'currentSwiper').swiper
+      console.log(swiper)
+      return currentSwiper
     }
   }
 }

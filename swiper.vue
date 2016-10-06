@@ -33,6 +33,7 @@
     },
     beforeDestroy: function() {
       if (!!this.swiper) {
+        this.swiper.destroy(true, true)
         this.swiper = null
         delete this.swiper
       }
