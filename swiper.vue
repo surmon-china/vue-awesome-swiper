@@ -16,7 +16,6 @@
   export default {
     name: 'swiper',
     props: {
-      code: String,
       options: {
         type: Object,
         default: function() {
@@ -26,38 +25,17 @@
         }
       },
     },
-    beforeCreate: function() {
-      // console.log('beforeCreate', this.options)
-    },
-    created: function() {
-      // console.log('beforeCreate', this.options)
-    },
-    beforeMount: function() {
-      // console.log('beforeMount', this.$el)
+    ready: function() {
+      if (!this.swiper) this.swiper = new Swiper(this.$el, this.options)
     },
     mounted: function() {
-      // console.log('mounted', this.$el)
-      this.swiper = new Swiper(this.$el, this.options)
-    },
-    beforeUpdate: function() {
-      // console.log('beforeUpdate', this.$el)
-    },
-    updated: function() {
-      // console.log('updated', this.$el)
-    },
-    activated: function() {
-      // console.log('activated', this.$el)
-    },
-    deactivated: function() {
-      // console.log('deactivated', this.$el)
+      if (!this.swiper) this.swiper = new Swiper(this.$el, this.options)
     },
     beforeDestroy: function() {
-      this.swiper = null
-      delete this.swiper
-      // console.log('beforeDestroy', this.$el)
-    },
-    destroyed: function() {
-      // console.log('destroyed', this.$el)
+      if (!!this.swiper) {
+        this.swiper = null
+        delete this.swiper
+      }
     }
   }
 </script>

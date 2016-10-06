@@ -1,14 +1,13 @@
 /**
- * Vue-swiper-master
+ * Vue-awesome-swiper
  * @author Surmon.me
- * @date 2016-10-5
  */
 
 var SwiperComponent = require('./swiper.vue')
 var SlideComponent = require('./slide.vue')
 
 var swiper = {
-  slide: SlideComponent,
+  swiperSlide: SlideComponent,
   swiper: SwiperComponent,
   install: function(Vue) {
     Vue.component('swiper', SwiperComponent)

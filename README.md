@@ -7,8 +7,7 @@
 
 
 # Vue-Awesome-Swiper
-Swiper(slides) components for Vue.js(1.X ~ 2.X)
-10月7日前会完善对vue1.X版本的兼容支持
+Swiper(slides) component for Vue.js(1.X ~ 2.X)，本组件基于 [Swiper](http://www.swiper.com.cn/api/index.html) 支持Vue全版本
 
 
 # Example
@@ -42,18 +41,19 @@ var awesomeSwiper = require('vue-awesome-swiper')
 Vue.use(awesomeSwiper)
 
 
---------------------------------------
+// --------------------------------------
+
 
 // or use with component(ES6)
 import Vue from 'vue'
 // ...
-import { swiper, slide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 // use
 export default {
   components: {
     swiper,
-    swiperSlide: slide
+    swiperSlide
   }
 }
 ```
@@ -62,10 +62,17 @@ export default {
 
 ``` html
 <swiper :options="swiperOption">
-  <swiper-slide class="item" v-for="slide in [1, 2, 3, 4, 5]">
-    <!-- 每一个slide均可以是任何内容 -->
-    <div>初始化后的Swiper实例{{ slide }}</div>
+  <!-- 幻灯内容 -->
+  <swiper-slide>
+    <div>我是Swiper实例slide1</div>
   </swiper-slide>
+  <swiper-slid>
+    <div>我是Swiper实例slide2</div>
+  </swiper-slide>
+  <swiper-slid>
+    <div>我是Swiper实例slide3</div>
+  </swiper-slide>
+  <!-- ... -->
   <!-- 以下配置均为可选（使用具名slot来确定并应用一些操作控件元素） -->
   <div class="swiper-pagination"  slot="pagination"></div>
   <div class="swiper-button-prev" slot="button-prev"></div>
@@ -78,9 +85,11 @@ export default {
 ``` javascript
 // swiperOption example:
 export default {
+  name: 'carrousel',
   data() {
     return {
       swiperOption: {
+        // 所有配置均为可选（同Swiper配置）
         autoplay: 3000,
         // direction : 'vertical',
         // grabCursor : true,
@@ -93,8 +102,24 @@ export default {
         // scrollbar:'.swiper-scrollbar',
         mousewheelControl : true,
         observeParents:true,
+        // more callbacks
+        onTransitionStart: function(swiper){
+          console.log(swiper)
+        },
+        // more Swiper config ...
         // ...
       }
+    }
+  },
+  // example (if you need to get the swiper object)
+  mounted() {
+    console.log(this)
+    this.getSwiper()
+  },
+  // example (this swiperOption is the swiper object on component mounted)
+  methods: {
+    getSwiper() {
+      console.log(this.swiperOption)
     }
   }
 }
