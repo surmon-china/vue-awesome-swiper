@@ -30,17 +30,17 @@ npm install vue-awesome-swiper --save
 // import with ES6
 import Vue from 'vue'
 // ...
-import awesomeSwiper from 'vue-awesome-swiper'
+import AwesomeSwiper from 'vue-awesome-swiper'
 
 
 // require with Webpack/Node.js
 var Vue = require('vue')
 // ...
-var awesomeSwiper = require('vue-awesome-swiper')
+var AwesomeSwiper = require('vue-awesome-swiper')
 
 
 // use
-Vue.use(awesomeSwiper)
+Vue.use(AwesomeSwiper)
 
 
 // --------------------------------------
