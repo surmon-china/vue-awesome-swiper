@@ -84,8 +84,8 @@ swiperPlugins.debugger = function(swiper, params) {
 <swiper :options="swiperOption">
   <!-- 幻灯内容 -->
   <swiper-slide>I'm Slide 1</swiper-slide>
-  <swiper-slid3>I'm Slide 2</swiper-slide>
-  <swiper-slid3>I'm Slide 3</swiper-slide>
+  <swiper-slide>I'm Slide 2</swiper-slide>
+  <swiper-slide>I'm Slide 3</swiper-slide>
   <!-- ... -->
   <!-- 以下配置均为可选（使用具名slot来确定并应用一些操作控件元素） -->
   <div class="swiper-pagination"  slot="pagination"></div>
