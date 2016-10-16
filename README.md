@@ -86,6 +86,10 @@ swiperPlugins.debugger = function(swiper, params) {
   <swiper-slide>I'm Slide 1</swiper-slide>
   <swiper-slide>I'm Slide 2</swiper-slide>
   <swiper-slide>I'm Slide 3</swiper-slide>
+  <swiper-slide>I'm Slide 4</swiper-slide>
+  <swiper-slide>I'm Slide 5</swiper-slide>
+  <swiper-slide>I'm Slide 6</swiper-slide>
+  <swiper-slide>I'm Slide 7</swiper-slide>
   <!-- ... -->
   <!-- 以下配置均为可选（使用具名slot来确定并应用一些操作控件元素） -->
   <div class="swiper-pagination"  slot="pagination"></div>
@@ -104,7 +108,7 @@ export default {
   data() {
     return {
       swiperOption: {
-        // 自定义配置别名
+        // 可以自定义配置一个别名，用于找到当前实例化后的swiper对象以便进行一些操作
         name: 'currentSwiper',
         // 所有配置均为可选（同Swiper配置）
         autoplay: 3000,
@@ -119,9 +123,9 @@ export default {
         scrollbar:'.swiper-scrollbar',
         mousewheelControl : true,
         observeParents:true,
-        // if you need use plugins in the swiper, you can config in this
+        // if you need use plugins in the swiper, you can config like this
         debugger: true,
-        // more callbacks
+        // swiper callbacks
         onTransitionStart: function(swiper){
           console.log(swiper)
         },
@@ -130,20 +134,24 @@ export default {
       }
     }
   },
-  // example (if you need to get the current swiper object)
-  mounted() {
-    this.getSwiper()
-  },
-  // find the swiper object in current component(vm) childrens
-  methods: {
-    getSwiper() {
-      let currentSwiper = this.$children.find(children => children.options.name == 'currentSwiper').swiper
-      console.log(swiper)
-      return currentSwiper
+  // example code (if you need to get the current swiper object, find the swiper object in current component(vm) childrens)
+  // 如果你需要得到当前的swiper对象来做一些事情，你可以像下面这样定义一个方法属性来获取当前的swiper对象
+  computed: {
+    swiper() {
+      return (this.$children.find(children => children.options.name == 'currentSwiper').swiper)
     }
+  },
+  mounted() {
+    // you can use current swiper object to do something(swiper methods)
+    console.log('this is current swiper object', this.swiper)
+    this.swiper.slideTo(3, 1000, false)
   }
 }
 ```
+
+# Mobile Example Code
+[mobile-fullpage-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/mobile-fullpage-example.vue)
+
 
 # API
 Swiper官网中的API及配置均可使用

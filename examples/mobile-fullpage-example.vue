@@ -1,5 +1,5 @@
 <template>
-  <swiper :options="swiperOption">
+  <swiper :options="swiperOption" class="swiper-box">
     <swiper-slide class="swiper-item">Slide 1</swiper-slide>
     <swiper-slide class="swiper-item">Slide 2</swiper-slide>
     <swiper-slide class="swiper-item">Slide 3</swiper-slide>
@@ -38,10 +38,9 @@
     height: 100%;
   }
   body {
-    padding: 0;
     background: #eee;
   }
-  .swiper-container {
+  .swiper-box {
     width: 100%;
     height: 100%;
     margin: 0 auto;
