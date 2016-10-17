@@ -25,7 +25,6 @@
     <p class="append-buttons">
         <a @click.stop="prependSlide" class="btn btn-primary prepend-slide">Prepend Slide</a>
         <a @click.stop="appendSlide" class="btn btn-success append-slide">Append Slide</a>
-        <a @click.stop="removeFirstSlide" class="btn btn-danger append-slide">Remove First Slide</a>
     </p>
   </div>
 </template>
@@ -46,26 +45,12 @@
         swiperSlides: [1, 2, 3, 4, 5]
       }
     },
-    ready() {
-      this.swiper = this.swiper || this.$children.find((children) => children.swiper).swiper
-    },
     methods: {
       appendSlide() {
         this.swiperSlides.push(this.swiperSlides.length + 1)
-        this.updateSlides()
       },
       prependSlide() {
         this.swiperSlides.unshift(this.swiperSlides[0] - 1)
-        this.updateSlides()
-      },
-      removeFirstSlide() {
-        this.swiperSlides.shift()
-        this.updateSlides()
-      },
-      updateSlides() {
-        setTimeout(() => {
-          this.swiper.update(true)
-        }, 50)
       }
     }
   }

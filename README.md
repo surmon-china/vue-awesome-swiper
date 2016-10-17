@@ -9,6 +9,9 @@
 # Vue-Awesome-Swiper
 Swiper(slides) component for Vue.js(1.X ~ 2.X)，本组件基于 [Swiper3](http://www.swiper.com.cn)构建， 支持Vue全版本，支持移动端 + PC端使用，欢迎加入前端大本营：288325802
 
+> ### V2.2.0
+> 新增了异步数据的支持
+
 
 # Example
 
@@ -27,13 +30,13 @@ npm install vue-awesome-swiper --save
 ### Vue use
 
 ``` javascript
-// import with ES6
+// import in ES6
 import Vue from 'vue'
 // ...
 import AwesomeSwiper from 'vue-awesome-swiper'
 
 
-// require with Webpack/Node.js
+// or require in Webpack/Node.js
 var Vue = require('vue')
 // ...
 var AwesomeSwiper = require('vue-awesome-swiper')
@@ -60,6 +63,7 @@ export default {
 }
 
 // if you need to custom swiper plugins
+// 如果你要定制一些swiper插件的话，这段代码是个示例，否则不用care
 swiperPlugins.debugger = function(swiper, params) {
   if (!params) return;
   // Need to return object with properties that names are the same as callbacks
@@ -99,8 +103,6 @@ swiperPlugins.debugger = function(swiper, params) {
 </swiper>
 ```
 
-### Component options
-
 ``` javascript
 // swiperOption example:
 export default {
@@ -108,7 +110,7 @@ export default {
   data() {
     return {
       swiperOption: {
-        // 可以自定义配置一个别名，用于找到当前实例化后的swiper对象以便进行一些操作
+        // 如果你后续需要找到当前实例化后的swiper对象以对其进行一些操作的话，可以自定义配置一个名字
         name: 'currentSwiper',
         // 所有配置均为可选（同Swiper配置）
         autoplay: 3000,
@@ -123,7 +125,7 @@ export default {
         scrollbar:'.swiper-scrollbar',
         mousewheelControl : true,
         observeParents:true,
-        // if you need use plugins in the swiper, you can config like this
+        // if you need use plugins in the swiper, you can config in here like this
         debugger: true,
         // swiper callbacks
         onTransitionStart: function(swiper){
@@ -145,6 +147,42 @@ export default {
     // you can use current swiper object to do something(swiper methods)
     console.log('this is current swiper object', this.swiper)
     this.swiper.slideTo(3, 1000, false)
+  }
+}
+```
+
+### Async data example（异步数据调用的简单例子）
+
+``` html
+<swiper :options="swiperOption">
+  <swiper-slide v-for="slide in swiperSlides">I'm Slide {{ slide }}</swiper-slide>
+  <div class="swiper-pagination"  slot="pagination"></div>
+</swiper>
+```
+
+``` javascript
+export default {
+  name: 'carrousel',
+  data() {
+    return {
+      swiperOption: {
+        autoplay: 3500,
+        setWrapperSize :true,
+        pagination : '.swiper-pagination',
+        paginationClickable :true,
+        mousewheelControl : true,
+        observeParents:true,
+      },
+      swiperSlides: [1, 2, 3, 4, 5]
+    }
+  },
+  mounted() {
+    let _this = this
+    setInterval(function() {
+      console.log('simulate async data')
+      let swiperSlides = _this.swiperSlides
+      if (swiperSlides.length < 10) swiperSlides.push(swiperSlides.length + 1)
+    }, 3000)
   }
 }
 ```
