@@ -32,6 +32,9 @@
     mounted: function() {
       if (!this.swiper) this.swiper = new Swiper(this.$el, this.options)
     },
+    updated: function(){
+      this.swiper.update();
+    },
     beforeDestroy: function() {
       if (!!this.swiper) {
         this.swiper = null
