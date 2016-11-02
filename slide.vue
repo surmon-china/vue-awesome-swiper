@@ -8,10 +8,21 @@
   export default {
     name: 'swiper-slide',
     ready: function() {
-      this.$parent && this.$parent.swiper && this.$parent.swiper.update(true)
+      this.update()
     },
     mounted: function() {
-      this.$parent && this.$parent.swiper && this.$parent.swiper.update(true)
+      this.update()
+    },
+    updated: function(){
+      this.update()
+    },
+    attached: function(){
+      this.update()
+    },
+    methods: {
+      update: function() {
+        this.$parent && this.$parent.swiper && this.$parent.swiper.update(true)
+      }
     }
   }
 </script>
