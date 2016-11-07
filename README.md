@@ -9,6 +9,9 @@
 # Vue-Awesome-Swiper
 Swiper(slides) component for Vue.js(1.X ~ 2.X)，本组件基于 [Swiper3](http://www.swiper.com.cn)构建， 支持Vue全版本，支持移动端 + PC端使用，欢迎加入前端大本营：288325802
 
+> ### V2.2.3
+> 增加服务端渲染支持，然而我还没测试
+
 > ### V2.2.0
 > 新增了异步数据的支持
 
