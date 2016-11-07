@@ -12,8 +12,11 @@
 </template>
 
 <script>
-  var Swiper = require('swiper')
-  require('swiper/dist/css/swiper.css')
+  var Swiper;
+  if (typeof global.window != 'undefined') {
+    Swiper = require('swiper');
+    require('swiper/dist/css/swiper.css');
+  }
   export default {
     name: 'swiper',
     props: {
@@ -27,10 +30,14 @@
       },
     },
     ready: function() {
-      if (!this.swiper) this.swiper = new Swiper(this.$el, this.options)
+      if (!this.swiper && typeof global.window != 'undefined') {
+        this.swiper = new Swiper(this.$el, this.options)
+      }
     },
     mounted: function() {
-      if (!this.swiper) this.swiper = new Swiper(this.$el, this.options)
+      if (!this.swiper && typeof global.window != 'undefined') {
+        this.swiper = new Swiper(this.$el, this.options)
+      }
     },
     updated: function(){
       this.swiper.update()
