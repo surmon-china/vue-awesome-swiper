@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  var Swiper;
-  if (typeof global.window !== 'undefined') {
+  var Swiper
+  if (typeof global.window != 'undefined') {
     Swiper = require('swiper')
     require('swiper/dist/css/swiper.css')
   }
@@ -30,12 +30,12 @@
       },
     },
     ready: function() {
-      if (!this.swiper && typeof global.window !== 'undefined') {
+      if (!this.swiper && typeof global.window != 'undefined') {
         this.swiper = new Swiper(this.$el, this.options)
       }
     },
     mounted: function() {
-      if (!this.swiper && typeof global.window !== 'undefined') {
+      if (!this.swiper && typeof global.window != 'undefined') {
         this.swiper = new Swiper(this.$el, this.options)
       }
     },
