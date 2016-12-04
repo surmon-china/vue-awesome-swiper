@@ -37,7 +37,7 @@
         ………… <br>
         过了一会儿,该女士又回来了.而且带来了工行的回答:'农行的人说了,这里是农行,只有农民能取钱,我是城市人口,工行的人说了,我们这里是公行,只能公的来取,母的不行!!!!,说我是贱人,要到建行取钱' </p>
       </swiper-slide>
-      <div class="swiper-scrollbar" solt="scrollbar"></div>
+      <div class="swiper-scrollbar" slot="scrollbar"></div>
     </swiper>
   </div>
 </template>
