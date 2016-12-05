@@ -44,7 +44,7 @@
     },
     beforeDestroy: function() {
       if (!!this.swiper) {
-        this.swiper = null
+        this.swiper.destroy()
         delete this.swiper
       }
     }

@@ -1,45 +1,43 @@
-<style scoped>
-  .swiper-slide {
-    font-size: 18px;
-    text-align: left;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 30px;
-  }
-</style>
-
 <template>
-  <div>
-    <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">scroll-container</button>
-      <button class="btn btn-default btn-xs btn-title">内容滚动/可拖动</button>
-      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/32-scroll-container.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
-    </div>
-    <swiper :options="swiperOption">
-      <swiper-slide>
-        <h4>绝顶聪明</h4>
-        <p style="font-family:microsoft yahei; line-height:1.8;">一天下午，我同学在建设银行十分无聊的上班，一个穿得很糟糕的女士(神经病患者)来到他窗口，给了他一张纸条要提款。 <br><br>
-        纸条上赫然写着 <br><br>
-        '兹派XX同志于贵银行处提取人民币'. <br>
-        然后是l后面N多个零元。 <br>
-        落款是***C.P中央办公厅***。 <br><br>
-        我同学本来想报警,可看该神经病患者女子很认真的样子,想想还是打发给保安算鸟.(~估计保安也是很闲). <br>
-        果然,保安对该女子说:'你这张条子想要提款,必须先到对面派出所,找所长盖一个章，他盖完章,你再来取钱就没问题啦。' <br>
-        该女子想都没想，直接就向派出所走去了。(这保安还真不一般,平时有点小看他了). <br><br>
-        大概十多分钟，排队的顾客慢慢多起来的时候，那个女子兴高采烈的回来了，举着那个条子，说：'人家说啦，办公程序简化了，不用所长批条直接就可以取钱啦。' <br><br>
-        我这个同学一听到这就不住的感叹:pol.ice队伍里真有高人，一句'高调'就给打发回来了。 <br><br>
-        我这个同学和保安当时就有点傻了，营业大厅有很多人都在，怕她精神病发作起来影响正常的秩序，只好把值班主管找来了。 <br><br>
-        主管和女患者在一边聊了几句，问你取钱做什么用呀,女患者说:'取钱买面包,蛋糕,吃的,买穿的'主管指了指不远处的地方，该女子就又高高兴兴地走了。 <br>
-        保安去请教'高招',主管当时是这样对女患者说的: '我们这里是建行,只有建房子才能到这里取钱。你取钱买吃的,那肯定是粮食了,要去农行,买穿的等东西,取钱要到工商银行才行！' <br>
-        我同学打心眼里佩服呀,到底是当主管的啊!!!! <br><br>
-        ………… <br>
-        ………… <br>
-        过了一会儿,该女士又回来了.而且带来了工行的回答:'农行的人说了,这里是农行,只有农民能取钱,我是城市人口,工行的人说了,我们这里是公行,只能公的来取,母的不行!!!!,说我是贱人,要到建行取钱' </p>
-      </swiper-slide>
-      <div class="swiper-scrollbar" slot="scrollbar"></div>
-    </swiper>
-  </div>
+  <md-card>
+    <md-card-actions v-md-ink-ripple>
+      <div class="md-subhead">
+        <span>scroll-container</span>
+        <span>（</span>
+        <span>内容滚动/可拖动</span>
+        <span>）</span>
+      </div>
+      <md-button class="md-icon-button"
+                 target="_blank"
+                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/32-scroll-container.vue">
+        <md-icon>code</md-icon>
+      </md-button>
+    </md-card-actions>
+    <md-card-media>
+      <!-- swiper -->
+      <swiper :options="swiperOption">
+        <swiper-slide class="text">
+          <div class="content">
+            <h4 class="title">乌合之众</h4>
+            <p>回答这个问题之前，我想我们应该首先定义如何判断一本书存不存在偏见。我觉得“一本书是否存在偏见”并不在于他所提出的观点本身是否荒诞或者离经叛道，而在于他得出结论的过程是否科学，是否存在缺乏推敲的主观臆断。如果结论拥有完整严谨的推导过程，那么即使答案再令人瞠目结舌，我们也无法说他存在着偏见；反过来说，如果一本书里的论据没有任何可信的来源，结论也是无本之木，即使他的观点让人感觉“好像真是那么回事呀”，那么这套理论也很难摆脱主观思维的限制。</p>
+            <p>以上是典型的理工思维。</p>
+            <p>我从书架上找到了《乌合之众》戴光年的译本，随便翻开了几页：
+              <blockquote> “又比如在亚洲一些野蛮人的部落中 流传着这样的风俗：当他们将骁勇善战的对手击败后，往往会吃下这个人的心脏，认为这样就可以得到他的全部力量和勇气。”（P61）
+              “毫不客气的说，在十个人里面，就有九个人在几年里把他们的时间和努力浪费掉了；而且可以说，这是非常重要的，甚至是决定性的几年。他们中间有一半甚至三分之二的人，是为了考试而活着，然后被残酷地淘汰掉。”（P86）
+              “就历史而言，尤其是文学和艺术的历史，实际上只是再重复那些毫无意义的东西。每个人都不想这样做，但是这些历史所具有的名望压迫着他们，每个人最后都会重复他从学校里学到的东西，直到这些东西变成了一些再没有人敢说三道四的称号和事物。”（P114）
+              </blockquote>
+            </p>
+            <p>在这本书里我们经常可以看到勒庞把各种小说桥段，英雄传说和坊间流言用具有主观性的叙述方式表达出来，用以佐证他的论点，论证的逻辑方式也常常语焉不详——我可以接受这种书籍成为富有趣味性的人文读物，但是说这是一本研究群体心理学方面的重要著作，似乎令人难以接受。如果说《乌合之众》不存在偏见，我会觉得非常奇怪。</p>
+            <br>
+            <p>不过我们可以换一个角度看待勒庞和他的《乌合之众》。对于一部具有重要意义的作品来说，严谨和逻辑不应该作为其主要价值评判标准。我们应该关注的是它发现了什么，创造了什么。一部伟大的作品之所以伟大，并不是因为他严格的遵守着范式，而在于那些闪耀着的具有鲜明色调的个人智慧的光芒——这些东西通常是无法通过逻辑去解释的。从这个层面上说，我们其实并不需要执着于这本书是否存在着偏见，只需要让我们觉得“好像真是那么回事呀”就已经足够了。我没法说出这本书之于心理学的具体意义，但只说他带给我的东西，我觉得已经足够丰富。</p>
+            <br>
+            <p>而上面这些，似乎又是一种人文思维了。</p>
+          </div>
+        </swiper-slide>
+        <div class="swiper-scrollbar" slot="scrollbar"></div>
+      </swiper>
+    </md-card-media>
+  </md-card>
 </template>
 
 <script>
@@ -57,3 +55,34 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .swiper-slide.text {
+    font-size: 18px!important;
+    text-align: left!important;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 30px;
+
+    > .content {
+
+      > .title {
+        margin: 0;
+        text-align: center;
+        margin-bottom: .75em;
+      }
+
+      > p,
+      blockquote {
+        line-height: 2;
+        text-indent: 2em;
+      }
+
+      blockquote {
+        background-color: #ddd;
+        margin-left: 2em;
+      }
+    }
+  }
+</style>

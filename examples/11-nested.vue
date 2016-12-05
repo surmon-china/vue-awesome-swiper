@@ -1,33 +1,38 @@
-<style scoped>
-  .swiper-container-v {
-    background: #eee;
-  }
-</style>
-
 <template>
-  <div>
-    <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">nested</button>
-      <button class="btn btn-default btn-xs btn-title">Swipers嵌套</button>
-      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/11-nested.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
-    </div>
-    <swiper :options="swiperOptionh">
-      <swiper-slide>Horizontal Slide 1</swiper-slide>
-      <swiper-slide>
-        <swiper :options="swiperOptionv">
-          <swiper-slide>Vertical Slide 1</swiper-slide>
-          <swiper-slide>Vertical Slide 2</swiper-slide>
-          <swiper-slide>Vertical Slide 3</swiper-slide>
-          <swiper-slide>Vertical Slide 4</swiper-slide>
-          <swiper-slide>Vertical Slide 5</swiper-slide>
-          <div class="swiper-pagination swiper-pagination-v" slot="pagination"></div>
-        </swiper>
-      </swiper-slide>
-      <swiper-slide>Horizontal Slide 3</swiper-slide>
-      <swiper-slide>Horizontal Slide 4</swiper-slide>
-      <div class="swiper-pagination swiper-pagination-h" slot="pagination"></div>
-    </swiper>
-  </div>
+  <md-card>
+    <md-card-actions v-md-ink-ripple>
+      <div class="md-subhead">
+        <span>nested</span>
+        <span>（</span>
+        <span>Swipers嵌套</span>
+        <span>）</span>
+      </div>
+      <md-button class="md-icon-button"
+                 target="_blank"
+                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/11-nested.vue">
+        <md-icon>code</md-icon>
+      </md-button>
+    </md-card-actions>
+    <md-card-media>
+      <!-- swiper -->
+      <swiper :options="swiperOptionh">
+        <swiper-slide>Horizontal Slide 1</swiper-slide>
+        <swiper-slide>
+          <swiper :options="swiperOptionv">
+            <swiper-slide>Vertical Slide 1</swiper-slide>
+            <swiper-slide>Vertical Slide 2</swiper-slide>
+            <swiper-slide>Vertical Slide 3</swiper-slide>
+            <swiper-slide>Vertical Slide 4</swiper-slide>
+            <swiper-slide>Vertical Slide 5</swiper-slide>
+            <div class="swiper-pagination swiper-pagination-v" slot="pagination"></div>
+          </swiper>
+        </swiper-slide>
+        <swiper-slide>Horizontal Slide 3</swiper-slide>
+        <swiper-slide>Horizontal Slide 4</swiper-slide>
+        <div class="swiper-pagination swiper-pagination-h" slot="pagination"></div>
+      </swiper>
+    </md-card-media>
+  </md-card>
 </template>
 
 <script>
@@ -49,3 +54,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .swiper-container-v {
+    background: #eee;
+  }
+</style>

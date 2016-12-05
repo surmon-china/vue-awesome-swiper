@@ -1,32 +1,34 @@
-<style scoped>
-  .append-buttons {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .append-buttons a {
-    display: inline-block;
-    margin: 0 10px;
-  }
-</style>
-
 <template>
-  <div>
-    <div class="btn-group btn-vue-example">
-      <button class="btn btn-default btn-xs btn-title">dynamic-slides</button>
-      <button class="btn btn-default btn-xs btn-title">动态加载Slides</button>
-      <a href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/22-dynamic-slides.vue" target="_blank" class="btn btn-primary btn-xs">&lt; &gt;</a>
-    </div>
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="slide in swiperSlides">Slide {{ slide }}</swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
-    </swiper>
-    <p class="append-buttons">
-        <a @click.stop="prependSlide" class="btn btn-primary prepend-slide">Prepend Slide</a>
-        <a @click.stop="appendSlide" class="btn btn-success append-slide">Append Slide</a>
-    </p>
-  </div>
+  <md-card>
+    <md-card-actions v-md-ink-ripple>
+      <div class="md-subhead">
+        <span>dynamic-slides</span>
+        <span>（</span>
+        <span>动态加载Slides</span>
+        <span>）</span>
+      </div>
+      <div>
+        <md-button @click.native="prependSlide">Prepend Slide</md-button>
+        <md-button @click.native="appendSlide">Append Slide</md-button>
+        <md-button @click.native="popSlide">Pop Slide</md-button>
+        <md-button @click.native="shiftSlide">Shift Slide</md-button>
+      </div>
+      <md-button class="md-icon-button"
+                 target="_blank"
+                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/22-dynamic-slides.vue">
+        <md-icon>code</md-icon>
+      </md-button>
+    </md-card-actions>
+    <md-card-media>
+      <!-- swiper -->
+      <swiper :options="swiperOption">
+        <swiper-slide v-for="slide in swiperSlides">Slide {{ slide }}</swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+    </md-card-media>
+  </md-card>
 </template>
 
 <script>
@@ -51,7 +53,24 @@
       },
       prependSlide() {
         this.swiperSlides.unshift(this.swiperSlides[0] - 1)
+      },
+      popSlide() {
+        this.swiperSlides.pop()
+      },
+      shiftSlide() {
+        this.swiperSlides.shift()
       }
     }
   }
 </script>
+
+<style scoped>
+  .append-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .append-buttons a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+</style>
