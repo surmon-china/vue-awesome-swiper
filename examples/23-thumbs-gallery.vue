@@ -41,11 +41,13 @@
     data() {
       return {
         swiperOptionTop: {
+          notNextTick: true,
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
           spaceBetween: 10
         },
         swiperOptionThumbs: {
+          notNextTick: true,
           spaceBetween: 10,
           centeredSlides: true,
           slidesPerView: 'auto',

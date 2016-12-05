@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  var Swiper
-  if (typeof global.window != 'undefined') {
-    Swiper = require('swiper')
+  const w = typeof global.window != 'undefined'
+  if (w) {
+    window.Swiper = window.Swiper || require('swiper')
     require('swiper/dist/css/swiper.css')
   }
   export default {
@@ -30,16 +30,18 @@
       },
     },
     ready: function() {
-      if (!this.swiper && typeof global.window != 'undefined') {
+      if (!this.swiper && w) {
         this.swiper = new Swiper(this.$el, this.options)
       }
     },
     mounted: function() {
-      this.$nextTick(() => {
-        if (!this.swiper && typeof global.window != 'undefined') {
-          this.swiper = new Swiper(this.$el, this.options)
+      var _this = this
+      const mount = function () {
+        if (!_this.swiper && w) {
+          _this.swiper = new Swiper(_this.$el, _this.options)
         }
-      })
+      }
+      this.options.notNextTick ? mount() : this.$nextTick(mount)
     },
     updated: function(){
       this.swiper.update()
