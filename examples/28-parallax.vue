@@ -17,7 +17,7 @@
       <!-- swiper -->
       <swiper :options="swiperOption">
         <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"
-             style="background-image:url(http://himg2.huanqiu.com/saronscms/uploadfile/2014/0606/20140606102048260.jpg)">
+             style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg)">
         </div>
         <swiper-slide>
           <div class="title" data-swiper-parallax="-100">Slide 1</div>

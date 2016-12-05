@@ -41,7 +41,11 @@
           slidesPerView: 3,
           slidesPerColumn: 2,
           paginationClickable: true,
-          spaceBetween: 30
+          spaceBetween: 30,
+          onClick(swiper, event) {
+            // console.log('Swiper-onClick.activePageIndex:', swiper.activeIndex)
+            // console.log('Swiper-onClick.current Page activeItemIndex:', swiper.clickedIndex)
+          }
         }
       }
     }
