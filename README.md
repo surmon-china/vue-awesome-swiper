@@ -110,7 +110,7 @@ swiperPlugins.debugger = function(swiper, params) {
 ```
 
 ``` javascript
-// swiperOption example:
+// swiper options example:
 export default {
   name: 'carrousel',
   data() {
