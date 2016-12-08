@@ -21,7 +21,13 @@
     },
     methods: {
       update: function() {
-        this.$parent && this.$parent.swiper && this.$parent.swiper.update(true)
+        if (this.$parent && this.$parent.swiper) {
+          this.$parent.swiper.update(true)
+          if (this.$parent.options.loop) {
+            this.$parent.swiper.destroyLoop()
+            this.$parent.swiper.createLoop()
+          }
+        }
       }
     }
   }
