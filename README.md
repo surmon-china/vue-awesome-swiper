@@ -115,7 +115,7 @@ swiperPlugins.debugger = function(swiper, params) {
 ```
 
 ``` javascript
-// swiperOption example:
+// swiper options example:
 export default {
   name: 'carrousel',
   data() {
@@ -151,7 +151,7 @@ export default {
     }
   },
   // example code (if you need to get the current swiper object, you can find the swiper object like this, the $ref object is a ref attribute corresponding to the dom redefined)
-  // 如果你需要得到当前的swiper对象来做一些事情，你可以像下面这样定义一个方法属性来获取当前的swiper对象，实际上这里的$refs对应的是当前组件内所有关联了ref属性的组件元素对象
+  // 如果你需要得到当前的swiper对象来做一些事情，你可以像下面这样定义一个方法属性来获取当前的swiper对象，实际上这里的$refs对应的是当前组件内所有关联了ref属性的组件元素对象，同时配置中的notNextTick属性一定要设置为true
   computed: {
     swiper() {
       return this.$refs.mySwiperA.swiper
