@@ -57,9 +57,6 @@ var AwesomeSwiper = require('vue-awesome-swiper')
 Vue.use(AwesomeSwiper)
 
 
-// --------------------------------------
-
-
 // or use with component
 import Vue from 'vue'
 import { swiper, swiperSlide, swiperPlugins } from 'vue-awesome-swiper'
@@ -73,7 +70,7 @@ export default {
 }
 
 // custom swiper plugins(if you need to custom swiper plugins)
-// 如果你要定制一些swiper插件的话，这段代码是个示例，否则不用care
+// 如果你要定制一些swiper插件的话，这段代码是个示例，否则不用care，当然上面的swiperPlugins也不需要引入啦
 swiperPlugins.debugger = function(swiper, params) {
   if (!params) return;
   // Need to return object with properties that names are the same as callbacks
