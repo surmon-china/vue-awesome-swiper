@@ -74,6 +74,7 @@ VueAwesomeSwiper.swiperPlugins.debugger = (swiper, params) => {
   }
 }
 
+
 // global use
 Vue.use(VueAwesomeSwiper)
 
