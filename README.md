@@ -199,10 +199,9 @@ export default {
     }
   },
   mounted() {
-    let _this = this
     setInterval(() => {
       console.log('simulate async data')
-      let swiperSlides = _this.swiperSlides
+      let swiperSlides = this.swiperSlides
       if (swiperSlides.length < 10) swiperSlides.push(swiperSlides.length + 1)
     }, 3000)
   }
