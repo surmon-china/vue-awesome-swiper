@@ -78,9 +78,6 @@ VueAwesomeSwiper.swiperPlugins.debugger = (swiper, params) => {
 Vue.use(VueAwesomeSwiper)
 
 
-// --------------------------------------
-
-
 // or use with component
 import Vue from 'vue'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -92,6 +89,28 @@ export default {
     swiperSlide
   }
 }
+<<<<<<< HEAD
+=======
+
+// custom swiper plugins(if you need to custom swiper plugins)
+// 如果你要定制一些swiper插件的话，这段代码是个示例，否则不用care，当然上面的swiperPlugins也不需要引入啦
+swiperPlugins.debugger = function(swiper, params) {
+  if (!params) return;
+  // Need to return object with properties that names are the same as callbacks
+  return {
+    onInit: function(swiper) {
+      console.log('onInit');
+    },
+    onClick: function(swiper, e) {
+      console.log('onClick');
+    },
+    onTap: function(swiper, e) {
+      console.log('onTap');
+    },
+    // something callback...
+  }
+}
+>>>>>>> c5e3349a213f4f6f6adbfabfe483679916915c14
 ```
 
 ### Use in component
