@@ -9,20 +9,22 @@
 # Vue-Awesome-Swiper
 Swiper(slides) component for Vue.js(1.X ~ 2.X)，组件基于 [Swiper3](http://www.swiper.com.cn)构建， 支持目前Vue的所有版本，支持移动端 + PC端使用，欢迎加入前端大本营：288325802
 
+> ### v2.2.8
+> 新增几个example，优化部分代码
 
-> ### V2.2.6
+> ### v2.2.6
 > 修复Loop模式+动态数据模式，执行上翻操作时顺序/数据错误的Bug
 
-> ### V2.2.5
+> ### v2.2.5
 > 优化生命周期的安装方法
 
-> ### V2.2.4
+> ### v2.2.4
 > 重构Example页面，修改获取对象的方式，优化销毁方法
 
-> ### V2.2.3
+> ### v2.2.3
 > 增加服务端渲染支持，然而我还没测试
 
-> ### V2.2.0
+> ### v2.2.0
 > 新增了异步数据的支持
 
 
@@ -45,16 +47,35 @@ npm install vue-awesome-swiper --save
 ``` javascript
 // import in ES6
 import Vue from 'vue'
-import AwesomeSwiper from 'vue-awesome-swiper'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 
 // or require in Webpack/Node.js
 var Vue = require('vue')
-var AwesomeSwiper = require('vue-awesome-swiper')
+var VueAwesomeSwiper = require('vue-awesome-swiper')
 
+
+// custom swiper plugins(if you need to custom swiper plugins)
+// 如果你要定制一些swiper插件的话，这段代码是个示例，否则不用care
+VueAwesomeSwiper.swiperPlugins.debugger = (swiper, params) => {
+  if (!params) return;
+  // Need to return object with properties that names are the same as callbacks
+  return {
+    onInit(swiper) {
+      console.log('onInit');
+    },
+    onClick(swiper, e) {
+      console.log('onClick');
+    },
+    onTap(swiper, e) {
+      console.log('onTap');
+    },
+    // to do something (callback)...
+  }
+}
 
 // global use
-Vue.use(AwesomeSwiper)
+Vue.use(VueAwesomeSwiper)
 
 
 // --------------------------------------
@@ -62,32 +83,13 @@ Vue.use(AwesomeSwiper)
 
 // or use with component
 import Vue from 'vue'
-import { swiper, swiperSlide, swiperPlugins } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 // use
 export default {
   components: {
     swiper,
     swiperSlide
-  }
-}
-
-// custom swiper plugins(if you need to custom swiper plugins)
-// 如果你要定制一些swiper插件的话，这段代码是个示例，否则不用care
-swiperPlugins.debugger = function(swiper, params) {
-  if (!params) return;
-  // Need to return object with properties that names are the same as callbacks
-  return {
-    onInit: function(swiper) {
-      console.log('onInit');
-    },
-    onClick: function(swiper, e) {
-      console.log('onClick');
-    },
-    onTap: function(swiper, e) {
-      console.log('onTap');
-    },
-    // something callback...
   }
 }
 ```

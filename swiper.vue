@@ -22,31 +22,32 @@
     props: {
       options: {
         type: Object,
-        default: function() {
+        default() {
           return {
             autoplay: 3500
           }
         }
       },
     },
-    ready: function() {
+    ready() {
       if (!this.swiper && w) {
         this.swiper = new Swiper(this.$el, this.options)
       }
     },
-    mounted: function() {
-      var _this = this
+    mounted() {
+      let self = this
       const mount = function () {
-        if (!_this.swiper && w) {
-          _this.swiper = new Swiper(_this.$el, _this.options)
+        if (!self.swiper && w) {
+          delete self.options.notNextTick
+          self.swiper = new Swiper(self.$el, self.options)
         }
       }
       this.options.notNextTick ? mount() : this.$nextTick(mount)
     },
-    updated: function(){
+    updated(){
       this.swiper.update()
     },
-    beforeDestroy: function() {
+    beforeDestroy() {
       if (!!this.swiper) {
         this.swiper.destroy()
         delete this.swiper

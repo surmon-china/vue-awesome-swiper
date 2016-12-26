@@ -7,20 +7,20 @@
 <script>
   export default {
     name: 'swiper-slide',
-    ready: function() {
+    ready() {
       this.update()
     },
-    mounted: function() {
+    mounted() {
       this.update()
     },
-    updated: function(){
+    updated(){
       this.update()
     },
-    attached: function(){
+    attached(){
       this.update()
     },
     methods: {
-      update: function() {
+      update() {
         if (this.$parent && this.$parent.swiper) {
           this.$parent.swiper.update(true)
           if (this.$parent.options.loop) {

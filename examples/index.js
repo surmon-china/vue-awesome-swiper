@@ -33,6 +33,9 @@ import example34 from './34-autoheight.vue'
 import example35 from './35-effect-flip.vue'
 import example36 from './36-pagination-fraction.vue'
 import example37 from './37-pagination-progress.vue'
+import example38 from './38-inner-scroll.vue'
+import example39 from './39-zoom.vue'
+import example40 from './40-slideable-menu.vue'
 
 module.exports = {
   example01,
@@ -69,5 +72,8 @@ module.exports = {
   example34,
   example35,
   example36,
-  example37
+  example37,
+  example38,
+  example39,
+  example40
 }
