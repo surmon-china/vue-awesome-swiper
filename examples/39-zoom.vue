@@ -18,17 +18,17 @@
       <swiper :options="swiperOption">
         <swiper-slide>
           <div class="swiper-zoom-container">
-            <img src="http://www.swiper.com.cn/demo/img/largeNature1.jpg">
+            <img src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/kennedy_meadows_0.jpg">
           </div>
         </swiper-slide>
         <swiper-slide>
           <div class="swiper-zoom-container">
-            <img src="http://www.swiper.com.cn/demo/img/largeNature2.jpg">
+            <img src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg">
           </div>
         </swiper-slide>
         <swiper-slide>
           <div class="swiper-zoom-container">
-            <img src="http://www.swiper.com.cn/demo/img/largeNature3.jpg">
+            <img src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/mount_rainier.jpg">
           </div>
         </swiper-slide>
         <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
