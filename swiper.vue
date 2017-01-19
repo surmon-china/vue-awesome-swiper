@@ -27,7 +27,7 @@
             autoplay: 3500
           }
         }
-      },
+      }
     },
     ready() {
       if (!this.swiper && browser) {
