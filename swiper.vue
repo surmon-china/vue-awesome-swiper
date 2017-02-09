@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  const browser = typeof global.window != 'undefined'
+  var browser = typeof window !== 'undefined'
   if (browser) {
     window.Swiper = require('swiper')
     require('swiper/dist/css/swiper.css')
@@ -35,8 +35,8 @@
       }
     },
     mounted() {
-      let self = this
-      const mount = function () {
+      var self = this
+      var mount = function () {
         if (!self.swiper && browser) {
           delete self.options.notNextTick
           self.swiper = new Swiper(self.$el, self.options)

@@ -6,7 +6,9 @@
 var Swiper = require('swiper')
 var SwiperComponent = require('./swiper.vue')
 var SlideComponent = require('./slide.vue')
-if (typeof global.window != 'undefined') window.Swiper = Swiper
+if (typeof window !== 'undefined') {
+	window.Swiper = Swiper
+}
 
 var swiper = {
   swiperSlide: SlideComponent,
