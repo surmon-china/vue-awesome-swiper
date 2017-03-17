@@ -58,41 +58,35 @@ export default {
 
 ``` vue
 <!-- You can custom the "mySwiper" name used to find the swiper instance in current component -->
-<div v-swiper:mySwiper="swiperOption">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide" v-for="banner in banners">
-      <img :src="banner">
+<template>
+  <div v-swiper:mySwiper="swiperOption">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="banner in banners">
+        <img :src="banner">
+      </div>
     </div>
+    <div class="swiper-pagination swiper-pagination-bullets"></div>
   </div>
-  <div class="swiper-pagination swiper-pagination-bullets"></div>
-</div>
+</template>
+
 <script>
   export default {
     data () {
       return {
-        banners: [
-          '/1.jpg',
-          '/2.jpg',
-          '/3.jpg'
-        ],
+        banners: [ '/1.jpg', '/2.jpg', '/3.jpg' ],
         swiperOption: {
           autoplay: 5000,
           initialSlide: 1,
-          direction : 'horizontal',
           loop: true,
           pagination: '.swiper-pagination',
-          paginationElement: 'li',
           onSlideChangeEnd: swiper => {
             console.log('onSlideChangeEnd', swiper.realIndex)
-          },
-          onTap: swiper => {
-            console.log('onTap', swiper.realIndex)
           }
         }
       }
     },
     mounted() {
-      console.log('app init', this)
+      console.log('app init')
       setTimeout(() => {
         this.banners.push('/5.jpg')
         console.log('banners update')
@@ -111,21 +105,24 @@ export default {
 
 ``` vue
 <!-- The ref attr used to find the swiper instance -->
-<swiper :options="swiperOption" ref="mySwiper">
-  <!-- slides -->
-  <swiper-slide>I'm Slide 1</swiper-slide>
-  <swiper-slide>I'm Slide 2</swiper-slide>
-  <swiper-slide>I'm Slide 3</swiper-slide>
-  <swiper-slide>I'm Slide 4</swiper-slide>
-  <swiper-slide>I'm Slide 5</swiper-slide>
-  <swiper-slide>I'm Slide 6</swiper-slide>
-  <swiper-slide>I'm Slide 7</swiper-slide>
-  <!-- Optional controls -->
-  <div class="swiper-pagination"  slot="pagination"></div>
-  <div class="swiper-button-prev" slot="button-prev"></div>
-  <div class="swiper-button-next" slot="button-next"></div>
-  <div class="swiper-scrollbar"   slot="scrollbar"></div>
-</swiper>
+<template>
+  <swiper :options="swiperOption" ref="mySwiper">
+    <!-- slides -->
+    <swiper-slide>I'm Slide 1</swiper-slide>
+    <swiper-slide>I'm Slide 2</swiper-slide>
+    <swiper-slide>I'm Slide 3</swiper-slide>
+    <swiper-slide>I'm Slide 4</swiper-slide>
+    <swiper-slide>I'm Slide 5</swiper-slide>
+    <swiper-slide>I'm Slide 6</swiper-slide>
+    <swiper-slide>I'm Slide 7</swiper-slide>
+    <!-- Optional controls -->
+    <div class="swiper-pagination"  slot="pagination"></div>
+    <div class="swiper-button-prev" slot="button-prev"></div>
+    <div class="swiper-button-next" slot="button-next"></div>
+    <div class="swiper-scrollbar"   slot="scrollbar"></div>
+  </swiper>
+</template>
+
 <script>
   // swiper options example:
   export default {
@@ -182,10 +179,13 @@ export default {
 ### Async data example
 
 ``` vue
-<swiper :options="swiperOption">
-  <swiper-slide v-for="slide in swiperSlides">I'm Slide {{ slide }}</swiper-slide>
-  <div class="swiper-pagination" slot="pagination"></div>
-</swiper>
+<template>
+  <swiper :options="swiperOption">
+    <swiper-slide v-for="slide in swiperSlides">I'm Slide {{ slide }}</swiper-slide>
+    <div class="swiper-pagination" slot="pagination"></div>
+  </swiper>
+</template>
+
 <script>
   export default {
     name: 'carrousel',
@@ -217,12 +217,11 @@ export default {
 [mobile-fullpage-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/41-mobile-fullpage-example.vue)
 
 # Nuxt.js/SSR Example Code
-[nuxt.js/ssr-example](https://github.com/surmon-china/vue-awesome-swiper/blob/master/nuxt-ssr-example)
+[nuxt.js/ssr-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/nuxt-ssr-example)
 
 
 # API
-Swiper's API and configuration can be used.
-Swiper官网中的API及配置均可使用
+Swiper's API and configuration can be used.（Swiper官网中的API及配置均可使用）
 - [cn Swiper3 apis](http://www.swiper.com.cn/api/index.html)
 - [en Swiper3 apis](http://idangero.us/swiper/api/#.WMlhYxJ97mI)
 
