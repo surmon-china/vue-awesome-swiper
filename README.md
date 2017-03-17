@@ -7,7 +7,7 @@
 
 
 # Vue-Awesome-Swiper
-Swiper([Swiper3](http://www.swiper.com.cn)) component for Vue.js(1.X ~ 2.X), support pc and mobile, spa and server rendering.
+Swiper([Swiper3](http://www.swiper.com.cn)) component for Vue.js(1.X ~ 2.X), support pc and mobile, SPA and SSR.
 
 # Example
 
