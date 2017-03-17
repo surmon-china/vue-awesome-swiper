@@ -1,6 +1,5 @@
 # Dependency directories
 node_modules
-
 examples
-/examples
-examples/
+nuxt-ssr-example
+.github
