@@ -1,7 +1,7 @@
 {
   "name": "vue-awesome-swiper",
-  "version": "2.3.2",
-  "description": "Swiper(slide) component for Vue.js(1.x ~ 2.x)",
+  "version": "2.3.4",
+  "description": "Swiper component for Vue.js(1.x ~ 2.x)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,6 +31,6 @@
   },
   "homepage": "https://github.com/surmon-china/vue-awesome-swiper#readme",
   "dependencies": {
-    "swiper": "^3.3.1"
+    "swiper": "^3.4.2"
   }
 }
