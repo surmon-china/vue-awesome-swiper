@@ -38,7 +38,7 @@ var VueAwesomeSwiper = require('vue-awesome-swiper')
 var VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
 
 
-// mount with global
+// mount with global(If used in nuxt.js / SSR, you should keep it only in a browser-built environment)
 Vue.use(VueAwesomeSwiper)
 
 
