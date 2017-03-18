@@ -45,10 +45,12 @@
       this.options.notNextTick ? mount() : this.$nextTick(mount)
     },
     updated(){
-      this.swiper.update()
+      if (this.swiper) {
+        this.swiper.update()
+      }
     },
     beforeDestroy() {
-      if (!!this.swiper) {
+      if (this.swiper) {
         this.swiper.destroy()
         delete this.swiper
       }
