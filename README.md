@@ -54,6 +54,14 @@ export default {
 ```
 
 
+### Use the difference（使用方法的区别）
+
+**SSR and the only difference in the use of the SPA:**
+- SPA worked by the `component`, find quill instance by `ref attribute`.
+- SSR worked by the `directive`, find quill instance by `directive arg`.
+- Other configurations, events are the same.
+
+
 ### Use in SSR
 
 ``` vue
