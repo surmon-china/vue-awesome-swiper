@@ -38,14 +38,14 @@ var VueAwesomeSwiper = require('vue-awesome-swiper')
 Vue.use(VueAwesomeSwiper)
 
 
-// If used in nuxt.js/SSR, you should keep it only in a browser-build environment
+// If used in Nuxt.js/SSR, you should keep it only in a browser-build environment
 if (process.BROWSER_BUILD) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
   Vue.use(VueAwesomeSwiper)
 }
 
 
-// mount with component(can't work in ssr)
+// mount with component(can't work in Nuxt.js/SSR)
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
@@ -104,7 +104,7 @@ export default {
       }, 3000)
       console.log(
         'This is current swiper instance object', this.mySwiper, 
-        'I will slideTo banners 3')
+        'It will slideTo banners 3')
       this.mySwiper.slideTo(3)
     }
   }
