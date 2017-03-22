@@ -38,7 +38,7 @@ var VueAwesomeSwiper = require('vue-awesome-swiper')
 Vue.use(VueAwesomeSwiper)
 
 
-// If used in Nuxt.js/SSR, you should keep it only in a browser-build environment
+// If used in Nuxt.js/SSR, you should keep it only in browser build environment
 if (process.BROWSER_BUILD) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
   Vue.use(VueAwesomeSwiper)
