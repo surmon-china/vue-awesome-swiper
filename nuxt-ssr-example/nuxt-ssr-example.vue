@@ -1,13 +1,13 @@
 <template>
   <!-- You can find this swiper instance object in current compomemt by the "mySwiper"  -->
-	<div v-swiper:mySwiper="swiperOption">
-	  <div class="swiper-wrapper">
-	    <div class="swiper-slide" v-for="banner in banners">
-	      <img :src="banner">
-	    </div>
-	  </div>
-	  <div class="swiper-pagination swiper-pagination-bullets"></div>
-	</div>
+  <div v-swiper:mySwiper="swiperOption">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="banner in banners">
+        <img :src="banner">
+      </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination-bullets"></div>
+  </div>
 </template>
 
 <script>
@@ -39,12 +39,12 @@
       console.log('app init', this)
       setTimeout(() => {
         this.banners.push('/5.jpg')
-      	console.log('banners update')
+        console.log('banners update')
       }, 3000)
       console.log(
-      	'This is current swiper instance object', this.mySwiper, 
-      	'I will slideTo banners 3')
-     	this.mySwiper.slideTo(3)
+        'This is current swiper instance object', this.mySwiper, 
+        'I will slideTo banners 3')
+       this.mySwiper.slideTo(3)
     }
   }
 </script>
