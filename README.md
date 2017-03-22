@@ -34,12 +34,15 @@ var Vue = require('vue')
 var VueAwesomeSwiper = require('vue-awesome-swiper')
 
 
-// or import 'vue-awesome-swiper/ssr' to used in Nuxt.js/ssr
-var VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
-
-
-// mount with global(If used in nuxt.js / SSR, you should keep it only in a browser-built environment)
+// mount with global
 Vue.use(VueAwesomeSwiper)
+
+
+// If used in nuxt.js/SSR, you should keep it only in a browser-build environment
+if (process.BROWSER_BUILD) {
+  const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
+  Vue.use(VueAwesomeSwiper)
+}
 
 
 // mount with component(can't work in ssr)
@@ -57,8 +60,8 @@ export default {
 ### Use the difference（使用方法的区别）
 
 **SSR and the only difference in the use of the SPA:**
-- SPA worked by the `component`, find quill instance by `ref attribute`.
-- SSR worked by the `directive`, find quill instance by `directive arg`.
+- SPA worked by the `component`, find swiper instance by `ref attribute`.
+- SSR worked by the `directive`, find swiper instance by `directive arg`.
 - Other configurations, events are the same.
 
 
