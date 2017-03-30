@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper-slide">
+  <div :class="slideClass">
     <slot></slot>
   </div>
 </template>
@@ -7,11 +7,19 @@
 <script>
   export default {
     name: 'swiper-slide',
+    data() {
+      return {
+        slideClass: 'swiper-slide'
+      }
+    },
     ready() {
       this.update()
     },
     mounted() {
       this.update()
+      if (this.$parent.options.slideClass) {
+        this.slideClass = this.$parent.options.slideClass
+      }
     },
     updated(){
       this.update()
