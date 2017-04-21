@@ -40,6 +40,7 @@ Vue.use(VueAwesomeSwiper)
 
 
 // If used in Nuxt.js/SSR, you should keep it only in browser build environment
+// The `Process. BROWSER_BUILD` itself is just a feature, it is only valid in Nuxt.js, you need to modify it according to your own procedures, such as: in vue official ssr scaffolding it should be` process.browser`
 if (process.BROWSER_BUILD) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
   Vue.use(VueAwesomeSwiper)
