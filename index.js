@@ -1,23 +1,30 @@
 /**
  * Vue-awesome-swiper
  * @author Surmon.me
+ * @changes by nigeltiany
  */
 
-var Swiper = require('swiper')
-var SwiperComponent = require('./swiper.vue')
-var SlideComponent = require('./slide.vue')
+var Swiper = require('swiper');
+
+import CarouselItem from './carousel-item.vue';
+import CarouselView from './carousel-view.vue';
+
+
 if (typeof window !== 'undefined') {
 	window.Swiper = Swiper
 }
 
-var swiper = {
-  swiperSlide: SlideComponent,
-  swiper: SwiperComponent,
-  swiperPlugins: Swiper.prototype.plugins,
-  install: function(Vue) {
-    Vue.component('swiper', SwiperComponent)
-    Vue.component('swiper-slide', SlideComponent)
-  }
+const install = (Vue) => {
+    Vue.component('carousel-view', CarouselView)
+    Vue.component('carousel-item', CarouselItem)
 }
 
-module.exports = swiper
+export default{
+    install
+}
+
+export {
+    CarouselView,
+    CarouselItem,
+}
+

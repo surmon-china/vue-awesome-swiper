@@ -14,11 +14,11 @@
 <script>
   var browser = typeof window !== 'undefined'
   if (browser) {
-    window.Swiper = require('swiper')
+    window.Swiper = require('carousel-view')
     require('swiper/dist/css/swiper.css')
   }
   export default {
-    name: 'swiper',
+    name: 'carousel-view',
     props: {
       options: {
         type: Object,
