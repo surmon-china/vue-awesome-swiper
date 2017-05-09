@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'swiper-slide',
+    name: 'carousel-item',
     data() {
       return {
         slideClass: 'swiper-slide'
