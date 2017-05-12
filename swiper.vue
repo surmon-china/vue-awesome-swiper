@@ -43,7 +43,7 @@
     },
     mounted() {
       var self = this
-      var mount = function () {
+      var mount = function() {
         if (!self.swiper && browser) {
           delete self.options.notNextTick
           var setClassName = false
@@ -55,7 +55,7 @@
               }
             }
           }
-          var mountInstance = function () {
+          var mountInstance = function() {
             self.swiper = new Swiper(self.$el, self.options)
           }
           setClassName ? self.$nextTick(mountInstance) : mountInstance()

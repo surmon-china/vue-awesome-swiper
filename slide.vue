@@ -21,10 +21,10 @@
         this.slideClass = this.$parent.options.slideClass
       }
     },
-    updated(){
+    updated() {
       this.update()
     },
-    attached(){
+    attached() {
       this.update()
     },
     methods: {

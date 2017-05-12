@@ -1,6 +1,6 @@
 {
   "name": "vue-awesome-swiper",
-  "version": "2.4.0",
+  "version": "2.4.2",
   "description": "Swiper component for Vue.js(1.x ~ 2.x)",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "author": {
     "name": "Surmon",
     "email": "surmon@foxmail.com",
-    "url": "http://surmon.me"
+    "url": "https://surmon.me"
   },
   "license": "MIT",
   "bugs": {
