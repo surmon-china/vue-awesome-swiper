@@ -10,13 +10,9 @@
     <slot name="scrollbar"></slot>
   </div>
 </template>
-
+<style src="node_modules/swiper/dist/css/swiper.css"></style>
 <script>
-  var browser = typeof window !== 'undefined'
-  if (browser) {
-    window.Swiper = require('swiper')
-    require('swiper/dist/css/swiper.css')
-  }
+	var browser = typeof window !== 'undefined'
   export default {
     name: 'swiper',
     props: {
