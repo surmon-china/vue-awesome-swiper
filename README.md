@@ -22,10 +22,6 @@ Swiper([Swiper3](http://www.swiper.com.cn)) component for Vue.js(1.X ~ 2.X), sup
 npm install vue-awesome-swiper --save
 ```
 
-### 增补
-- 增加编译脚本
-- 修补css引用问题
-
 ### Vue mount
 
 ``` javascript
