@@ -1,52 +1,80 @@
 {
-	"name": "vue-awesome-swiper",
-	"version": "2.4.4",
-	"description": "Swiper component for Vue.js(1.x ~ 2.x)",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "cross-env NODE_ENV=production browserify -t vueify -e index.js  -x vue -s VueAwesomeSwiper -o dist/vue-awesome-swiper.js -d && uglifyjs dist/vue-awesome-swiper.js --source-map -o dist/vue-awesome-swiper.min.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/surmon-china/vue-awesome-swiper.git"
-	},
-	"keywords": [
-		"vue-awesome-swiper",
-		"vue awesome swiper",
-		"awesome-swiper",
-		"vue carrousel",
-		"vue swiper",
-		"vue slide",
-		"carrousel",
-		"swiper"
-	],
-	"author": {
-		"name": "Surmon",
-		"email": "surmon@foxmail.com",
-		"url": "https://surmon.me"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/surmon-china/vue-awesome-swiper/issues"
-	},
-	"homepage": "https://github.com/surmon-china/vue-awesome-swiper#readme",
-	"browserify-css": {
-		"autoInject": true,
-		"minify": true,
-		"rootDir": "."
-	},
-	"dependencies": {
-		"swiper": "^3.4.2",
-		"vue": "^1.0.28"
-	},
-	"devDependencies": {
-		"babel-core": "^6.24.1",
-		"babel-plugin-transform-runtime": "^6.23.0",
-		"babel-preset-es2015": "^6.24.1",
-		"browserify": "^14.4.0",
-		"cross-env": "^5.0.0",
-		"uglify-js": "^3.0.15",
-		"vueify": "^8.7.0"
-	}
+  "_from": "vue-awesome-swiper@^2.4.0",
+  "_id": "vue-awesome-swiper@2.4.4",
+  "_inBundle": false,
+  "_integrity": "sha512-pMdmK1YLqJxdroM51PBQlY/PHDWAsXUg3p8sl4+wchMlIH26IujWiLgEl8q17pXSua3rOvq3BnD6+XDrOeFEXg==",
+  "_location": "/vue-awesome-swiper",
+  "_phantomChildren": {
+    "envify": "3.4.1"
+  },
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "vue-awesome-swiper@^2.4.0",
+    "name": "vue-awesome-swiper",
+    "escapedName": "vue-awesome-swiper",
+    "rawSpec": "^2.4.0",
+    "saveSpec": null,
+    "fetchSpec": "^2.4.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vue-awesome-swiper/-/vue-awesome-swiper-2.4.4.tgz",
+  "_shasum": "dd42c1f5ccead9737da4f1c1f6efe3ec44cb13b5",
+  "_spec": "vue-awesome-swiper@^2.4.0",
+  "_where": "/Users/surmon/Projects/Node.js/vue-example",
+  "author": {
+    "name": "Surmon",
+    "email": "surmon@foxmail.com",
+    "url": "https://surmon.me"
+  },
+  "browserify-css": {
+    "autoInject": true,
+    "minify": true,
+    "rootDir": "."
+  },
+  "bugs": {
+    "url": "https://github.com/surmon-china/vue-awesome-swiper/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "swiper": "^3.4.2",
+    "vue": "^1.0.28"
+  },
+  "deprecated": false,
+  "description": "Swiper component for Vue.js(1.x ~ 2.x)",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^14.4.0",
+    "cross-env": "^5.0.0",
+    "uglify-js": "^3.0.15",
+    "vueify": "^8.7.0"
+  },
+  "homepage": "https://github.com/surmon-china/vue-awesome-swiper#readme",
+  "keywords": [
+    "vue-awesome-swiper",
+    "vue awesome swiper",
+    "awesome-swiper",
+    "vue carrousel",
+    "vue swiper",
+    "vue slide",
+    "carrousel",
+    "swiper"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "vue-awesome-swiper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surmon-china/vue-awesome-swiper.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production browserify -t vueify -e index.js  -x vue -s VueAwesomeSwiper -o dist/vue-awesome-swiper.js -d && uglifyjs dist/vue-awesome-swiper.js --source-map -o dist/vue-awesome-swiper.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.4.4"
 }
