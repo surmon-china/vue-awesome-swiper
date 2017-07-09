@@ -6,6 +6,8 @@
 var Swiper = require('swiper')
 var SwiperComponent = require('./swiper.vue')
 var SlideComponent = require('./slide.vue')
+SwiperComponent = SwiperComponent.default || SwiperComponent
+SlideComponent = SlideComponent.default || SlideComponent
 if (typeof window !== 'undefined') {
 	window.Swiper = Swiper
 }
@@ -15,8 +17,8 @@ var swiper = {
   swiper: SwiperComponent,
   swiperPlugins: Swiper.prototype.plugins,
   install: function(Vue) {
-    Vue.component('swiper', SwiperComponent)
-    Vue.component('swiper-slide', SlideComponent)
+    Vue.component(SwiperComponent.name, SwiperComponent)
+    Vue.component(SlideComponent.name, SlideComponent)
   }
 }
 
