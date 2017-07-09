@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-actions v-md-ink-ripple>
+    <md-card-actions>
       <div class="md-subhead">
         <span>nested</span>
         <span>（</span>
@@ -15,22 +15,22 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOptionh">
-        <swiper-slide>Horizontal Slide 1</swiper-slide>
-        <swiper-slide>
-          <swiper :options="swiperOptionv">
-            <swiper-slide>Vertical Slide 1</swiper-slide>
-            <swiper-slide>Vertical Slide 2</swiper-slide>
-            <swiper-slide>Vertical Slide 3</swiper-slide>
-            <swiper-slide>Vertical Slide 4</swiper-slide>
-            <swiper-slide>Vertical Slide 5</swiper-slide>
+      <mt-swiper :options="swiperOptionh">
+        <mt-swiper-slide>Horizontal Slide 1</mt-swiper-slide>
+        <mt-swiper-slide>
+          <mt-swiper :options="swiperOptionv">
+            <mt-swiper-slide>Vertical Slide 1</mt-swiper-slide>
+            <mt-swiper-slide>Vertical Slide 2</mt-swiper-slide>
+            <mt-swiper-slide>Vertical Slide 3</mt-swiper-slide>
+            <mt-swiper-slide>Vertical Slide 4</mt-swiper-slide>
+            <mt-swiper-slide>Vertical Slide 5</mt-swiper-slide>
             <div class="swiper-pagination swiper-pagination-v" slot="pagination"></div>
-          </swiper>
-        </swiper-slide>
-        <swiper-slide>Horizontal Slide 3</swiper-slide>
-        <swiper-slide>Horizontal Slide 4</swiper-slide>
+          </mt-swiper>
+        </mt-swiper-slide>
+        <mt-swiper-slide>Horizontal Slide 3</mt-swiper-slide>
+        <mt-swiper-slide>Horizontal Slide 4</mt-swiper-slide>
         <div class="swiper-pagination swiper-pagination-h" slot="pagination"></div>
-      </swiper>
+      </mt-swiper>
     </md-card-media>
   </md-card>
 </template>

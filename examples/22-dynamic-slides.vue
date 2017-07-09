@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-actions v-md-ink-ripple>
+    <md-card-actions>
       <div class="md-subhead">
         <span>dynamic-slides</span>
         <span>（</span>
@@ -21,12 +21,12 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOption">
-        <swiper-slide v-for="slide in swiperSlides">Slide {{ slide }}</swiper-slide>
+      <mt-swiper :options="swiperOption">
+        <mt-swiper-slide v-for="slide in swiperSlides">Slide {{ slide }}</mt-swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
+      </mt-swiper>
     </md-card-media>
   </md-card>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-actions v-md-ink-ripple>
+    <md-card-actions>
       <div class="md-subhead">
         <span>lazy-load-images</span>
         <span>（</span>
@@ -15,35 +15,35 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOption">
-        <swiper-slide>
+      <mt-swiper :options="swiperOption">
+        <mt-swiper-slide>
           <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/kennedy_meadows_0.jpg" class="swiper-lazy">
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-        </swiper-slide>
-        <swiper-slide>
+        </mt-swiper-slide>
+        <mt-swiper-slide>
             <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/three_sisters_wilderness_0.jpg" class="swiper-lazy">
             <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-        </swiper-slide>
-        <swiper-slide>
+        </mt-swiper-slide>
+        <mt-swiper-slide>
           <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/snoqualmie_pass_0.jpg" class="swiper-lazy">
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-        </swiper-slide>
-        <swiper-slide>
+        </mt-swiper-slide>
+        <mt-swiper-slide>
           <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/mount_rainier.jpg" class="swiper-lazy">
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-        </swiper-slide>
-        <swiper-slide>
+        </mt-swiper-slide>
+        <mt-swiper-slide>
           <img data-src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg" class="swiper-lazy">
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-        </swiper-slide>
-        <swiper-slide>
+        </mt-swiper-slide>
+        <mt-swiper-slide>
           <img data-src="https://avatars3.githubusercontent.com/u/14019524?v=3&s=466" class="swiper-lazy">
           <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-        </swiper-slide>
+        </mt-swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
         <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-      </swiper>
+      </mt-swiper>
     </md-card-media>
   </md-card>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-actions v-md-ink-ripple>
+    <md-card-actions>
       <div class="md-subhead">
         <span>zoom</span>
         <span>（</span>
@@ -15,26 +15,26 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOption">
-        <swiper-slide>
+      <mt-swiper :options="swiperOption">
+        <mt-swiper-slide>
           <div class="swiper-zoom-container">
             <img src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/kennedy_meadows_0.jpg">
           </div>
-        </swiper-slide>
-        <swiper-slide>
+        </mt-swiper-slide>
+        <mt-swiper-slide>
           <div class="swiper-zoom-container">
             <img src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg">
           </div>
-        </swiper-slide>
-        <swiper-slide>
+        </mt-swiper-slide>
+        <mt-swiper-slide>
           <div class="swiper-zoom-container">
             <img src="http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/mount_rainier.jpg">
           </div>
-        </swiper-slide>
+        </mt-swiper-slide>
         <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-      </swiper>
+      </mt-swiper>
     </md-card-media>
   </md-card>
 </template>

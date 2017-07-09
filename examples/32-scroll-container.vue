@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-actions v-md-ink-ripple>
+    <md-card-actions>
       <div class="md-subhead">
         <span>scroll-container</span>
         <span>（</span>
@@ -15,8 +15,8 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOption">
-        <swiper-slide class="text">
+      <mt-swiper :options="swiperOption">
+        <mt-swiper-slide class="text">
           <div class="content">
             <h4 class="title">乌合之众</h4>
             <p>回答这个问题之前，我想我们应该首先定义如何判断一本书存不存在偏见。我觉得“一本书是否存在偏见”并不在于他所提出的观点本身是否荒诞或者离经叛道，而在于他得出结论的过程是否科学，是否存在缺乏推敲的主观臆断。如果结论拥有完整严谨的推导过程，那么即使答案再令人瞠目结舌，我们也无法说他存在着偏见；反过来说，如果一本书里的论据没有任何可信的来源，结论也是无本之木，即使他的观点让人感觉“好像真是那么回事呀”，那么这套理论也很难摆脱主观思维的限制。</p>
@@ -33,9 +33,9 @@
             <br>
             <p>而上面这些，似乎又是一种人文思维了。</p>
           </div>
-        </swiper-slide>
+        </mt-swiper-slide>
         <div class="swiper-scrollbar" slot="scrollbar"></div>
-      </swiper>
+      </mt-swiper>
     </md-card-media>
   </md-card>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-actions v-md-ink-ripple>
+    <md-card-actions>
       <div class="md-subhead">
         <span>Default</span>
         <span>（</span>
@@ -15,18 +15,18 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-        <swiper-slide>Slide 7</swiper-slide>
-        <swiper-slide>Slide 8</swiper-slide>
-        <swiper-slide>Slide 9</swiper-slide>
-        <swiper-slide>Slide 10</swiper-slide>
-      </swiper>
+      <mt-swiper>
+        <mt-swiper-slide>Slide 1</mt-swiper-slide>
+        <mt-swiper-slide>Slide 2</mt-swiper-slide>
+        <mt-swiper-slide>Slide 3</mt-swiper-slide>
+        <mt-swiper-slide>Slide 4</mt-swiper-slide>
+        <mt-swiper-slide>Slide 5</mt-swiper-slide>
+        <mt-swiper-slide>Slide 6</mt-swiper-slide>
+        <mt-swiper-slide>Slide 7</mt-swiper-slide>
+        <mt-swiper-slide>Slide 8</mt-swiper-slide>
+        <mt-swiper-slide>Slide 9</mt-swiper-slide>
+        <mt-swiper-slide>Slide 10</mt-swiper-slide>
+      </mt-swiper>
     </md-card-media>
   </md-card>
 </template>

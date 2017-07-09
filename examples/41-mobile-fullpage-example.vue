@@ -1,17 +1,17 @@
 <template>
-  <swiper :options="swiperOption" class="swiper-box">
-    <swiper-slide class="swiper-item">Slide 1</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 2</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 3</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 4</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 5</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 6</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 7</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 8</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 9</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 10</swiper-slide>
+  <mt-swiper :options="swiperOption" class="swiper-box">
+    <mt-swiper-slide class="swiper-item">Slide 1</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 2</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 3</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 4</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 5</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 6</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 7</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 8</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 9</mt-swiper-slide>
+    <mt-swiper-slide class="swiper-item">Slide 10</mt-swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
-  </swiper>
+  </mt-swiper>
 </template>
 
 <script>

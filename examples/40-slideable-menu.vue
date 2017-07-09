@@ -1,6 +1,6 @@
 <template>
   <md-card>
-    <md-card-actions v-md-ink-ripple>
+    <md-card-actions>
       <div class="md-subhead">
         <span>slideable-menu</span>
         <span>（</span>
@@ -15,17 +15,17 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOption" ref="swiper">
-        <swiper-slide class="menu">Menu slide</swiper-slide>
-        <swiper-slide class="content">
+      <mt-swiper :options="swiperOption" ref="swiper">
+        <mt-swiper-slide class="menu">Menu slide</mt-swiper-slide>
+        <mt-swiper-slide class="content">
           <div class="menu-button" :class="{ 'cross': menuCross }" @click="toggleMenu">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
           </div>
           Content slide
-        </swiper-slide>
-      </swiper>
+        </mt-swiper-slide>
+      </mt-swiper>
     </md-card-media>
   </md-card>
 </template>
