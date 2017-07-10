@@ -119,21 +119,21 @@ export default {
 ``` vue
 <!-- The ref attr used to find the swiper instance -->
 <template>
-  <mt-swiper :options="swiperOption" ref="mySwiper">
+  <swiper :options="swiperOption" ref="mySwiper">
     <!-- slides -->
-    <mt-swiper-slide>I'm Slide 1</mt-swiper-slide>
-    <mt-swiper-slide>I'm Slide 2</mt-swiper-slide>
-    <mt-swiper-slide>I'm Slide 3</mt-swiper-slide>
-    <mt-swiper-slide>I'm Slide 4</mt-swiper-slide>
-    <mt-swiper-slide>I'm Slide 5</mt-swiper-slide>
-    <mt-swiper-slide>I'm Slide 6</mt-swiper-slide>
-    <mt-swiper-slide>I'm Slide 7</mt-swiper-slide>
+    <swiper-slide>I'm Slide 1</swiper-slide>
+    <swiper-slide>I'm Slide 2</swiper-slide>
+    <swiper-slide>I'm Slide 3</swiper-slide>
+    <swiper-slide>I'm Slide 4</swiper-slide>
+    <swiper-slide>I'm Slide 5</swiper-slide>
+    <swiper-slide>I'm Slide 6</swiper-slide>
+    <swiper-slide>I'm Slide 7</swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
     <div class="swiper-scrollbar"   slot="scrollbar"></div>
-  </mt-swiper>
+  </swiper>
 </template>
 
 <script>
@@ -193,10 +193,10 @@ export default {
 
 ``` vue
 <template>
-  <mt-swiper :options="swiperOption">
-    <mt-swiper-slide v-for="slide in swiperSlides">I'm Slide {{ slide }}</mt-swiper-slide>
+  <swiper :options="swiperOption">
+    <swiper-slide v-for="slide in swiperSlides">I'm Slide {{ slide }}</swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
-  </mt-swiper>
+  </swiper>
 </template>
 
 <script>

@@ -15,36 +15,36 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <mt-swiper :options="swiperOption">
+      <swiper :options="swiperOption">
         <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"
              style="background-image:url(http://cdn.gousa.cn/sites/default/files/styles/original_with_watermark/public/yosemite_national_park_0.jpg)">
         </div>
-        <mt-swiper-slide>
+        <swiper-slide>
           <div class="title" data-swiper-parallax="-100">Slide 1</div>
           <br>
           <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
           <div class="text" data-swiper-parallax="-300">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
           </div>
-        </mt-swiper-slide>
-        <mt-swiper-slide>
+        </swiper-slide>
+        <swiper-slide>
           <div class="title" data-swiper-parallax="-100">Slide 2</div>
           <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
           <div class="text" data-swiper-parallax="-300">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
           </div>
-        </mt-swiper-slide>
-        <mt-swiper-slide>
+        </swiper-slide>
+        <swiper-slide>
           <div class="title" data-swiper-parallax="-100">Slide 3</div>
           <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
           <div class="text" data-swiper-parallax="-300">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
           </div>
-        </mt-swiper-slide>
+        </swiper-slide>
         <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
         <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
         <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-      </mt-swiper>
+      </swiper>
     </md-card-media>
   </md-card>
 </template>

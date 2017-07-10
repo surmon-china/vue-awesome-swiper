@@ -15,17 +15,17 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <mt-swiper :options="swiperOption" ref="swiper">
-        <mt-swiper-slide class="menu">Menu slide</mt-swiper-slide>
-        <mt-swiper-slide class="content">
+      <swiper :options="swiperOption" ref="swiper">
+        <swiper-slide class="menu">Menu slide</swiper-slide>
+        <swiper-slide class="content">
           <div class="menu-button" :class="{ 'cross': menuCross }" @click="toggleMenu">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
           </div>
           Content slide
-        </mt-swiper-slide>
-      </mt-swiper>
+        </swiper-slide>
+      </swiper>
     </md-card-media>
   </md-card>
 </template>

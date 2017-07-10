@@ -15,20 +15,20 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <mt-swiper :options="parentSwiperOption" class="parent-swiper" ref="pSwiper">
-        <mt-swiper-slide>Slide 1</mt-swiper-slide>
-        <mt-swiper-slide>
-          <mt-swiper :options="childSwiperOption" class="child-swiper">
-            <mt-swiper-slide>Slide 2</mt-swiper-slide>
+      <swiper :options="parentSwiperOption" class="parent-swiper" ref="pSwiper">
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>
+          <swiper :options="childSwiperOption" class="child-swiper">
+            <swiper-slide>Slide 2</swiper-slide>
             <div class="swiper-scrollbar" slot="scrollbar"></div>
-          </mt-swiper>
-        </mt-swiper-slide>
-        <mt-swiper-slide>Slide 3</mt-swiper-slide>
-        <mt-swiper-slide>Slide 4</mt-swiper-slide>
-        <mt-swiper-slide>Slide 5</mt-swiper-slide>
-        <mt-swiper-slide>Slide 6</mt-swiper-slide>
-        <mt-swiper-slide>Slide 7</mt-swiper-slide>
-      </mt-swiper>
+          </swiper>
+        </swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+      </swiper>
     </md-card-media>
   </md-card>
 </template>

@@ -1,6 +1,6 @@
 {
   "name": "vue-awesome-swiper",
-  "version": "2.5.2",
+  "version": "2.5.4",
   "description": "Swiper component for Vue.js(1.x ~ 2.x)",
   "main": "index.js",
   "scripts": {

@@ -21,12 +21,12 @@
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <mt-swiper :options="swiperOption">
-        <mt-swiper-slide v-for="slide in swiperSlides">Slide {{ slide }}</mt-swiper-slide>
+      <swiper :options="swiperOption">
+        <swiper-slide v-for="slide in swiperSlides">Slide {{ slide }}</swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
-      </mt-swiper>
+      </swiper>
     </md-card-media>
   </md-card>
 </template>
