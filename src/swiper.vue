@@ -64,8 +64,7 @@
           setClassName ? self.$nextTick(mountInstance) : mountInstance()
         }
       }
-      console.log(this.options.notNextTick || this.notNextTick);
-      (this.options.notNextTick || this.notNextTick) ? mount() : this.$nextTick(mount);
+      (this.options.notNextTick || this.notNextTick) ? mount() : this.$nextTick(mount)
     },
     updated: function() {
       if (this.swiper) {
