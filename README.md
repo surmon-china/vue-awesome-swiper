@@ -8,13 +8,31 @@
 
 
 # Vue-Awesome-Swiper
-Swiper([Swiper3](http://www.swiper.com.cn)) component for Vue.js(1.X ~ 2.X), support pc and mobile, SPA and SSR.
+Swiper([Swiper3](http://www.swiper.com.cn)) component for Vue, support pc and mobile, SPA and SSR.
 
 # Example
 
 [Demo Page](https://surmon-china.github.io/vue-awesome-swiper)
 
-# Use Setup
+# Use Setup for Browser
+
+### Require script and style
+
+``` html
+<link rel="stylesheet" href=".../.../swiper.css"/>
+<script type="text/javascript" src=".../vue.min.js"></script>
+<script type="text/javascript" src=".../dist/vue-awesome-swiper.min.js"></script>
+```
+
+### Use
+
+``` javascript
+Vue.use(window.VueAwesomeSwiper)
+
+// vue app code...
+```
+
+# Use Setup for Webpack
 
 ### Install vue-awesome-swiper
 
@@ -25,6 +43,9 @@ npm install vue-awesome-swiper --save
 ### Vue mount
 
 ``` javascript
+// starting with version 2.6.0, you need to manually introduce swiper's css
+require('swiper/dist/css/swiper.css')
+
 // import
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -40,8 +61,7 @@ Vue.use(VueAwesomeSwiper)
 
 
 // If used in Nuxt.js/SSR, you should keep it only in browser build environment
-// The `Process. BROWSER_BUILD` itself is just a feature, it is only valid in Nuxt.js, you need to modify it according to your own procedures, such as: in vue official ssr scaffolding it should be` process.browser`
-if (process.BROWSER_BUILD) {
+if (process.browser) {
   const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
   Vue.use(VueAwesomeSwiper)
 }
@@ -119,7 +139,7 @@ export default {
 ``` vue
 <!-- The ref attr used to find the swiper instance -->
 <template>
-  <swiper :options="swiperOption" ref="mySwiper">
+  <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
     <!-- slides -->
     <swiper-slide>I'm Slide 1</swiper-slide>
     <swiper-slide>I'm Slide 2</swiper-slide>
@@ -142,11 +162,11 @@ export default {
     name: 'carrousel',
     data() {
       return {
+        // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
+        // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+        notNextTick: true,
         swiperOption: {
-          // NotNextTick is a component's own property, and if notNextTick is set to true, the component will not instantiate the swiper through NextTick, which means you can get the swiper object the first time (if you need to use the get swiper object to do what Things, then this property must be true)
-          // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
-          notNextTick: true,
-          // swiper configs 所有的配置同swiper官方api配置
+          // swiper optionss 所有的配置同swiper官方api配置
           autoplay: 3000,
           direction : 'vertical',
           grabCursor : true,
@@ -232,12 +252,13 @@ export default {
 # Nuxt.js/SSR Example Code
 [nuxt.js/ssr-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/nuxt-ssr-example)
 
+# Issues
+针对中文用户：如果你有未解决的问题请一定要在已关闭的 issues 里进行搜索，绝大多数问题能够得到答案；提问题之前一定要自行测试问题节点，测试出问题所在，若为自身业务问题或基础知识问题或 swiper 本身的问题，问题会被直接关闭。
 
 # API
 Swiper's API and configuration can be used.（Swiper官网中的API及配置均可使用）
 - [cn Swiper3 apis](http://www.swiper.com.cn/api/index.html)
 - [en Swiper3 apis](http://idangero.us/swiper/api/#.WMlhYxJ97mI)
-
 
 # Author Blog
 [Surmon](https://surmon.me)

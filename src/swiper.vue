@@ -13,35 +13,38 @@
 
 <script>
   var browser = typeof window !== 'undefined'
-  if (browser) {
-    window.Swiper = require('swiper')
-    require('swiper/dist/css/swiper.css')
-  }
+  if (browser) window.Swiper = require('swiper')
   export default {
     name: 'swiper',
     props: {
       options: {
         type: Object,
-        default() {
+        default: function() {
           return {
             autoplay: 3500
           }
         }
+      },
+      notNextTick: {
+        type: Boolean,
+        default: function() {
+          return false
+        }
       }
     },
-    data() {
+    data: function() {
       return {
         defaultSwiperClasses: {
           wrapperClass: 'swiper-wrapper'
         }
       }
     },
-    ready() {
+    ready: function() {
       if (!this.swiper && browser) {
         this.swiper = new Swiper(this.$el, this.options)
       }
     },
-    mounted() {
+    mounted: function() {
       var self = this
       var mount = function() {
         if (!self.swiper && browser) {
@@ -61,14 +64,15 @@
           setClassName ? self.$nextTick(mountInstance) : mountInstance()
         }
       }
-      this.options.notNextTick ? mount() : this.$nextTick(mount)
+      console.log(this.options.notNextTick || this.notNextTick);
+      (this.options.notNextTick || this.notNextTick) ? mount() : this.$nextTick(mount);
     },
-    updated(){
+    updated: function() {
       if (this.swiper) {
         this.swiper.update()
       }
     },
-    beforeDestroy() {
+    beforeDestroy: function() {
       if (this.swiper) {
         this.swiper.destroy()
         delete this.swiper
