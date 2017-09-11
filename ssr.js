@@ -17,7 +17,7 @@ var swiper = {
     Vue.directive('swiper', {
       bind: function(el, binding, vnode) {
         var _this = vnode.context
-        if (!el.className.includes('swiper-container')) {
+        if (el.className.indexOf('swiper-container') === -1) {
           el.className += (!!el.className ? ' ' : '' + 'swiper-container')
         }
       },
