@@ -1,5 +1,5 @@
 
-var Swiper = window.Swiper = require('swiper')
+var Swiper = require('swiper')
 var swiper = {
   install: function(Vue) {
   	var getInstanceName = function(el, binding, vnode) {
