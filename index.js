@@ -9,7 +9,7 @@ var SlideComponent = require('./src/slide.vue')
 SwiperComponent = SwiperComponent.default || SwiperComponent
 SlideComponent = SlideComponent.default || SlideComponent
 if (typeof window !== 'undefined') {
-	window.Swiper = Swiper
+  window.Swiper = Swiper
 }
 
 var swiper = {
