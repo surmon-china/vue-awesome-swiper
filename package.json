@@ -31,6 +31,21 @@
     "url": "https://github.com/surmon-china/vue-awesome-swiper/issues"
   },
   "homepage": "https://github.com/surmon-china/vue-awesome-swiper#readme",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      [
+        "vueify"
+      ]
+    ]
+  },
   "browserify-css": {
     "autoInject": true,
     "minify": true,
