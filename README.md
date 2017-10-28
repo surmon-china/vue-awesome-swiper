@@ -15,7 +15,7 @@ Swiper([Swiper3](http://www.swiper.com.cn)) component for Vue, support pc and mo
 
 [Demo Page](https://surmon-china.github.io/vue-awesome-swiper)
 
-# Use Setup for Browser
+# Use Setup for Browser(UMD)
 
 ### Require script and style
 
