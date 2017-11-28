@@ -95,7 +95,7 @@ if (process.browser) {
 ```
 
 
-### Use the difference（使用方法的区别）
+### Difference（使用方法的异同）
 
 **SSR and the only difference in the use of the SPA:**
 - SPA worked by the `component`, find swiper instance by `ref attribute`.
@@ -103,7 +103,7 @@ if (process.browser) {
 - Other configurations, events are the same.
 
 
-### Use in SSR
+### SSR
 
 ``` vue
 <!-- You can custom the "mySwiper" name used to find the swiper instance in current component -->
@@ -150,7 +150,7 @@ if (process.browser) {
 ```
 
 
-### Use in SPA
+### SPA
 
 ``` vue
 <!-- The ref attr used to find the swiper instance -->
@@ -263,6 +263,9 @@ if (process.browser) {
 ```
 
 
+# Plugins
+
+
 # Issues
 针对中文用户：如果你有未解决的问题请一定要在已关闭的 issues 里进行搜索，绝大多数问题能够得到答案；提问题之前一定要自行测试问题节点，测试出问题所在，若为自身业务问题或基础知识问题或 swiper 本身的问题，问题会被直接关闭。
 
@@ -273,5 +276,5 @@ Swiper's API and configuration can be used.（Swiper官网中的API及配置均�
 - [EN Swiper4 documents](http://idangero.us/swiper/api/#.WMlhYxJ97mI)
 
 
-# Author Blog
+# Author
 [Surmon](https://surmon.me)
