@@ -10,70 +10,62 @@
 
 
 # Vue-Awesome-Swiper
-Swiper([Swiper4](http://www.swiper.com.cn)) component for Vue, support pc and mobile, SPA and SSR.
+[Swiper4](http://www.swiper.com.cn) component for Vue, support pc and mobile, SPA and SSR.
 
 基于 Swiper4、适用于 Vue 的富文本编辑器，支持服务端渲染和单页应用。
 
 如果需要回退到 Swiper3 请使用 [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7)。
 
+
 # Example
 
 [Demo Page](https://surmon-china.github.io/vue-awesome-swiper)
 
-# Use Setup for Browser(UMD)
+[mobile-fullpage-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/41-mobile-fullpage-example.vue)
 
-### Require script and style
+[nuxt.js/ssr-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/nuxt-ssr-example)
+
+
+# Install
+
+#### CDN
 
 ``` html
-<link rel="stylesheet" href=".../.../swiper.css"/>
-<script type="text/javascript" src=".../vue.min.js"></script>
-<script type="text/javascript" src=".../dist/vue-awesome-swiper.min.js"></script>
+<link rel="stylesheet" href="path/to/swiper.css"/>
+<script type="text/javascript" src="path/to/swiper.js"></script>
+<script type="text/javascript" src="path/to/vue.min.js"></script>
+<script type="text/javascript" src="path/to/dist/vue-awesome-swiper.js"></script>
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper.default)
+</script>
 ```
 
-### Use
-
-``` javascript
-Vue.use(window.VueAwesomeSwiper)
-
-// vue app code...
-```
-
-# Use Setup for Webpack
-
-### Install vue-awesome-swiper
+#### NPM
 
 ``` bash
 npm install vue-awesome-swiper --save
 ```
 
-### Vue mount
+### Mount
+
+#### mount with global
 
 ``` javascript
-// starting with version 2.6.0, you need to manually introduce swiper's css
-require('swiper/dist/css/swiper.css')
-
-// import
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+// require styles
+import 'swiper/dist/css/swiper.css'
 
-// or require
-var Vue = require('vue')
-var VueAwesomeSwiper = require('vue-awesome-swiper')
+Vue.use(VueAwesomeSwiper, /* {  default global options } */)
+```
 
+#### mount with component
 
-// mount with global
-Vue.use(VueAwesomeSwiper)
+```javascript
+// require styles
+import 'swiper/dist/css/swiper.css'
 
-
-// If used in Nuxt.js/SSR, you should keep it only in browser build environment
-if (process.browser) {
-  const VueAwesomeSwiper = require('vue-awesome-swiper/ssr')
-  Vue.use(VueAwesomeSwiper)
-}
-
-
-// mount with component(can't work in Nuxt.js/SSR)
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
@@ -82,6 +74,22 @@ export default {
     swiperSlide
   }
 }
+```
+
+#### mount with ssr
+
+```javascript
+// If used in nuxt.js/ssr, you should keep it only in browser build environment
+if (process.browser) {
+  const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
+  Vue.use(VueAwesomeSwiper)
+}
+```
+
+#### register quill module
+
+```javascript
+// swiper extend
 ```
 
 
@@ -252,19 +260,16 @@ export default {
 </script>
 ```
 
-# Mobile Example Code
-[mobile-fullpage-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/41-mobile-fullpage-example.vue)
-
-# Nuxt.js/SSR Example Code
-[nuxt.js/ssr-example-code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/nuxt-ssr-example)
 
 # Issues
 针对中文用户：如果你有未解决的问题请一定要在已关闭的 issues 里进行搜索，绝大多数问题能够得到答案；提问题之前一定要自行测试问题节点，测试出问题所在，若为自身业务问题或基础知识问题或 swiper 本身的问题，问题会被直接关闭。
 
+
 # API
 Swiper's API and configuration can be used.（Swiper官网中的API及配置均可使用）
-- [cn Swiper3 apis](http://www.swiper.com.cn/api/index.html)
-- [en Swiper3 apis](http://idangero.us/swiper/api/#.WMlhYxJ97mI)
+- [CN Swiper4 documents](http://www.swiper.com.cn/api/index.html)
+- [EN Swiper4 documents](http://idangero.us/swiper/api/#.WMlhYxJ97mI)
+
 
 # Author Blog
 [Surmon](https://surmon.me)
