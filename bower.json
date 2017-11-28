@@ -1,6 +1,6 @@
 {
   "name": "vue-awesome-swiper",
-  "description": "Quill editor component for Vue",
+  "description": "Swiper component for Vue",
   "main": "./dist/vue-awesome-swiper.min.js",
   "author": {
     "name": "Surmon",

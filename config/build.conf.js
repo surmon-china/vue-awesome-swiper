@@ -17,7 +17,7 @@ module.exports = merge(baseConfig, {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
     filename: '[name].js',
-    library: 'VueQuillEditor',
+    library: 'VueAwesomeSwiper',
     libraryTarget: 'umd'
   },
   devtool: '#source-map',
@@ -26,9 +26,6 @@ module.exports = merge(baseConfig, {
     modules: [
       resolve('src'),
       resolve('node_modules')
-    ],
-    alias: {
-      'quill': 'quill/dist/quill.js',
-    }
+    ]
   }
 })

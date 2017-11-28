@@ -4,10 +4,9 @@
 ### V3.0.0
 
 #### use
-1. require styles [#111](https://github.com/surmon-china/vue-quill-editor/issues/111)
-2. add global default options [#111](https://github.com/surmon-china/vue-quill-editor/issues/110)
-3. add lib object-assign
-4. update the options assign logic
+1. add global default options
+2. update the options assign logic
+3. Update to [Swiper4](http://www.swiper.com.cn)
 
 #### project
 - add brower support

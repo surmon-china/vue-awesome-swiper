@@ -1,58 +1,92 @@
 
-var Swiper = require('swiper')
-Swiper = Swiper.default || Swiper
-var swiper = {
-  Swiper,
-  install: function(Vue) {
-  	var getInstanceName = function(el, binding, vnode) {
-  		var customInstanceName = ''
-        if (binding.arg) {
-        	customInstanceName = binding.arg
-        } else if (vnode.data.attrs && vnode.data.attrs.instanceName) {
-          customInstanceName = vnode.data.attrs.instanceName
-        } else if (el.id) {
-          customInstanceName = el.id
-        }
-        var instanceName = customInstanceName || 'swiper'
-        return instanceName
-  	}
-    Vue.directive('swiper', {
-      bind: function(el, binding, vnode) {
-        var _this = vnode.context
-        if (el.className.indexOf('swiper-container') === -1) {
-          el.className += (!!el.className ? ' ' : '' + 'swiper-container')
-        }
-      },
-      inserted: function(el, binding, vnode) {
-        var _this = vnode.context
-        var options = binding.value
-        var instanceName = getInstanceName(el, binding, vnode)
-        var swiper = _this[instanceName]
-        if (!swiper) {
-          _this[instanceName] = new Swiper(el, options)
-        }
-      },
-      componentUpdated: function(el, binding, vnode) {
-      	var instanceName = getInstanceName(el, binding, vnode)
-        var swiper = vnode.context[instanceName]
-        if (swiper) {
-          swiper.update(true)
-          swiper.updatePagination(true)
-          if (binding.value.loop) {
-            swiper.reLoop()
-          }
-        }
-      },
-      unbind: function(el, binding, vnode) {
-      	var instanceName = getInstanceName(el, binding, vnode)
-        var swiper = vnode.context[instanceName]
-        if (swiper) {
-          swiper.destroy()
-          delete vnode.context[instanceName]
+/*
+* VueAwesomeSwiper ssr.js
+* Author: surmon@foxmail.com
+* Github: https://github.com/surmon-china/vue-awesome-swiper
+*/
+
+// Require sources
+import _Swiper from 'swiper'
+
+const Swiper = window.Swiper || _Swiper
+
+// swiperDirective
+const swiperDirective = globalOptions => {
+
+  // Get swiper instace name in directive
+  const getInstanceName = (el, binding, vnode) => {
+    let instanceName = null
+    if (binding.arg) {
+      instanceName = binding.arg
+    } else if (vnode.data.attrs && (vnode.data.attrs.instanceName || vnode.data.attrs['instance-name'])) {
+      instanceName = (vnode.data.attrs.instanceName || vnode.data.attrs['instance-name'])
+    } else if (el.id) {
+      instanceName = el.id
+    }
+    return instanceName || 'swiper'
+  }
+
+  return {
+
+    // Init
+    bind(el, binding, vnode) {
+      const self = vnode.context
+      if (el.className.indexOf('swiper-container') === -1) {
+        el.className += (!!el.className ? ' ' : '' + 'swiper-container')
+      }
+    },
+
+    // DOM inserted
+    inserted(el, binding, vnode) {
+      const self = vnode.context
+      const options = binding.value
+      const instanceName = getInstanceName(el, binding, vnode)
+      let swiper = self[instanceName]
+      if (!swiper) {
+        const swiperOptions = objectAssign({}, globalOptions, options)
+        swiper = self[instanceName] = new Swiper(el, swiperOptions)
+      }
+    },
+
+    // Parse options change
+    componentUpdated(el, binding, vnode) {
+      const instanceName = getInstanceName(el, binding, vnode)
+      const swiper = vnode.context[instanceName]
+      if (swiper) {
+        swiper.update(true)
+        swiper.updatePagination(true)
+        if (binding.value.loop) {
+          swiper.reLoop()
         }
       }
-    })
+    },
+
+    // Destroy this directive
+    unbind(el, binding, vnode) {
+      const instanceName = getInstanceName(el, binding, vnode)
+      const swiper = vnode.context[instanceName]
+      if (swiper) {
+        swiper.destroy()
+        delete vnode.context[instanceName]
+      }
+    }
   }
 }
 
-module.exports = swiper
+const VueAwesomeSwiper = {
+
+  // Swiper
+  Swiper,
+  
+  // swiperDirective
+  swiper: swiperDirective({}),
+
+   // Global swiper default options
+  install(Vue, globalOptions = {}) {
+
+    // Mount swiper directive for Vue global
+    Vue.directive('swiper', swiperDirective(globalOptions))
+  }
+}
+
+export default VueAwesomeSwiper

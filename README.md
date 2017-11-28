@@ -105,7 +105,7 @@ if (process.browser) {
 
 ### SSR
 
-``` vue
+```vue
 <!-- You can custom the "mySwiper" name used to find the swiper instance in current component -->
 <template>
   <div v-swiper:mySwiper="swiperOption">
@@ -152,7 +152,7 @@ if (process.browser) {
 
 ### SPA
 
-``` vue
+```vue
 <!-- The ref attr used to find the swiper instance -->
 <template>
   <swiper :options="swiperOption" :not-next-tick="notNextTick" ref="mySwiper">
@@ -227,7 +227,7 @@ if (process.browser) {
 
 ### Async data example
 
-``` vue
+```vue
 <template>
   <swiper :options="swiperOption">
     <swiper-slide v-for="slide in swiperSlides">I'm Slide {{ slide }}</swiper-slide>

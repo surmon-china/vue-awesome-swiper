@@ -1,25 +1,28 @@
-/**
- * Vue-awesome-swiper
- * @author Surmon.me
- */
 
-var Swiper = require('swiper')
-var SwiperComponent = require('./src/swiper.vue')
-var SlideComponent = require('./src/slide.vue')
-SwiperComponent = SwiperComponent.default || SwiperComponent
-SlideComponent = SlideComponent.default || SlideComponent
-if (typeof window !== 'undefined') {
-  window.Swiper = Swiper
-}
+/*
+* VueAwesomeSwiper
+* Author: surmon@foxmail.com
+* Github: https://github.com/surmon-china/vue-awesome-swiper
+*/
 
-var swiper = {
-  swiperSlide: SlideComponent,
+
+import _Swiper from 'quill'
+import SlideComponent from './slide.vue'
+import SwiperComponent from './swiper.vue'
+
+const Swiper = window.Swiper || _Swiper
+const VueAwesomeSwiper = {
+  Swiper,
   swiper: SwiperComponent,
+  swiperSlide: SlideComponent,
   swiperPlugins: Swiper.prototype.plugins,
-  install: function(Vue) {
+  install(Vue, globalOptions) {
+    if (globalOptions) {
+      quillEditor.props.globalOptions.default = () => globalOptions
+    }
     Vue.component(SwiperComponent.name, SwiperComponent)
     Vue.component(SlideComponent.name, SlideComponent)
   }
 }
 
-module.exports = swiper
+export default VueAwesomeSwiper
