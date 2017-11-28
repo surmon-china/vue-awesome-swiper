@@ -17,7 +17,7 @@
     },
     mounted: function() {
       this.update()
-      if (this.$parent.options.slideClass) {
+      if (this.$parent && this.$parent.options && this.$parent.options.slideClass) {
         this.slideClass = this.$parent.options.slideClass
       }
     },
