@@ -2,6 +2,7 @@
 var Swiper = require('swiper')
 Swiper = Swiper.default || Swiper
 var swiper = {
+  Swiper,
   install: function(Vue) {
   	var getInstanceName = function(el, binding, vnode) {
   		var customInstanceName = ''

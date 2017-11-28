@@ -3,13 +3,18 @@
 [![GitHub forks](https://img.shields.io/github/forks/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/network)
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://twitter.com/intent/tweet?url=https://github.com/surmon-china/vue-awesome-swiper)
+[![Build Status](https://travis-ci.org/surmon-china/vue-awesome-swiper.svg?branch=master)](https://travis-ci.org/surmon-china/vue-awesome-swiper)
 
 [![NPM](https://nodei.co/npm/vue-awesome-swiper.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-awesome-swiper/)
 [![NPM](https://nodei.co/npm-dl/vue-awesome-swiper.png?months=9&height=3)](https://nodei.co/npm/vue-awesome-swiper/)
 
 
 # Vue-Awesome-Swiper
-Swiper([Swiper3](http://www.swiper.com.cn)) component for Vue, support pc and mobile, SPA and SSR.
+Swiper([Swiper4](http://www.swiper.com.cn)) component for Vue, support pc and mobile, SPA and SSR.
+
+基于 Swiper4、适用于 Vue 的富文本编辑器，支持服务端渲染和单页应用。
+
+如果需要回退到 Swiper3 请使用 [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7)。
 
 # Example
 

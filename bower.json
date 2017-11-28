@@ -1,0 +1,30 @@
+{
+  "name": "vue-awesome-swiper",
+  "description": "Quill editor component for Vue",
+  "main": "./dist/vue-awesome-swiper.min.js",
+  "author": {
+    "name": "Surmon",
+    "email": "surmon@foxmail.com",
+    "url": "http://surmon.me"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vue-awesome-swiper",
+    "vue awesome swiper",
+    "awesome-swiper",
+    "vue carrousel",
+    "vue swiper",
+    "vue slide",
+    "carrousel",
+    "swiper"
+  ],
+  "homepage": "https://surmon-china.github.io/vue-awesome-swiper",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
