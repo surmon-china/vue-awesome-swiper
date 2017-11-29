@@ -1,7 +1,7 @@
 <template>
   <div class="swiper-container">
     <slot name="parallax-bg"></slot>
-    <div :class="defaultSwiperClasses.wrapperClass">
+    <div :class="classes.wrapperClass">
       <slot></slot>
     </div>
     <slot name="pagination"></slot>
@@ -12,68 +12,68 @@
 </template>
 
 <script>
-  var browser = typeof window !== 'undefined'
-  if (browser) window.Swiper = require('swiper')
+  import _Swiper from 'swiper'
+  import objectAssign from 'object-assign'
+  const Swiper = window.Swiper || _Swiper
   export default {
     name: 'swiper',
     props: {
       options: {
         type: Object,
-        default: function() {
-          return {
-            autoplay: 3500
-          }
-        }
+        default: () => ({})
       },
-      notNextTick: {
-        type: Boolean,
-        default: function() {
-          return false
-        }
+      globalOptions: {
+        type: Object,
+        required: false,
+        default: () => ({})
       }
     },
-    data: function() {
+    methods: {
+      update() {
+        if (this.swiper) {
+          this.swiper.update && this.swiper.update()
+        }
+      },
+      mountInstance() {
+        const swiperOptions = objectAssign({}, this.globalOptions, this.options)
+        this.swiper = new Swiper(this.$el, swiperOptions)
+      }
+    },
+    data() {
       return {
-        defaultSwiperClasses: {
+        classes: {
           wrapperClass: 'swiper-wrapper'
         }
       }
     },
-    ready: function() {
-      if (!this.swiper && browser) {
-        this.swiper = new Swiper(this.$el, this.options)
+    ready() {
+      if (!this.swiper) {
+        this.mountInstance()
       }
     },
-    mounted: function() {
-      var self = this
-      var mount = function() {
-        if (!self.swiper && browser) {
-          delete self.options.notNextTick
-          var setClassName = false
-          for(var className in self.defaultSwiperClasses){
-            if (self.defaultSwiperClasses.hasOwnProperty(className)) {
-              if (self.options[className]) {
-                setClassName = true
-                self.defaultSwiperClasses[className] = self.options[className]
-              }
+    mounted() {
+      if (!this.swiper) {
+        let setClassName = false
+        for(const className in this.classes) {
+          if (this.classes.hasOwnProperty(className)) {
+            if (this.options[className]) {
+              setClassName = true
+              this.classes[className] = this.options[className]
             }
           }
-          var mountInstance = function() {
-            self.swiper = new Swiper(self.$el, self.options)
-          }
-          setClassName ? self.$nextTick(mountInstance) : mountInstance()
         }
-      }
-      (this.options.notNextTick || this.notNextTick) ? mount() : this.$nextTick(mount)
-    },
-    updated: function() {
-      if (this.swiper) {
-        this.swiper.update()
+        setClassName ? this.$nextTick(this.mountInstance) : this.mountInstance()
       }
     },
-    beforeDestroy: function() {
+    activated() {
+      this.update()
+    },
+    updated() {
+      this.update()
+    },
+    beforeDestroy() {
       if (this.swiper) {
-        this.swiper.destroy()
+        this.swiper.destroy && this.swiper.destroy()
         delete this.swiper
       }
     }
