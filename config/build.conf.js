@@ -10,7 +10,7 @@ module.exports = merge(baseConfig, {
     'vue-awesome-swiper': './src/index.js'
   },
   externals: {
-    quill: 'quill',
+    swiper: 'swiper',
     'object-assign': 'object-assign'
   },
   output: {

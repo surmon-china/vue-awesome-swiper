@@ -20,17 +20,23 @@
           '/3.jpg'
         ],
         swiperOption: {
-          autoplay: 5000,
-          initialSlide: 1,
-          direction : 'horizontal',
           loop: true,
-          pagination: '.swiper-pagination',
-          paginationElement: 'li',
-          onSlideChangeEnd: swiper => {
-            console.log('onSlideChangeEnd', swiper.realIndex)
+          slidesPerView: 'auto',
+          centeredSlides: true,
+          spaceBetween: 30,
+          wrapperClass: 'my-wrapper',
+          slideClass: 'my-slide',
+          pagination: {
+            el: '.swiper-pagination',
+            dynamicBullets: true
           },
-          onTap: swiper => {
-            console.log('onTap', swiper.realIndex)
+          on: {
+            slideChange() {
+              console.log('onSlideChangeEnd', this);
+            },
+            tap() {
+              console.log('onTap', this);
+            }
           }
         }
       }

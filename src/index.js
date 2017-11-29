@@ -6,7 +6,7 @@
 */
 
 
-import _Swiper from 'quill'
+import _Swiper from 'swiper'
 import SlideComponent from './slide.vue'
 import SwiperComponent from './swiper.vue'
 
@@ -15,10 +15,9 @@ const VueAwesomeSwiper = {
   Swiper,
   swiper: SwiperComponent,
   swiperSlide: SlideComponent,
-  swiperPlugins: Swiper.prototype.plugins,
   install(Vue, globalOptions) {
     if (globalOptions) {
-      quillEditor.props.globalOptions.default = () => globalOptions
+      SwiperComponent.props.globalOptions.default = () => globalOptions
     }
     Vue.component(SwiperComponent.name, SwiperComponent)
     Vue.component(SlideComponent.name, SlideComponent)

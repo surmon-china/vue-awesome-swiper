@@ -7,6 +7,7 @@
 
 // Require sources
 import _Swiper from 'swiper'
+import objectAssign from 'object-assign'
 
 const Swiper = window.Swiper || _Swiper
 
@@ -53,10 +54,10 @@ const swiperDirective = globalOptions => {
       const instanceName = getInstanceName(el, binding, vnode)
       const swiper = vnode.context[instanceName]
       if (swiper) {
-        swiper.update(true)
-        swiper.updatePagination(true)
+        swiper.update && swiper.update(true)
+        swiper.updatePagination && swiper.updatePagination(true)
         if (binding.value.loop) {
-          swiper.reLoop()
+          swiper.reLoop && swiper.reLoop()
         }
       }
     },
@@ -65,8 +66,8 @@ const swiperDirective = globalOptions => {
     unbind(el, binding, vnode) {
       const instanceName = getInstanceName(el, binding, vnode)
       const swiper = vnode.context[instanceName]
-      if (swiper) {
-        swiper.destroy()
+      if (!!swiper) {
+        swiper.destroy && swiper.destroy()
         delete vnode.context[instanceName]
       }
     }
