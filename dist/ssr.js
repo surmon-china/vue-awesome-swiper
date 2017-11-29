@@ -33,7 +33,7 @@ var swiperDirective = function swiperDirective(globalOptions) {
     bind: function bind(el, binding, vnode) {
       var self = vnode.context;
       if (el.className.indexOf('swiper-container') === -1) {
-        el.className += !!el.className ? ' ' : '' + 'swiper-container';
+        el.className += (el.className ? ' ' : '') + 'swiper-container';
       }
     },
     inserted: function inserted(el, binding, vnode) {
@@ -60,7 +60,7 @@ var swiperDirective = function swiperDirective(globalOptions) {
     unbind: function unbind(el, binding, vnode) {
       var instanceName = getInstanceName(el, binding, vnode);
       var swiper = vnode.context[instanceName];
-      if (!!swiper) {
+      if (swiper) {
         swiper.destroy && swiper.destroy();
         delete vnode.context[instanceName];
       }

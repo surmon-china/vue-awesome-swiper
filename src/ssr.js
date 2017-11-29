@@ -33,7 +33,7 @@ const swiperDirective = globalOptions => {
     bind(el, binding, vnode) {
       const self = vnode.context
       if (el.className.indexOf('swiper-container') === -1) {
-        el.className += (!!el.className ? ' ' : '' + 'swiper-container')
+        el.className += ((el.className ? ' ' : '') + 'swiper-container')
       }
     },
 
@@ -66,7 +66,7 @@ const swiperDirective = globalOptions => {
     unbind(el, binding, vnode) {
       const instanceName = getInstanceName(el, binding, vnode)
       const swiper = vnode.context[instanceName]
-      if (!!swiper) {
+      if (swiper) {
         swiper.destroy && swiper.destroy()
         delete vnode.context[instanceName]
       }

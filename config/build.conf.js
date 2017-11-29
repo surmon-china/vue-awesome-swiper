@@ -26,6 +26,9 @@ module.exports = merge(baseConfig, {
     modules: [
       resolve('src'),
       resolve('node_modules')
-    ]
+    ],
+    alias: {
+      'swiper': 'swiper/dist/js/swiper.js'
+    }
   }
 })

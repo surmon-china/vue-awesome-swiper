@@ -1,18 +1,18 @@
 
-import Swiper from 'swiper'
+// import Swiper from 'swiper'
 import Vue from 'vue/dist/vue.js'
-import VueAwesomeSwiper from '../../../src/index.js'
-import VueAwesomeSwiperSSR from '../../../src/ssr.js'
+// import VueAwesomeSwiper from '../../../src/index.js'
+// import VueAwesomeSwiperSSR from '../../../src/ssr.js'
 
 window.Vue = Vue
 
 // console.log('--------VueAwesomeSwiper', VueAwesomeSwiper)
 // console.log('--------VueAwesomeSwiperSSR', VueAwesomeSwiperSSR)
 
-describe('vue-quill-editor', () => {
+describe('vue-awesome-swiper', () => {
 
-  Vue.use(VueAwesomeSwiper)
-  Vue.use(VueAwesomeSwiperSSR)
+  // Vue.use(VueAwesomeSwiper)
+  // Vue.use(VueAwesomeSwiperSSR)
 
   /*
 
