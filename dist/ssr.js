@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.install = exports.swiper = exports.Swiper = undefined;
 
-var _swiper = require('swiper');
+var _swiper = require('swiper/dist/js/swiper.js');
 
 var _swiper2 = _interopRequireDefault(_swiper);
 

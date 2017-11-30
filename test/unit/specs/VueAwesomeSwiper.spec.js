@@ -1,18 +1,22 @@
 
-// import Swiper from 'swiper'
 import Vue from 'vue/dist/vue.js'
-// import VueAwesomeSwiper from '../../../src/index.js'
-// import VueAwesomeSwiperSSR from '../../../src/ssr.js'
-
-window.Vue = Vue
+import Swiper from 'swiper/dist/js/swiper.js'
+import VueAwesomeSwiper, { swiper, swiperSlide, install } from '../../../src/index.js'
+import VueAwesomeSwiperSSR from '../../../src/ssr.js'
 
 // console.log('--------VueAwesomeSwiper', VueAwesomeSwiper)
 // console.log('--------VueAwesomeSwiperSSR', VueAwesomeSwiperSSR)
 
 describe('vue-awesome-swiper', () => {
 
-  // Vue.use(VueAwesomeSwiper)
-  // Vue.use(VueAwesomeSwiperSSR)
+  Vue.use(VueAwesomeSwiper)
+  Vue.use(VueAwesomeSwiperSSR)
+
+  // 测试解构是否成功
+  it('can get the object in es module', () => {
+    expect(typeof install).to.deep.equal('function')
+    expect(typeof swiper.methods.update).to.deep.equal('function')
+  })
 
   /*
 

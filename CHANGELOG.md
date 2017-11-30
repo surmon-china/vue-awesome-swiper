@@ -1,6 +1,10 @@
 
 ## CHANGELOG
 
+### v3.0.2
+
+1. fix ssr build bug
+
 ### v3.0.1
 
 1. fix the es module export issue

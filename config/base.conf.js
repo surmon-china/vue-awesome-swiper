@@ -37,6 +37,7 @@ module.exports = {
       'process.env': env
     }),
     new webpack.optimize.UglifyJsPlugin({
+      exclude: /swiper\.esm\.bundle\.js/i,
       compress: { warnings: false }
     })
   ]
