@@ -1,11 +1,11 @@
 
 ## CHANGELOG
 
-### V3.0.1
+### v3.0.1
 
 1. fix the es module export issue
 
-### V3.0.0
+### v3.0.0
 
 #### use
 1. add global default options
