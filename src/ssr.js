@@ -74,20 +74,17 @@ const swiperDirective = globalOptions => {
   }
 }
 
-const VueAwesomeSwiper = {
+// swiperDirective
+const swiper = swiperDirective({})
 
-  // Swiper
-  Swiper,
-  
-  // swiperDirective
-  swiper: swiperDirective({}),
+// Global swiper default options
+const install = function (Vue, globalOptions = {}) {
 
-   // Global swiper default options
-  install(Vue, globalOptions = {}) {
-
-    // Mount swiper directive for Vue global
-    Vue.directive('swiper', swiperDirective(globalOptions))
-  }
+  // Mount swiper directive for Vue global
+  Vue.directive('swiper', swiperDirective(globalOptions))
 }
 
+const VueAwesomeSwiper = { Swiper, swiper, install }
+
+export { Swiper, swiper, install }
 export default VueAwesomeSwiper

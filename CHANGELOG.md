@@ -1,6 +1,10 @@
 
 ## CHANGELOG
 
+### V3.0.1
+
+1. fix the es module export issue
+
 ### V3.0.0
 
 #### use

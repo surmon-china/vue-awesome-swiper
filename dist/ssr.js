@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.install = exports.swiper = exports.Swiper = undefined;
 
 var _swiper = require('swiper');
 
@@ -68,16 +69,17 @@ var swiperDirective = function swiperDirective(globalOptions) {
   };
 };
 
-var VueAwesomeSwiper = {
-  Swiper: Swiper,
+var swiper = swiperDirective({});
 
-  swiper: swiperDirective({}),
+var install = function install(Vue) {
+  var globalOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-  install: function install(Vue) {
-    var globalOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-    Vue.directive('swiper', swiperDirective(globalOptions));
-  }
+  Vue.directive('swiper', swiperDirective(globalOptions));
 };
 
+var VueAwesomeSwiper = { Swiper: Swiper, swiper: swiper, install: install };
+
+exports.Swiper = Swiper;
+exports.swiper = swiper;
+exports.install = install;
 exports.default = VueAwesomeSwiper;
