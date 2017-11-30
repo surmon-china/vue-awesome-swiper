@@ -31,7 +31,7 @@ import example30 from './30-thumbs-gallery.vue'
 import example31 from './31-thumbs-gallery-loop.vue'
 import example32 from './32-multiple-swipers.vue'
 import example33 from './33-hash-navigation.vue'
-import example34 from './34-history.vue'
+// import example34 from './34-history.vue'
 import example35 from './35-rtl.vue'
 import example36 from './36-parallax'
 import example37 from './37-lazy-load-images.vue'
@@ -76,7 +76,7 @@ export default {
   example31,
   example32,
   example33,
-  example34,
+  // example34,
   example35,
   example36,
   example37,
