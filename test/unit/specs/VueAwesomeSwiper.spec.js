@@ -1,8 +1,8 @@
 
 import Vue from 'vue/dist/vue.js'
 import Swiper from 'swiper/dist/js/swiper.js'
-import VueAwesomeSwiper, { swiper, swiperSlide, install } from '../../../src/index.js'
 import VueAwesomeSwiperSSR from '../../../src/ssr.js'
+import VueAwesomeSwiper, { swiper, swiperSlide, install } from '../../../src/index.js'
 
 // console.log('--------VueAwesomeSwiper', VueAwesomeSwiper)
 // console.log('--------VueAwesomeSwiperSSR', VueAwesomeSwiperSSR)
@@ -15,105 +15,81 @@ describe('vue-awesome-swiper', () => {
   // 测试解构是否成功
   it('can get the object in es module', () => {
     expect(typeof install).to.deep.equal('function')
+    expect(swiper.name).to.deep.equal('swiper')
+    expect(swiperSlide.name).to.deep.equal('swiper-slide')
+    expect(typeof swiperSlide.methods.update).to.deep.equal('function')
     expect(typeof swiper.methods.update).to.deep.equal('function')
+    expect(typeof VueAwesomeSwiperSSR.swiper).to.deep.equal('object')
+    expect(typeof VueAwesomeSwiperSSR.install).to.deep.equal('function')
   })
-
-  /*
 
   // 全局安装
   describe('Global install spa:component', () => {
-    it(' - should can get the quill element', done => {
+    it(' - should can get the swiper element', () => {
       const vm = new Vue({
-        template: `<div><quill-editor v-model="content"></quill-editor></div>`,
-        data: {
-          content: '<p>test content</p>',
-        }
+        template: `<swiper>
+                    <swiper-slide>Slide 1</swiper-slide>
+                    <swiper-slide>Slide 2</swiper-slide>
+                    <swiper-slide>Slide 3</swiper-slide>
+                    <swiper-slide>Slide 4</swiper-slide>
+                    <swiper-slide>Slide 5</swiper-slide>
+                    <swiper-slide>Slide 6</swiper-slide>
+                    <swiper-slide>Slide 7</swiper-slide>
+                    <swiper-slide>Slide 8</swiper-slide>
+                    <swiper-slide>Slide 9</swiper-slide>
+                    <swiper-slide>Slide 10</swiper-slide>
+                  </swiper>`
       }).$mount()
-      expect(vm.$children[0].value).to.deep.equal('<p>test content</p>')
-      Vue.nextTick(() => {
-        expect(vm.$children[0].quill instanceof Quill).to.equal(true)
-        expect(vm.$children[0].quill.getText()).to.deep.equal('test content\n')
-        done()
-      })
+      expect(vm.$el.innerText).to.deep.equal(' Slide 1 Slide 2 Slide 3 Slide 4 Slide 5 Slide 6 Slide 7 Slide 8 Slide 9 Slide 10    ')
+      expect(vm.$el.className).to.deep.equal('swiper-container swiper-container-horizontal')
+      expect(vm.$el.children[0].className).to.deep.equal('swiper-wrapper')
+      expect(vm.$el.children[0].children.length).to.deep.equal(10)
     })
   })
 
   // 全局配置测试
-  describe('Get instance by attr ref and set global options', () => {
-    it(' - should get the quill instance and global options', done => {
+  describe('Get instance by attr ref and set component options', () => {
+    it(' - should get the swiper instance and component options', done => {
       const vm = new Vue({
-        template: `<div><quill-editor ref="myTextEditor" v-model="content"></quill-editor></div>`,
-        data: {
-          content: '<p>test content</p>'
+        template: `<swiper :options="swiperOption" ref="mySwiper">
+                    <swiper-slide>Slide 1</swiper-slide>
+                    <swiper-slide>Slide 2</swiper-slide>
+                    <swiper-slide>Slide 3</swiper-slide>
+                    <swiper-slide>Slide 4</swiper-slide>
+                    <swiper-slide>Slide 5</swiper-slide>
+                    <swiper-slide>Slide 6</swiper-slide>
+                    <swiper-slide>Slide 7</swiper-slide>
+                    <swiper-slide>Slide 8</swiper-slide>
+                    <swiper-slide>Slide 9</swiper-slide>
+                    <swiper-slide>Slide 10</swiper-slide>
+                    <div class="swiper-button-prev" slot="button-prev"></div>
+                    <div class="swiper-button-next" slot="button-next"></div>
+                  </swiper>`,
+        data() {
+          return {
+            swiperOption: {
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+              }
+            }
+          }
         },
         computed: {
-          editor() {
-            return this.$refs.myTextEditor
+          swiperComponent() {
+            return this.$refs.mySwiper
           },
-          quill() {
-            return this.editor.quill
+          swiper() {
+            return this.swiperComponent.swiper
           }
         }
       }).$mount()
       Vue.nextTick(() => {
-        expect(vm.quill instanceof Quill).to.equal(true)
-        expect(vm.quill.getText()).to.deep.equal('test content\n')
-        expect(Object.keys(vm.editor._options).length >= 5).to.equal(true)
-        done()
-      })
-    })
-  })
-
-  // 全局配置覆盖
-  describe('Set component options', () => {
-    it(' - should quill.placeholder === component.options.placeholder', done => {
-      const vm = new Vue({
-        template: `<div><quill-editor ref="myTextEditor" :options="editorOption" v-model="content"></quill-editor></div>`,
-        data: {
-          content: '<p>test content</p>',
-          editorOption: {
-            placeholder: 'component placeholder'
-          }
-        },
-        computed: {
-          editor() {
-            return this.$refs.myTextEditor
-          },
-          quill() {
-            return this.editor.quill
-          }
-        }
-      }).$mount()
-      Vue.nextTick(() => {
-        // 配置是否等同局部配置
-        const placeholder = vm.editor._options.placeholder
-        const isInclude = placeholder === 'component placeholder' || placeholder === undefined
-        expect(isInclude).to.equal(true)
-        done()
-      })
-    })
-  })
-
-  // 数据绑定
-  describe('Component data binding', () => {
-    it(' - should change the quill content after change the component content data', done => {
-      const vm = new Vue({
-        template: `<div><quill-editor v-model="content" ref="myTextEditor"></quill-editor></div>`,
-        data: {
-          content: '<p>test content</p>'
-        },
-        computed: {
-          quill() {
-            return this.$refs.myTextEditor.quill
-          }
-        },
-        mounted() {
-          this.content = '<span>test change</span>'
-        }
-      }).$mount()
-      Vue.nextTick(() => {
-        expect(vm.quill.getText()).to.deep.equal('test change\n')
-        expect(vm.quill.editor.delta.ops).to.deep.equal([{ insert: "test change\n" }])
+        expect(vm.swiper instanceof Swiper).to.equal(true)
+        expect(vm.swiperComponent.options.navigation.nextEl).to.deep.equal('.swiper-button-next')
+        expect(vm.swiper.el.children[1].className).to.equal('swiper-button-prev')
+        expect(vm.swiper.el.children[1].outerHTML).to.equal('<div class="swiper-button-prev"></div>')
+        expect(typeof vm.swiper.slideTo).to.equal('function')
         done()
       })
     })
@@ -121,71 +97,53 @@ describe('vue-awesome-swiper', () => {
 
   // 广播事件
   describe('Component emit event and data binding by evennt', () => {
-    it(' - should capture event after the quill emit event', done => {
+    it(' - should capture event after the swiper emit event', done => {
       const eventLogs = []
       const vm = new Vue({
         template: `<div>
-                      <quill-editor ref="myTextEditor"
-                                    :value="content"
-                                    @blur="onEditorBlur"
-                                    @focus="onEditorFocus"
-                                    @ready="onEditorReady"
-                                    @change="onEditorChange"
-                                    @input="onEditorInput">
-                      </quill-editor>
+                      <swiper :options="swiperOption">
+                        <swiper-slide>Slide 1</swiper-slide>
+                        <swiper-slide>Slide 2</swiper-slide>
+                        <swiper-slide>Slide 3</swiper-slide>
+                        <swiper-slide>Slide 4</swiper-slide>
+                        <swiper-slide>Slide 5</swiper-slide>
+                        <swiper-slide>Slide 6</swiper-slide>
+                        <swiper-slide>Slide 7</swiper-slide>
+                        <swiper-slide>Slide 8</swiper-slide>
+                        <swiper-slide>Slide 9</swiper-slide>
+                        <swiper-slide>Slide 10</swiper-slide>
+                        <div class="swiper-pagination" slot="pagination"></div>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                      </swiper>
                   </div>
                   `,
-        data: {
-          content: '<p>test content</p>'
-        },
-        computed: {
-          editor() {
-            return this.$refs.myTextEditor
-          },
-          quill() {
-            return this.editor.quill
-          }
-        },
-        methods: {
-          onEditorBlur(quill) {
-            console.log('onEditorBlur', quill)
-            eventLogs.push('onEditorBlur')
-          },
-          onEditorFocus(quill) {
-            console.log('onEditorFocus', quill)
-            eventLogs.push('onEditorFocus')
-          },
-          onEditorReady(quill) {
-            eventLogs.push('onEditorReady')
-            // mockEvennt(this.editor.$el.children[1])
-            // triggerEvent(this.editor.$el.children[0].children[0].children[0], 'MouseEvent')
-          },
-          onEditorChange({ quill, text, html }) {
-            eventLogs.push('onEditorChange' + text)
-            // expect(quill instanceof Quill).to.deep.equal(true)
-            // expect(!!text).to.deep.equal(true)
-            // expect(!!html).to.deep.equal(true)
-          },
-          onEditorInput(html) {
-            eventLogs.push('onEditorInput' + html)
-            // expect(html).to.deep.equal('<p>test change</p>')
+        data() {
+          return {
+            swiperOption: {
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+              },
+              on: {
+                init() {
+                  eventLogs.push('init')
+                },
+                slideChange() {
+                  eventLogs.push('slideChange')
+                },
+              }
+            }
           }
         },
         mounted() {
           eventLogs.push('mounted')
-          this.content = '<span>test change</span>'
         }
       }).$mount()
-
       // console.log('----------', eventLogs)
-      expect(eventLogs[0]).to.deep.equal('onEditorReady')
+      expect(eventLogs[0]).to.deep.equal('init')
       expect(eventLogs[1]).to.deep.equal('mounted')
       done()
-      // console.log('onEditorReady', this.editor.$el.children[1].children[0].dispatchEvent(event), event)
-      // expect(quill instanceof Quill).to.deep.equal(true)
-        // setTimeout(() => {
-          // this.content = '<p>test change</p>'
-        // }, 1000)
     })
   })
 
@@ -195,89 +153,60 @@ describe('vue-awesome-swiper', () => {
       const eventLogs = []
       const vm = new Vue({
         template: `<div>
-                      <vue-quill-editor ref="myTextEditor"
-                                        v-model="content"
-                                        :options="editorOption"
-                                        @ready="onEditorReady">
-                      </vue-quill-editor>
+                      <local-swiper ref="localSwiper" :options="swiperOption">
+                        <local-slide>Slide 1</local-slide>
+                        <local-slide>Slide 2</local-slide>
+                        <local-slide>Slide 3</local-slide>
+                        <local-slide>Slide 4</local-slide>
+                        <local-slide>Slide 5</local-slide>
+                        <local-slide>Slide 6</local-slide>
+                        <local-slide>Slide 7</local-slide>
+                        <local-slide>Slide 8</local-slide>
+                        <local-slide>Slide 9</local-slide>
+                        <local-slide>Slide 10</local-slide>
+                        <div class="swiper-button-prev" slot="button-prev"></div>
+                        <div class="swiper-button-next" slot="button-next"></div>
+                      </local-swiper>
                   </div>
                   `,
         components: {
-          'VueAwesomeSwiper': VueAwesomeSwiper.quillEditor
+          'LocalSwiper': VueAwesomeSwiper.swiper,
+          'LocalSlide': VueAwesomeSwiper.swiperSlide,
         },
         data: {
-          content: '<p>test content</p>',
-          editorOption: {
-            placeholder: 'component placeholder'
+          swiperOption: {
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            },
+            on: {
+              init() {
+                eventLogs.push('init')
+              }
+            }
           }
         },
         computed: {
-          quill() {
-            return this.$refs.myTextEditor.quill
-          }
-        },
-        methods: {
-          onEditorReady(quill) {
-            eventLogs.push('onEditorReady')
+          swiperComponent() {
+            return this.$refs.localSwiper
+          },
+          swiper() {
+            return this.swiperComponent.swiper
           }
         },
         mounted() {
-          this.content = '<span>test change</span>'
+          eventLogs.push('mounted')
         }
       }).$mount()
       Vue.nextTick(() => {
-        expect(eventLogs[0]).to.deep.equal('onEditorReady')
-        expect(vm.quill instanceof Quill).to.deep.equal(true)
-        expect(vm.quill.getText()).to.deep.equal('test change\n')
-        expect(vm.quill.editor.delta.ops).to.deep.equal([{ insert: "test change\n" }])
-        done()
-      })
-    })
-  })
-
-  // 多个循环实例
-  describe('Multi edirot component instance', () => {
-    it(' - should update value after any change text', done => {
-      const eventLogs = []
-      const vm = new Vue({
-        template: `<div>
-                      <quill-editor :key="key"
-                                    :value="content"
-                                    :ref="'editor' + key"
-                                    v-for="(content, key) in contents"
-                                    :options="buildOptions(key)"
-                                    @ready="onEditorReady(key)">
-                      </quill-editor>
-                  </div>
-                  `,
-        data: {
-          contents: {
-            a: '<p>a-test content</p>',
-            b: '<p>b-test content</p>',
-            c: '<p>c-test content</p>'
-          }
-        },
-        methods: {
-          buildOptions(key) {
-            return {
-              placeholder: `${key}component placeholder`
-            }
-          },
-          onEditorReady(key) {
-            eventLogs.push(`${key}-onEditorReady`)
-          }
-        }
-      }).$mount()
-      expect(eventLogs[0]).to.deep.equal('a-onEditorReady')
-      expect(eventLogs[1]).to.deep.equal('b-onEditorReady')
-      expect(eventLogs[2]).to.deep.equal('c-onEditorReady')
-      expect(vm.$refs.editora[0].quill.getText()).to.deep.equal('a-test content\n')
-      expect(vm.$refs.editorb[0].quill.getText()).to.deep.equal('b-test content\n')
-      expect(vm.$refs.editorc[0].quill.getText()).to.deep.equal('c-test content\n')
-      vm.contents.b = '<p>b-test change</p>'
-      Vue.nextTick(() => {
-        expect(vm.$refs.editorb[0].quill.getText()).to.deep.equal('b-test change\n')
-        expect(vm.$refs.editorb[0].quill instanceof Quill).to.deep.equal(true)
+        // console.log('----------', eventLogs)
+        expect(eventLogs[0]).to.deep.equal('init')
+        expect(eventLogs[1]).to.deep.equal('mounted')
+        expect(vm.swiper instanceof Swiper).to.equal(true)
+        expect(vm.swiperComponent.options.navigation.nextEl).to.deep.equal('.swiper-button-next')
+        expect(vm.swiper.el.children[1].className).to.equal('swiper-button-prev')
+        expect(vm.swiper.el.children[1].outerHTML).to.equal('<div class="swiper-button-prev"></div>')
+        expect(typeof vm.swiper.slideTo).to.equal('function')
         done()
       })
     })
@@ -285,38 +214,43 @@ describe('vue-awesome-swiper', () => {
 
   // SSR 全局安装测试
   describe('Global install ssr:directive', () => {
-    it(' - should get quill instance and capture event', done => {
+    it(' - should get swiper instance and capture event', done => {
       const eventLogs = []
       const vm = new Vue({
         template: `<div>
-                    <div class="quill-editor" 
-                         ref="editor"
-                         @ready="onEditorReady"
-                         :value="content"
-                         v-quill:myQuillEditor="editorOption">
+                    <div v-swiper:mySwiper="swiperOption">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide" v-for="slide in slides">
+                          <span>{{ slide }}</span>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination swiper-pagination-bullets"></div>
                     </div>
                   </div>
                   `,
         data: {
-          content: '<p>test ssr content</p>',
-          editorOption: {}
-        },
-        methods: {
-          onEditorReady(quill) {
-            eventLogs.push('ssr/onEditorReady')
-            eventLogs.push(quill instanceof Quill)
+          slides: [1, 2, 3],
+          swiperOption: {
+            on: {
+              init() {
+                eventLogs.push('ssr/init')
+              }
+            }
           }
         },
         mounted() {
           eventLogs.push('ssr/mounted')
         }
       }).$mount()
-      expect(eventLogs[0]).to.deep.equal('ssr/onEditorReady')
-      expect(eventLogs[1]).to.deep.equal(true)
-      expect(eventLogs[2]).to.deep.equal('ssr/mounted')
-      vm.content = '<p>test ssr change</p>'
+      expect(eventLogs[0]).to.deep.equal('ssr/init')
+      expect(eventLogs[1]).to.deep.equal('ssr/mounted')
       Vue.nextTick(() => {
-        expect(vm.myQuillEditor.getText()).to.deep.equal('test ssr content\n')
+        expect(vm.mySwiper instanceof Swiper).to.equal(true)
+        expect(vm.mySwiper.el.children[0].className).to.equal('swiper-wrapper')
+        expect(vm.mySwiper.el.children[1].className).to.equal('swiper-pagination swiper-pagination-bullets')
+        expect(vm.mySwiper.el.children[1].outerHTML).to.equal('<div class="swiper-pagination swiper-pagination-bullets"></div>')
+        expect(typeof vm.mySwiper.slideTo).to.equal('function')
+        expect(vm.mySwiper.el.children[0].children.length).to.deep.equal(vm.slides.length)
         done()
       })
     })
@@ -328,64 +262,72 @@ describe('vue-awesome-swiper', () => {
       const eventLogs = []
       const vm = new Vue({
         template: `<div>
-                    <div class="quill-editor" 
-                         v-quill="buildOptions(key)"
-                         v-for="(content, key) in contents"
-                         @ready="onEditorReady(key)"
-                         :instance-name="'editor-' + key"
-                         :content="content"
-                         :key="key">
+                    <div :key="key" 
+                         :instance-name="'swiper-' + key"
+                         v-swiper="buildOptions(key)" 
+                         v-for="(slides, key) in swipers">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide" :key="key" v-for="slide in slides">
+                          <span>{{ slide }}</span>
+                        </div>
+                      </div>
+                      <div class="swiper-button-prev" v-if="key === 'b'"></div>
+                      <div class="swiper-button-next" v-if="key === 'b'"></div>
+                      <div class="swiper-pagination swiper-pagination-bullets" :class="'pagi-' + key"></div>
                     </div>
                   </div>
                   `,
         data: {
-          contents: {
-            a: '<p>a-test ssr content</p>',
-            b: '<p>b-test ssr content</p>',
-            c: '<p>c-test ssr content</p>'
+          swipers: {
+            a: [1, 2, 3],
+            b: [4, 5, 6],
+            c: [7, 8, 9]
           }
         },
         methods: {
           buildOptions(key) {
+            const options = {}
             if (key === 'a') {
-              return {}
+              options.pagination = { el: '.pagi-a' }
             }
             if (key === 'b') {
-              return {
-                placeholder: `${key}-ssr placeholder`
+              options.pagination = { el: '.pagi-b' }
+              options.navigatio = {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
               }
             }
             if (key === 'c') {
-              return {}
+              options.pagination = { el: '.pagi-c' }
             }
-          },
-          onEditorReady(key) {
-            eventLogs.push(`${key}-onEditorReady`)
+            options.on = {
+              init() {
+                eventLogs.push(`ssr/init/${key}`)
+              }
+            }
+            return options
           }
         },
         mounted() {
           eventLogs.push('ssr/mounted')
         }
       }).$mount()
-      expect(eventLogs[0]).to.deep.equal('a-onEditorReady')
-      expect(eventLogs[1]).to.deep.equal('b-onEditorReady')
-      expect(eventLogs[2]).to.deep.equal('c-onEditorReady')
+      expect(eventLogs[0]).to.deep.equal('ssr/init/a')
+      expect(eventLogs[1]).to.deep.equal('ssr/init/b')
+      expect(eventLogs[2]).to.deep.equal('ssr/init/c')
       expect(eventLogs[3]).to.deep.equal('ssr/mounted')
-      expect(vm['editor-a'] instanceof Quill).to.deep.equal(true)
-      expect(vm['editor-b'] instanceof Quill).to.deep.equal(true)
-      expect(vm['editor-c'] instanceof Quill).to.deep.equal(true)
-      expect(vm['editor-a'].getText()).to.deep.equal('a-test ssr content\n')
-      vm.contents.b = '<span>b-test ssr change</span>'
+      expect(vm['swiper-a'] instanceof Swiper).to.deep.equal(true)
+      expect(vm['swiper-b'] instanceof Swiper).to.deep.equal(true)
+      expect(vm['swiper-c'] instanceof Swiper).to.deep.equal(true)
+      expect(vm['swiper-a'].el.children[1].outerHTML).to.deep.equal('<div class="swiper-pagination swiper-pagination-bullets pagi-a"></div>')
+      expect(vm['swiper-b'].el.children[1].className).to.deep.equal('swiper-button-prev')
+      expect(vm['swiper-b'].el.children[2].className).to.deep.equal('swiper-button-next')
+      expect(vm['swiper-b'].el.children[3].className).to.deep.equal('swiper-pagination swiper-pagination-bullets pagi-b')
+      expect(vm['swiper-c'].el.children.length).to.deep.equal(2)
       Vue.nextTick(() => {
-        Vue.nextTick(() => {
-          expect(vm['editor-b'].getText()).to.deep.equal('b-test ssr change\n')
-          expect(vm['editor-b'].editor.delta.ops).to.deep.equal([{ insert: 'b-test ssr change\n' }])
-          expect(vm['editor-b'].options.placeholder).to.deep.equal('b-ssr placeholder')
-          expect(vm['editor-c'].options.placeholder).to.deep.equal('global ssr placeholder')
-          done()
-        })
+        expect(typeof vm['swiper-c'].slideTo).to.equal('function')
+        done()
       })
     })
   })
-  */
 })
