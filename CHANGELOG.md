@@ -1,6 +1,10 @@
 
 ## CHANGELOG
 
+### v3.0.3
+
+1. fix reLoop method [#205](https://github.com/surmon-china/vue-awesome-swiper/issues/205)
+
 ### v3.0.2
 
 1. fix ssr build bug
