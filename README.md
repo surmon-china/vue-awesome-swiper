@@ -38,7 +38,7 @@ If you need to roll back to Swiper3, use version [v2.6.7](https://github.com/sur
 <script type="text/javascript" src="path/to/vue.min.js"></script>
 <script type="text/javascript" src="path/to/dist/vue-awesome-swiper.js"></script>
 <script type="text/javascript">
-  Vue.use(window.VueAwesomeSwiper.default)
+  Vue.use(window.VueAwesomeSwiper)
 </script>
 ```
 
