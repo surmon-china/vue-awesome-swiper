@@ -36,10 +36,10 @@
 
 <script>
   export default {
-  	data() {
-  	  return {
-    		swiperOption: {
-    		  spaceBetween: 30,
+    data() {
+      return {
+        swiperOption: {
+          spaceBetween: 30,
           centeredSlides: true,
           autoplay: {
             delay: 2500,
@@ -53,8 +53,8 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
           }
-    		}
-  	  }
-  	}
+        }
+      }
+    }
   }
 </script>
