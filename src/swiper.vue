@@ -12,9 +12,36 @@
 </template>
 
 <script>
+  // require sources
   import _Swiper from 'swiper'
-  import objectAssign from 'object-assign'
   const Swiper = window.Swiper || _Swiper
+
+  // pollfill
+  if (typeof Object.assign != 'function') {
+    Object.defineProperty(Object, 'assign', {
+      value(target, varArgs) {
+        if (target == null) {
+          throw new TypeError('Cannot convert undefined or null to object')
+        }
+        const to = Object(target)
+        for (let index = 1; index < arguments.length; index++) {
+          const nextSource = arguments[index]
+          if (nextSource != null) {
+            for (const nextKey in nextSource) {
+              if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                to[nextKey] = nextSource[nextKey]
+              }
+            }
+          }
+        }
+        return to
+      },
+      writable: true,
+      configurable: true
+    })
+  }
+
+  // export
   export default {
     name: 'swiper',
     props: {
@@ -35,7 +62,7 @@
         }
       },
       mountInstance() {
-        const swiperOptions = objectAssign({}, this.globalOptions, this.options)
+        const swiperOptions = Object.assign({}, this.globalOptions, this.options)
         this.swiper = new Swiper(this.$el, swiperOptions)
       }
     },

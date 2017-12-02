@@ -742,7 +742,7 @@ module.exports = {
     "prefer-reflect": 0,
 
     //  在ES2015(ES6)中推荐使用剩余参数(...rest)代替arguments变量
-    "prefer-rest-params": 2,
+    "prefer-rest-params": 0,
 
     // 在ES2015(ES6)中推荐使用扩展符替代apply()方法
     "prefer-spread": 2,
