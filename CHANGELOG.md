@@ -1,7 +1,7 @@
 
 ## CHANGELOG
 
-### V3.0.4
+### v3.0.4
 
 1. fix object assign in spa
 
