@@ -20,6 +20,7 @@ If you need to roll back to Swiper3, use version [v2.6.7](https://github.com/sur
 
 如果需要回退到 Swiper3，请使用 [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) 版本。
 
+**If you are encountering errors while packing with webpack, please refer to the solution here [#206](https://github.com/surmon-china/vue-awesome-swiper/issues/206) [#204](https://github.com/surmon-china/vue-awesome-swiper/issues/204). Add the corresponding alias code in your webpack config.**
 
 # Example
 
