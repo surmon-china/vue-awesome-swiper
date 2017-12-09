@@ -22,6 +22,12 @@ If you need to roll back to Swiper3, use version [v2.6.7](https://github.com/sur
 
 **If you are encountering errors while packing with webpack, please refer to the solution here [#206](https://github.com/surmon-china/vue-awesome-swiper/issues/206) [#204](https://github.com/surmon-china/vue-awesome-swiper/issues/204). Add the corresponding alias code in your webpack config.**
 
+```javascript
+alias: {
+  'swiper$': 'swiper/dist/js/swiper.js'
+}
+```
+
 # Example
 
 [Demo Page](https://surmon-china.github.io/vue-awesome-swiper)
