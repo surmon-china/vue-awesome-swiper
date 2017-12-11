@@ -1,10 +1,13 @@
 
 ## CHANGELOG
 
+### v3.0.5
+
+1. update swiper version to v4.0.7
+
 ### v3.0.4
 
 1. fix object assign in spa
-
 
 ### v3.0.3
 

@@ -6,7 +6,7 @@
 */
 
 
-import _Swiper from 'swiper'
+import _Swiper from 'swiper/dist/js/swiper.js'
 import SlideComponent from './slide.vue'
 import SwiperComponent from './swiper.vue'
 

@@ -1,7 +1,7 @@
 {
   "name": "vue-awesome-swiper",
   "description": "Swiper editor component for Vue",
-  "version": "3.0.4",
+  "version": "3.0.6",
   "license": "MIT",
   "private": false,
   "author": {
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "object-assign": "^4.1.1",
-    "swiper": "^4.0.0"
+    "swiper": "^4.0.7"
   },
   "expDependencies": {
     "node-sass": "^4.7.2",
