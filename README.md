@@ -1,5 +1,5 @@
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper)
+[![Build Status](https://travis-ci.org/surmon-china/vue-awesome-swiper.svg?branch=master)](https://travis-ci.org/surmon-china/vue-awesome-swiper)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/issues)
 [![GitHub forks](https://img.shields.io/github/forks/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/network)
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper)
