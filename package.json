@@ -1,13 +1,13 @@
 {
   "name": "vue-awesome-swiper",
-  "description": "Swiper editor component for Vue",
+  "description": "Swiper component for Vue",
   "version": "3.0.6",
   "license": "MIT",
   "private": false,
   "author": {
     "name": "Surmon",
     "email": "surmon@foxmail.com",
-    "url": "http://surmon.me"
+    "url": "https://surmon.me"
   },
   "bugs": {
     "url": "https://github.com/surmon-china/vue-awesome-swiper/issues"
