@@ -52,10 +52,6 @@ var swiperDirective = function swiperDirective(globalOptions) {
       var swiper = vnode.context[instanceName];
       if (swiper) {
         swiper.update && swiper.update(true);
-        swiper.updatePagination && swiper.updatePagination(true);
-        if (binding.value.loop) {
-          swiper.reLoop && swiper.reLoop();
-        }
       }
     },
     unbind: function unbind(el, binding, vnode) {
