@@ -40,9 +40,35 @@
       configurable: true
     })
   }
-
+  // as of swiper 4.0.7
+  // http://idangero.us/swiper/api/#events
   const DEFAULT_EVENTS = [
-    "slideChange"
+    'beforeDestroy',
+    'slideChange',
+    'slideChangeTransitionStart',
+    'slideChangeTransitionEnd',
+    'slideNextTransitionStart',
+    'slideNextTransitionEnd',
+    'slidePrevTransitionStart',
+    'slidePrevTransitionEnd',
+    'transitionStart',
+    'transitionEnd',
+    'touchStart',
+    'touchMove',
+    'touchMoveOpposite',
+    'sliderMove',
+    'touchEnd',
+    'click',
+    'tap',
+    'doubleTap',
+    'imagesReady',
+    'progress',
+    'reachBeginning',
+    'reachEnd',
+    'fromEdge',
+    'setTranslate',
+    'setTransition',
+    'resize'
   ]
 
   // export
@@ -74,6 +100,7 @@
         const vm = this
         DEFAULT_EVENTS.forEach(eventName => {
           this.swiper.on(eventName, function() {
+            // NOTE - `this` is the swiper instance
             vm.$emit(eventName, this, ...arguments)
           })
         })
