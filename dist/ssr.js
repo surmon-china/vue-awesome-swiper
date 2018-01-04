@@ -17,6 +17,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Swiper = window.Swiper || _swiper2.default;
 
+var DEFAULT_EVENTS = ['beforeDestroy', 'slideChange', 'slideChangeTransitionStart', 'slideChangeTransitionEnd', 'slideNextTransitionStart', 'slideNextTransitionEnd', 'slidePrevTransitionStart', 'slidePrevTransitionEnd', 'transitionStart', 'transitionEnd', 'touchStart', 'touchMove', 'touchMoveOpposite', 'sliderMove', 'touchEnd', 'click', 'tap', 'doubleTap', 'imagesReady', 'progress', 'reachBeginning', 'reachEnd', 'fromEdge', 'setTranslate', 'setTransition', 'resize'];
+
 var swiperDirective = function swiperDirective(globalOptions) {
   var getInstanceName = function getInstanceName(el, binding, vnode) {
     var instanceName = null;
@@ -42,16 +44,32 @@ var swiperDirective = function swiperDirective(globalOptions) {
       var options = binding.value;
       var instanceName = getInstanceName(el, binding, vnode);
       var swiper = self[instanceName];
+
+      var eventEmit = function eventEmit(vnode, name, data) {
+        var handlers = vnode.data && vnode.data.on || vnode.componentOptions && vnode.componentOptions.listeners;
+        if (handlers && handlers[name]) handlers[name].fns(data);
+      };
+
       if (!swiper) {
         var swiperOptions = (0, _objectAssign2.default)({}, globalOptions, options);
         swiper = self[instanceName] = new Swiper(el, swiperOptions);
+        DEFAULT_EVENTS.forEach(function (eventName) {
+          swiper.on(eventName, function () {
+            eventEmit.apply(undefined, [vnode, eventName].concat(Array.prototype.slice.call(arguments)));
+          });
+        });
       }
+
+      eventEmit(vnode, 'ready', swiper);
     },
     componentUpdated: function componentUpdated(el, binding, vnode) {
       var instanceName = getInstanceName(el, binding, vnode);
       var swiper = vnode.context[instanceName];
       if (swiper) {
-        swiper.update && swiper.update(true);
+        swiper.update && swiper.update();
+        swiper.navigation && swiper.navigation.update();
+        swiper.pagination && swiper.pagination.render();
+        swiper.pagination && swiper.pagination.update();
       }
     },
     unbind: function unbind(el, binding, vnode) {

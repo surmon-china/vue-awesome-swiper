@@ -119,56 +119,12 @@ Swiper.use({
 - SSR worked by the `directive`, find swiper instance by `directive arg`.
 - Other configurations, events are the same.
 
-
-### SSR
-
-```vue
-<!-- You can custom the "mySwiper" name used to find the swiper instance in current component -->
-<template>
-  <div v-swiper:mySwiper="swiperOption">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="banner in banners">
-        <img :src="banner">
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-</template>
-
-<script>
-  export default {
-    data () {
-      return {
-        banners: [ '/1.jpg', '/2.jpg', '/3.jpg' ],
-        swiperOption: {
-          pagination: {
-            el: '.swiper-pagination'
-          },
-          // some swiper options...
-        }
-      }
-    },
-    mounted() {
-      setTimeout(() => {
-        this.banners.push('/4.jpg')
-        console.log('banners update')
-      }, 3000)
-      console.log(
-        'This is current swiper instance object', this.mySwiper, 
-        'It will slideTo banners 3')
-      this.mySwiper.slideTo(3, 1000, false)
-    }
-  }
-</script>
-```
-
-
 ### SPA
 
 ```vue
 <!-- The ref attr used to find the swiper instance -->
 <template>
-  <swiper :options="swiperOption" ref="mySwiper">
+  <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
     <!-- slides -->
     <swiper-slide>I'm Slide 1</swiper-slide>
     <swiper-slide>I'm Slide 2</swiper-slide>
@@ -242,6 +198,49 @@ Swiper.use({
           this.swiperSlides.push(this.swiperSlides.length + 1)
         }
       }, 3000)
+    }
+  }
+</script>
+```
+
+
+### SSR
+
+```vue
+<!-- You can custom the "mySwiper" name used to find the swiper instance in current component -->
+<template>
+  <div v-swiper:mySwiper="swiperOption">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="banner in banners">
+        <img :src="banner">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        banners: [ '/1.jpg', '/2.jpg', '/3.jpg' ],
+        swiperOption: {
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          // some swiper options...
+        }
+      }
+    },
+    mounted() {
+      setTimeout(() => {
+        this.banners.push('/4.jpg')
+        console.log('banners update')
+      }, 3000)
+      console.log(
+        'This is current swiper instance object', this.mySwiper, 
+        'It will slideTo banners 3')
+      this.mySwiper.slideTo(3, 1000, false)
     }
   }
 </script>

@@ -41,6 +41,37 @@
     })
   }
 
+  // as of swiper 4.0.7
+  // http://idangero.us/swiper/api/#events
+  const DEFAULT_EVENTS = [
+    'beforeDestroy',
+    'slideChange',
+    'slideChangeTransitionStart',
+    'slideChangeTransitionEnd',
+    'slideNextTransitionStart',
+    'slideNextTransitionEnd',
+    'slidePrevTransitionStart',
+    'slidePrevTransitionEnd',
+    'transitionStart',
+    'transitionEnd',
+    'touchStart',
+    'touchMove',
+    'touchMoveOpposite',
+    'sliderMove',
+    'touchEnd',
+    'click',
+    'tap',
+    'doubleTap',
+    'imagesReady',
+    'progress',
+    'reachBeginning',
+    'reachEnd',
+    'fromEdge',
+    'setTranslate',
+    'setTransition',
+    'resize'
+  ]
+
   // export
   export default {
     name: 'swiper',
@@ -99,13 +130,23 @@
         if (this.swiper) {
           this.swiper.update && this.swiper.update()
           this.swiper.navigation && this.swiper.navigation.update()
-          this.swiper.pagination && this.swiper.pagination.render(true)
+          this.swiper.pagination && this.swiper.pagination.render()
           this.swiper.pagination && this.swiper.pagination.update()
         }
       },
       mountInstance() {
         const swiperOptions = Object.assign({}, this.globalOptions, this.options)
         this.swiper = new Swiper(this.$el, swiperOptions)
+        this.bindEvents()
+        this.$emit('ready', this.swiper)
+      },
+      bindEvents() {
+        const vm = this
+        DEFAULT_EVENTS.forEach(eventName => {
+          this.swiper.on(eventName, function() {
+            vm.$emit(eventName, ...arguments)
+          })
+        })
       }
     }
   }

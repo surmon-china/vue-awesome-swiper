@@ -11,6 +11,37 @@ import objectAssign from 'object-assign'
 
 const Swiper = window.Swiper || _Swiper
 
+// as of swiper 4.0.7
+// http://idangero.us/swiper/api/#events
+const DEFAULT_EVENTS = [
+  'beforeDestroy',
+  'slideChange',
+  'slideChangeTransitionStart',
+  'slideChangeTransitionEnd',
+  'slideNextTransitionStart',
+  'slideNextTransitionEnd',
+  'slidePrevTransitionStart',
+  'slidePrevTransitionEnd',
+  'transitionStart',
+  'transitionEnd',
+  'touchStart',
+  'touchMove',
+  'touchMoveOpposite',
+  'sliderMove',
+  'touchEnd',
+  'click',
+  'tap',
+  'doubleTap',
+  'imagesReady',
+  'progress',
+  'reachBeginning',
+  'reachEnd',
+  'fromEdge',
+  'setTranslate',
+  'setTransition',
+  'resize'
+]
+
 // swiperDirective
 const swiperDirective = globalOptions => {
 
@@ -43,10 +74,25 @@ const swiperDirective = globalOptions => {
       const options = binding.value
       const instanceName = getInstanceName(el, binding, vnode)
       let swiper = self[instanceName]
+
+      // Emit event in Vue directive
+      const eventEmit = (vnode, name, data) => {
+        const handlers = (vnode.data && vnode.data.on) || 
+                         (vnode.componentOptions && vnode.componentOptions.listeners)
+        if (handlers && handlers[name]) handlers[name].fns(data)
+      }
+
       if (!swiper) {
         const swiperOptions = objectAssign({}, globalOptions, options)
         swiper = self[instanceName] = new Swiper(el, swiperOptions)
+        DEFAULT_EVENTS.forEach(eventName => {
+          swiper.on(eventName, function() {
+            eventEmit(vnode, eventName, ...arguments)
+          })
+        })
       }
+
+      eventEmit(vnode, 'ready', swiper)
     },
 
     // Parse options change
@@ -54,7 +100,10 @@ const swiperDirective = globalOptions => {
       const instanceName = getInstanceName(el, binding, vnode)
       const swiper = vnode.context[instanceName]
       if (swiper) {
-        swiper.update && swiper.update(true)
+        swiper.update && swiper.update()
+        swiper.navigation && swiper.navigation.update()
+        swiper.pagination && swiper.pagination.render()
+        swiper.pagination && swiper.pagination.update()
       }
     },
 

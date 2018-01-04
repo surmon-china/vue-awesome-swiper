@@ -1,6 +1,11 @@
 
 ## CHANGELOG
 
+### v3.1.0
+
+1. fix loop bug
+2. [bind swiper events to vuejs events](https://github.com/surmon-china/vue-awesome-swiper/pull/238)
+
 ### v3.0.7
 
 1. remove reloop function
