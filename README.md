@@ -209,7 +209,7 @@ Swiper.use({
 ```vue
 <!-- You can custom the "mySwiper" name used to find the swiper instance in current component -->
 <template>
-  <div v-swiper:mySwiper="swiperOption">
+  <div v-swiper:mySwiper="swiperOption" @someSwiperEvent="callback">
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="banner in banners">
         <img :src="banner">
