@@ -55,19 +55,9 @@
         default: () => ({})
       }
     },
-    methods: {
-      update() {
-        if (this.swiper) {
-          this.swiper.update && this.swiper.update()
-        }
-      },
-      mountInstance() {
-        const swiperOptions = Object.assign({}, this.globalOptions, this.options)
-        this.swiper = new Swiper(this.$el, swiperOptions)
-      }
-    },
     data() {
       return {
+        swiper: null,
         classes: {
           wrapperClass: 'swiper-wrapper'
         }
@@ -102,6 +92,20 @@
       if (this.swiper) {
         this.swiper.destroy && this.swiper.destroy()
         delete this.swiper
+      }
+    },
+    methods: {
+      update() {
+        if (this.swiper) {
+          this.swiper.update && this.swiper.update()
+          this.swiper.navigation && this.swiper.navigation.update()
+          this.swiper.pagination && this.swiper.pagination.render(true)
+          this.swiper.pagination && this.swiper.pagination.update()
+        }
+      },
+      mountInstance() {
+        const swiperOptions = Object.assign({}, this.globalOptions, this.options)
+        this.swiper = new Swiper(this.$el, swiperOptions)
       }
     }
   }

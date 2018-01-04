@@ -37,9 +37,9 @@
       return {
         menuCross: false,
         swiperOption: {
-          slidesPerView: 'auto',
           initialSlide: 1,
           resistanceRatio: 0,
+          slidesPerView: 'auto',
           slideToClickedSlide: true,
           on: {
             slideChange() {

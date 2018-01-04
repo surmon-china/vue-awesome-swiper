@@ -29,8 +29,8 @@
     },
     methods: {
       update() {
-        if (this.$parent && this.$parent.swiper && this.$parent.swiper.update) {
-          this.$parent.swiper.update(true)
+        if (this.$parent && this.$parent.swiper) {
+          this.$parent.update()
         }
       }
     }
