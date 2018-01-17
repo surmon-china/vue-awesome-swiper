@@ -56,6 +56,7 @@ var swiperDirective = function swiperDirective(globalOptions) {
         DEFAULT_EVENTS.forEach(function (eventName) {
           swiper.on(eventName, function () {
             eventEmit.apply(undefined, [vnode, eventName].concat(Array.prototype.slice.call(arguments)));
+            eventEmit.apply(undefined, [vnode, eventName.replace(/([A-Z])/g, '-$1')].concat(Array.prototype.slice.call(arguments)));
           });
         });
       }

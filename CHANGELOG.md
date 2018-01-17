@@ -1,6 +1,10 @@
 
 ## CHANGELOG
 
+### v3.1.1
+
+fix emit event in browser
+
 ### v3.1.0
 
 1. fix loop bug
