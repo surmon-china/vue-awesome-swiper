@@ -3,7 +3,7 @@
 
 ### v3.1.2
 
-upadte webpack config and rebuild.
+update webpack config and rebuild.
 
 ### v3.1.1
 
