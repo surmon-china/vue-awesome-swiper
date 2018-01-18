@@ -10,7 +10,12 @@ module.exports = merge(baseConfig, {
     'vue-awesome-swiper': './src/index.js'
   },
   externals: {
-    swiper: 'swiper',
+    'swiper/dist/js/swiper.js': {
+        root: 'Swiper',
+        commonjs: 'swiper/dist/js/swiper.js',
+        commonjs2: 'swiper/dist/js/swiper.js',
+        amd: 'swiper'
+    },
     'object-assign': 'object-assign'
   },
   output: {
@@ -18,7 +23,8 @@ module.exports = merge(baseConfig, {
     publicPath: '/',
     filename: '[name].js',
     library: 'VueAwesomeSwiper',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   devtool: '#source-map',
   resolve: {
@@ -28,7 +34,7 @@ module.exports = merge(baseConfig, {
       resolve('node_modules')
     ],
     alias: {
-      'swiper': 'swiper/dist/js/swiper.js'
+      'swiper$': 'swiper/dist/js/swiper.js'
     }
   }
 })
