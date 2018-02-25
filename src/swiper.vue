@@ -120,10 +120,12 @@
       this.update()
     },
     beforeDestroy() {
-      if (this.swiper) {
-        this.swiper.destroy && this.swiper.destroy()
-        delete this.swiper
-      }
+      this.$nextTick(function() {
+        if (this.swiper) {
+          this.swiper.destroy && this.swiper.destroy()
+          delete this.swiper
+        }
+      })
     },
     methods: {
       update() {
