@@ -1,6 +1,10 @@
 
 ## CHANGELOG
 
+### v3.1.3
+
+fixed bug with swiper inside transition. #276
+
 ### v3.1.2
 
 update webpack config and rebuild.
