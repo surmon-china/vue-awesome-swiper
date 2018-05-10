@@ -9,7 +9,7 @@
 import _Swiper from 'swiper/dist/js/swiper.js'
 import objectAssign from 'object-assign'
 
-const Swiper = window.Swiper || _Swiper
+const Swiper = (typeof window !== 'undefined') ? window.Swiper || _Swiper : _Swiper
 
 // as of swiper 4.0.7
 // http://idangero.us/swiper/api/#events
