@@ -77,7 +77,9 @@ var swiperDirective = function swiperDirective(globalOptions) {
       var instanceName = getInstanceName(el, binding, vnode);
       var swiper = vnode.context[instanceName];
       if (swiper) {
-        swiper.destroy && swiper.destroy();
+        if (swiper.destroy && swiper.initialized === true) {
+          swiper.destroy();
+        }
         delete vnode.context[instanceName];
       }
     }
