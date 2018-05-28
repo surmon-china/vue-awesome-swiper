@@ -14,7 +14,7 @@
 <script>
   // require sources
   import _Swiper from 'swiper/dist/js/swiper.js'
-  const Swiper = window.Swiper || _Swiper
+  const Swiper = typeof window !== 'undefined' && window.Swiper || _Swiper
 
   // pollfill
   if (typeof Object.assign != 'function') {
