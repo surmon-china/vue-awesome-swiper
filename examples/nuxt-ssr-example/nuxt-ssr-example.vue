@@ -58,7 +58,6 @@
   .swiper-container {
     height: 300px;
     width: 100%;
-
     .swiper-slide {
       text-align: center;
       font-size: 38px;
@@ -68,9 +67,7 @@
       justify-content: center;
       align-items: center;
     }
-
     .swiper-pagination {
-
       > .swiper-pagination-bullet {
         background-color: red;
       }
