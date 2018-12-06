@@ -55,7 +55,7 @@
 
 
 <style lang="scss" scoped>
-  .my-swiper {
+  .swiper-container {
     height: 300px;
     width: 100%;
 
