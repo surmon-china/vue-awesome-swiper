@@ -8,24 +8,48 @@
         <span>）</span>
       </div>
       <div>
-        <md-button @click.native="prependSlide">Prepend Slide</md-button>
-        <md-button @click.native="appendSlide">Append Slide</md-button>
-        <md-button @click.native="popSlide">Pop Slide</md-button>
-        <md-button @click.native="shiftSlide">Shift Slide</md-button>
+        <md-button @click.native="prependSlide">
+          Prepend Slide
+        </md-button>
+        <md-button @click.native="appendSlide">
+          Append Slide
+        </md-button>
+        <md-button @click.native="popSlide">
+          Pop Slide
+        </md-button>
+        <md-button @click.native="shiftSlide">
+          Shift Slide
+        </md-button>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/29-dynamic-slides.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/29-dynamic-slides.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
       <swiper :options="swiperOption">
-        <swiper-slide v-for="slide in swiperSlides" :key="slide">Slide {{ slide }}</swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+        <swiper-slide
+          v-for="slide in swiperSlides"
+          :key="slide"
+        >
+          Slide {{ slide }}
+        </swiper-slide>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        />
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
+        />
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        />
       </swiper>
     </md-card-media>
   </md-card>

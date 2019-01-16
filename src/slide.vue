@@ -1,12 +1,12 @@
 <template>
   <div :class="slideClass">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <script>
   export default {
-    name: 'swiper-slide',
+    name: 'SwiperSlide',
     data() {
       return {
         slideClass: 'swiper-slide'

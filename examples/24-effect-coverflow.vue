@@ -7,9 +7,11 @@
         <span>3D滚动切换</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/24-effect-coverflow.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/24-effect-coverflow.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
@@ -23,7 +25,10 @@
         <swiper-slide>Slide 5</swiper-slide>
         <swiper-slide>Slide 6</swiper-slide>
         <swiper-slide>Slide 7</swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        />
       </swiper>
     </md-card-media>
   </md-card>
@@ -43,7 +48,7 @@
             stretch: 0,
             depth: 100,
             modifier: 1,
-            slideShadows : true
+            slideShadows: true
           },
           pagination: {
             el: '.swiper-pagination'

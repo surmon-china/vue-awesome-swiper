@@ -7,23 +7,34 @@
         <span>渐变切换</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/22-effect-fade.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/22-effect-fade.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
       <swiper :options="swiperOption">
-        <swiper-slide class="slide-1"></swiper-slide>
-        <swiper-slide class="slide-2"></swiper-slide>
-        <swiper-slide class="slide-3"></swiper-slide>
-        <swiper-slide class="slide-4"></swiper-slide>
-        <swiper-slide class="slide-5"></swiper-slide>
-        <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
-        <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-        <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+        <swiper-slide class="slide-1" />
+        <swiper-slide class="slide-2" />
+        <swiper-slide class="slide-3" />
+        <swiper-slide class="slide-4" />
+        <swiper-slide class="slide-5" />
+        <div
+          class="swiper-pagination swiper-pagination-white"
+          slot="pagination"
+        />
+        <div
+          class="swiper-button-prev swiper-button-white"
+          slot="button-prev"
+        />
+        <div
+          class="swiper-button-next swiper-button-white"
+          slot="button-next"
+        />
       </swiper>
     </md-card-media>
   </md-card>

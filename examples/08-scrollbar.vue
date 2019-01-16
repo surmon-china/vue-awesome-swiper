@@ -7,9 +7,11 @@
         <span>滚动条</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/08-scrollbar.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/08-scrollbar.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
@@ -26,7 +28,10 @@
         <swiper-slide>Slide 8</swiper-slide>
         <swiper-slide>Slide 9</swiper-slide>
         <swiper-slide>Slide 10</swiper-slide>
-        <div class="swiper-scrollbar" slot="scrollbar"></div>
+        <div
+          class="swiper-scrollbar"
+          slot="scrollbar"
+        />
       </swiper>
     </md-card-media>
   </md-card>

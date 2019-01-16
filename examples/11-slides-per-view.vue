@@ -7,9 +7,11 @@
         <span>一次显示多个 slides</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/11-slides-per-view.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/11-slides-per-view.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
@@ -26,7 +28,10 @@
         <swiper-slide>Slide 8</swiper-slide>
         <swiper-slide>Slide 9</swiper-slide>
         <swiper-slide>Slide 10</swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        />
       </swiper>
     </md-card-media>
   </md-card>

@@ -1,16 +1,42 @@
 <template>
-  <swiper :options="swiperOption" class="swiper-box">
-    <swiper-slide class="swiper-item">Slide 1</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 2</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 3</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 4</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 5</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 6</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 7</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 8</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 9</swiper-slide>
-    <swiper-slide class="swiper-item">Slide 10</swiper-slide>
-    <div class="swiper-pagination" slot="pagination"></div>
+  <swiper
+    :options="swiperOption"
+    class="swiper-box"
+  >
+    <swiper-slide class="swiper-item">
+      Slide 1
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 2
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 3
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 4
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 5
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 6
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 7
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 8
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 9
+    </swiper-slide>
+    <swiper-slide class="swiper-item">
+      Slide 10
+    </swiper-slide>
+    <div
+      class="swiper-pagination"
+      slot="pagination"
+    />
   </swiper>
 </template>
 

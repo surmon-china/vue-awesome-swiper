@@ -7,21 +7,32 @@
         <span>可滑动菜单</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/43-slideable-menu.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/43-slideable-menu.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOption" ref="swiper">
-        <swiper-slide class="menu">Menu slide</swiper-slide>
+      <swiper
+        :options="swiperOption"
+        ref="swiper"
+      >
+        <swiper-slide class="menu">
+          Menu slide
+        </swiper-slide>
         <swiper-slide class="content">
-          <div class="menu-button" :class="{ 'cross': menuCross }" @click="toggleMenu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+          <div
+            class="menu-button"
+            :class="{ 'cross': menuCross }"
+            @click="toggleMenu"
+          >
+            <div class="bar" />
+            <div class="bar" />
+            <div class="bar" />
           </div>
           Content slide
         </swiper-slide>

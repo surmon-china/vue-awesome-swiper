@@ -7,9 +7,11 @@
         <span>响应式设置 / 根据屏幕大小自动分割幻灯单位</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/38-responsive-breakpoints.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/38-responsive-breakpoints.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
@@ -26,7 +28,10 @@
         <swiper-slide>Slide 8</swiper-slide>
         <swiper-slide>Slide 9</swiper-slide>
         <swiper-slide>Slide 10</swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        />
       </swiper>
     </md-card-media>
   </md-card>

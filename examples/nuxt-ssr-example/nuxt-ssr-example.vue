@@ -2,11 +2,15 @@
   <!-- You can find this swiper instance object in current component by the "mySwiper"  -->
   <div v-swiper:mySwiper="swiperOption">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="banner in banners">
+      <div
+        class="swiper-slide"
+        v-for="(banner, index) in banners"
+        :key="index"
+      >
         <img :src="banner">
       </div>
     </div>
-    <div class="swiper-pagination swiper-pagination-bullets"></div>
+    <div class="swiper-pagination swiper-pagination-bullets" />
   </div>
 </template>
 
@@ -46,7 +50,7 @@
         console.log('banners update')
       }, 3000)
       console.log(
-        'This is current swiper instance object', this.mySwiper, 
+        'This is current swiper instance object', this.mySwiper,
         'I will slideTo banners 3')
        this.mySwiper.slideTo(3)
     }

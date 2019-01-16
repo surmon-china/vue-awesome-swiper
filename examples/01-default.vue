@@ -7,9 +7,11 @@
         <span>默认设置</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/01-default.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/01-default.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>

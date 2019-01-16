@@ -8,22 +8,42 @@
         <span>）</span>
       </div>
       <div>
-        <md-button @click.native="toSlide(0)">To Slide 1</md-button>
-        <md-button @click.native="toSlide(249)">To Slide 250</md-button>
-        <md-button @click.native="toSlide(499)">To Slide 500</md-button>
+        <md-button @click.native="toSlide(0)">
+          To Slide 1
+        </md-button>
+        <md-button @click.native="toSlide(249)">
+          To Slide 250
+        </md-button>
+        <md-button @click.native="toSlide(499)">
+          To Slide 500
+        </md-button>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/41-virtual-slides.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/41-virtual-slides.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
     <md-card-media>
       <!-- swiper -->
-      <swiper :options="swiperOption" ref="mySwiper">
-        <div class="swiper-pagination" slot="pagination"></div>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+      <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+      >
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        />
+        <div
+          class="swiper-button-prev"
+          slot="button-prev"
+        />
+        <div
+          class="swiper-button-next"
+          slot="button-next"
+        />
       </swiper>
     </md-card-media>
   </md-card>

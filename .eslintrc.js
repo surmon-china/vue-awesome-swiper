@@ -1,7 +1,6 @@
 
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   globals: {
     env: false
   },
@@ -10,10 +9,12 @@ module.exports = {
     node: true
   },
   parserOptions: {
+    parser: 'babel-eslint',
     sourceType: 'module'
   },
   //  https:// github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: [
+    'plugin:vue/strongly-recommended',
     'standard'
   ],
   //  required to lint *.vue files
@@ -760,4 +761,4 @@ module.exports = {
     "yield-star-spacing": [2, "after"]
 
   }
-}
+};

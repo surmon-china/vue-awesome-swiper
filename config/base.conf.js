@@ -1,17 +1,21 @@
+const path = require('path');
+const webpack = require('webpack');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-const path = require('path')
-const webpack = require('webpack')
+const resolve = dir => path.join(__dirname, '..', dir);
 
-const resolve = dir => path.join(__dirname, '..', dir)
-
-const env = process.env.NODE_ENV === 'testing'
-  ? { NODE_ENV: '"testing"' }
-  : { NODE_ENV: '"production"' }
+const env = process.env.NODE_ENV === 'testing' ?
+  {
+    NODE_ENV: '"testing"'
+  } :
+  {
+    NODE_ENV: '"production"'
+  };
 
 module.exports = {
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
@@ -32,12 +36,24 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true,
+        parallel: 4,
+        uglifyOptions: {
+          warnings: false,
+          compress: {
+            warnings: false
+          },
+        },
+      })
+    ]
+  },
   plugins: [
+    new VueLoaderPlugin(),
     new webpack.DefinePlugin({
       'process.env': env
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false }
     })
   ]
-}
+};

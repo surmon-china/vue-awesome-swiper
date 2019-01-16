@@ -7,9 +7,11 @@
         <span>图片延迟加载</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/37-lazy-load-images.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/37-lazy-load-images.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
@@ -17,32 +19,59 @@
       <!-- swiper -->
       <swiper :options="swiperOption">
         <swiper-slide>
-          <img data-src="/static/images/surmon-1.jpg" class="swiper-lazy">
-          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          <img
+            data-src="/static/images/surmon-1.jpg"
+            class="swiper-lazy"
+          >
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
         </swiper-slide>
         <swiper-slide>
-            <img data-src="/static/images/surmon-2.jpg" class="swiper-lazy">
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          <img
+            data-src="/static/images/surmon-2.jpg"
+            class="swiper-lazy"
+          >
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
         </swiper-slide>
         <swiper-slide>
-          <img data-src="/static/images/surmon-3.jpg" class="swiper-lazy">
-          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          <img
+            data-src="/static/images/surmon-3.jpg"
+            class="swiper-lazy"
+          >
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
         </swiper-slide>
         <swiper-slide>
-          <img data-src="/static/images/surmon-4.jpg" class="swiper-lazy">
-          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          <img
+            data-src="/static/images/surmon-4.jpg"
+            class="swiper-lazy"
+          >
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
         </swiper-slide>
         <swiper-slide>
-          <img data-src="/static/images/surmon-5.jpg" class="swiper-lazy">
-          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          <img
+            data-src="/static/images/surmon-5.jpg"
+            class="swiper-lazy"
+          >
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
         </swiper-slide>
         <swiper-slide>
-          <img data-src="/static/images/surmon-6.jpg" class="swiper-lazy">
-          <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+          <img
+            data-src="/static/images/surmon-6.jpg"
+            class="swiper-lazy"
+          >
+          <div class="swiper-lazy-preloader swiper-lazy-preloader-white" />
         </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-        <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-        <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+        <div
+          class="swiper-pagination"
+          slot="pagination"
+        />
+        <div
+          class="swiper-button-next swiper-button-white"
+          slot="button-next"
+        />
+        <div
+          class="swiper-button-prev swiper-button-white"
+          slot="button-prev"
+        />
       </swiper>
     </md-card-media>
   </md-card>

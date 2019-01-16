@@ -3,7 +3,7 @@
 // we are also using it with karma-webpack
 //   https://github.com/webpack/karma-webpack
 
-var webpackConfig = require('../../config/test.conf')
+const webpackConfig = require('../../config/test.conf');
 
 module.exports = function (config) {
   config.set({
@@ -37,5 +37,5 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     }
-  })
-}
+  });
+};

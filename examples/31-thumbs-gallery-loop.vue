@@ -7,30 +7,46 @@
         <span>缩略图控制循环</span>
         <span>）</span>
       </div>
-      <md-button class="md-icon-button"
-                 target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/31-thumbs-gallery-loop.vue">
+      <md-button
+        class="md-icon-button"
+        target="_blank"
+        href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/31-thumbs-gallery-loop.vue"
+      >
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
-    <md-card-media  style="height: 500px">
+    <md-card-media style="height: 500px">
       <!-- swiper1 -->
-      <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
-        <swiper-slide class="slide-1"></swiper-slide>
-        <swiper-slide class="slide-2"></swiper-slide>
-        <swiper-slide class="slide-3"></swiper-slide>
-        <swiper-slide class="slide-4"></swiper-slide>
-        <swiper-slide class="slide-5"></swiper-slide>
-        <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-        <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+      <swiper
+        :options="swiperOptionTop"
+        class="gallery-top"
+        ref="swiperTop"
+      >
+        <swiper-slide class="slide-1" />
+        <swiper-slide class="slide-2" />
+        <swiper-slide class="slide-3" />
+        <swiper-slide class="slide-4" />
+        <swiper-slide class="slide-5" />
+        <div
+          class="swiper-button-next swiper-button-white"
+          slot="button-next"
+        />
+        <div
+          class="swiper-button-prev swiper-button-white"
+          slot="button-prev"
+        />
       </swiper>
       <!-- swiper2 Thumbs -->
-      <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs">
-        <swiper-slide class="slide-1"></swiper-slide>
-        <swiper-slide class="slide-2"></swiper-slide>
-        <swiper-slide class="slide-3"></swiper-slide>
-        <swiper-slide class="slide-4"></swiper-slide>
-        <swiper-slide class="slide-5"></swiper-slide>
+      <swiper
+        :options="swiperOptionThumbs"
+        class="gallery-thumbs"
+        ref="swiperThumbs"
+      >
+        <swiper-slide class="slide-1" />
+        <swiper-slide class="slide-2" />
+        <swiper-slide class="slide-3" />
+        <swiper-slide class="slide-4" />
+        <swiper-slide class="slide-5" />
       </swiper>
     </md-card-media>
   </md-card>
@@ -44,7 +60,7 @@
         swiperOptionTop: {
           spaceBetween: 10,
           loop: true,
-          loopedSlides: 5, //looped slides should be the same
+          loopedSlides: 5, // looped slides should be the same
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
@@ -55,7 +71,7 @@
           slidesPerView: 4,
           touchRatio: 0.2,
           loop: true,
-          loopedSlides: 5, //looped slides should be the same
+          loopedSlides: 5, // looped slides should be the same
           slideToClickedSlide: true,
         }
       }

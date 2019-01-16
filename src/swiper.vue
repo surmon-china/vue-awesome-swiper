@@ -1,13 +1,13 @@
 <template>
   <div class="swiper-container">
-    <slot name="parallax-bg"></slot>
+    <slot name="parallax-bg" />
     <div :class="classes.wrapperClass">
-      <slot></slot>
+      <slot />
     </div>
-    <slot name="pagination"></slot>
-    <slot name="button-prev"></slot>
-    <slot name="button-next"></slot>
-    <slot name="scrollbar"></slot>
+    <slot name="pagination" />
+    <slot name="button-prev" />
+    <slot name="button-next" />
+    <slot name="scrollbar" />
   </div>
 </template>
 
@@ -74,7 +74,7 @@
 
   // export
   export default {
-    name: 'swiper',
+    name: 'Swiper',
     props: {
       options: {
         type: Object,
