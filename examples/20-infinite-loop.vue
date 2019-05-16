@@ -9,7 +9,7 @@
       </div>
       <md-button class="md-icon-button"
                  target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/20-infinite-loop.vue">
+                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/trueExamples/20-infinite-loop.vue">
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>

@@ -9,7 +9,7 @@
       </div>
       <md-button class="md-icon-button"
                  target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/38-responsive-breakpoints.vue">
+                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/trueExamples/38-responsive-breakpoints.vue">
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
