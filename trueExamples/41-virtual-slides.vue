@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .button {
   display: flex;
   align-items: center;

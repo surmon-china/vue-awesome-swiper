@@ -54,12 +54,43 @@ export default {
 </script>
 
 <style scoped>
-.append-buttons {
-  text-align: center;
-  margin-top: 20px;
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.append-buttons a {
+.button > div {
+  min-width: 88px;
+  min-height: 36px;
+  margin: 6px 8px;
+  padding: 0 16px;
   display: inline-block;
-  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: currentColor;
+  font-family: inherit;
+  font-size: 14px;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: 500;
+  letter-spacing: inherit;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.button > div:hover {
+  background-color: hsla(0, 0%, 60%, 0.2);
 }
 </style>
