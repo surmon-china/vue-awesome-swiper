@@ -69,7 +69,8 @@
     'fromEdge',
     'setTranslate',
     'setTransition',
-    'resize'
+    'resize',
+    'init'
   ]
 
   // export
