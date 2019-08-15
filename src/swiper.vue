@@ -139,6 +139,10 @@
       mountInstance() {
         const swiperOptions = Object.assign({}, this.globalOptions, this.options)
         this.swiper = new Swiper(this.$el, swiperOptions)
+        if (swiperOptions.loop) {
+          this.swiper.loopDestroy()
+          this.swiper.loopCreate()
+        }
         this.bindEvents()
         this.$emit('ready', this.swiper)
       },
