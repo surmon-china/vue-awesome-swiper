@@ -113,7 +113,10 @@ const swiperDirective = globalOptions => {
       const instanceName = getInstanceName(el, binding, vnode)
       const swiper = vnode.context[instanceName]
       if (swiper) {
-        swiper.destroy && swiper.destroy()
+        setTimeout(function() {
+          swiper.destroy && swiper.destroy()
+          delete vnode.context[instanceName]
+        }, 1000)
         delete vnode.context[instanceName]
       }
     }
