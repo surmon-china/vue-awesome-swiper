@@ -117,7 +117,6 @@ const swiperDirective = globalOptions => {
           swiper.destroy && swiper.destroy()
           delete vnode.context[instanceName]
         }, 1000)
-        delete vnode.context[instanceName]
       }
     }
   }
