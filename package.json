@@ -51,6 +51,8 @@
   },
   "dependencies": {
     "object-assign": "^4.1.1",
+  },
+  "peerDependencies": {
     "swiper": "^4.0.7"
   },
   "expDependencies": {
