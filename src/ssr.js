@@ -6,7 +6,7 @@
 */
 
 // Require sources
-import _Swiper from 'swiper/dist/js/swiper.js'
+import _Swiper from 'swiper/js/swiper.js'
 import objectAssign from 'object-assign'
 
 const Swiper = window.Swiper || _Swiper
@@ -77,7 +77,7 @@ const swiperDirective = globalOptions => {
 
       // Emit event in Vue directive
       const eventEmit = (vnode, name, data) => {
-        const handlers = (vnode.data && vnode.data.on) || 
+        const handlers = (vnode.data && vnode.data.on) ||
                          (vnode.componentOptions && vnode.componentOptions.listeners)
         if (handlers && handlers[name]) handlers[name].fns(data)
       }
