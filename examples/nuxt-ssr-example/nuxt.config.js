@@ -5,7 +5,7 @@ module.exports = {
   ],
   // some nuxt config...
   css: [
-    'swiper/dist/css/swiper.css'
+    'swiper/css/swiper.css'
   ],
   // some nuxt config...
 }

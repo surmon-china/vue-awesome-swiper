@@ -1,6 +1,6 @@
 
 import Vue from 'vue/dist/vue.js'
-import Swiper from 'swiper/dist/js/swiper.js'
+import Swiper from 'swiper/js/swiper.js'
 import VueAwesomeSwiperSSR from '../../../src/ssr.js'
 import VueAwesomeSwiper, { swiper, swiperSlide, install } from '../../../src/index.js'
 
@@ -262,9 +262,9 @@ describe('vue-awesome-swiper', () => {
       const eventLogs = []
       const vm = new Vue({
         template: `<div>
-                    <div :key="key" 
+                    <div :key="key"
                          :instance-name="'swiper-' + key"
-                         v-swiper="buildOptions(key)" 
+                         v-swiper="buildOptions(key)"
                          v-for="(slides, key) in swipers">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide" :key="key" v-for="slide in slides">

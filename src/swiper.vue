@@ -44,6 +44,7 @@
   // as of swiper 4.0.7
   // http://idangero.us/swiper/api/#events
   const DEFAULT_EVENTS = [
+    'init',
     'beforeDestroy',
     'slideChange',
     'slideChangeTransitionStart',
@@ -69,7 +70,8 @@
     'fromEdge',
     'setTranslate',
     'setTransition',
-    'resize'
+    'resize',
+    'init'
   ]
 
   // export
@@ -145,9 +147,11 @@
       bindEvents() {
         const vm = this
         DEFAULT_EVENTS.forEach(eventName => {
-          this.swiper.on(eventName, function() {
-            vm.$emit(eventName, ...arguments)
-            vm.$emit(eventName.replace(/([A-Z])/g, '-$1').toLowerCase(), ...arguments)
+          this.swiper.on(eventName, (...args) => {
+            vm.$emit(eventName, ...args)
+            if (eventName.toLowerCase() !== eventName) {
+              vm.$emit(eventName.replace(/([A-Z])/g, '-$1').toLowerCase(), ...args)
+            }
           })
         })
       }

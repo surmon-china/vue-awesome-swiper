@@ -18,7 +18,8 @@
   "jsnext:main": "dist/vue-awesome-swiper.js",
   "files": [
     "dist",
-    "src"
+    "src",
+    "types/*.d.ts"
   ],
   "jspm": {
     "main": "dist/vue-awesome-swiper.js",
@@ -47,11 +48,14 @@
     "test": "cross-env BABEL_ENV=test NODE_ENV=testing karma start test/unit/karma.conf.js --single-run",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "finish": "npm run lint && npm test && npm run build",
-    "publish": "git push && git push --tags && npm publish"
+    "publish": "git push && git push --tags && npm publish",
+    "test:types": "tsc -p ./types/tsconfig.json"
   },
   "dependencies": {
-    "object-assign": "^4.1.1",
-    "swiper": "^4.0.7"
+    "object-assign": "^4.1.1"
+  },
+  "peerDependencies": {
+    "swiper": "^5.2.0"
   },
   "expDependencies": {
     "node-sass": "^4.7.2",
@@ -59,6 +63,7 @@
     "vue-awesome-swiper": "^3.0.0"
   },
   "devDependencies": {
+    "@types/swiper": "^4.4.1",
     "autoprefixer": "^6.7.2",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.24.1",
@@ -120,6 +125,7 @@
     "sinon": "^2.1.0",
     "sinon-chai": "^2.8.0",
     "uglify-js": "^3.0.15",
+    "typescript": "^3.2.2",
     "url-loader": "^0.5.7",
     "vue": "^2.5.0",
     "vue-hot-reload-api": "^1.2.0",
@@ -138,4 +144,3 @@
     "npm": ">= 3.0.0"
   }
 }
-
