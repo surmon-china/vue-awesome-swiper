@@ -9,7 +9,7 @@
       </div>
       <md-button class="md-icon-button"
                  target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/43-slideable-menu.vue">
+                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/trueExamples/43-slideable-menu.vue">
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
@@ -40,7 +40,7 @@
           initialSlide: 1,
           resistanceRatio: 0,
           slidesPerView: 'auto',
-          slideToClickedSlide: true,
+          // slideToClickedSlide: true,
           on: {
             slideChange() {
               if (this.activeIndex === 0) {

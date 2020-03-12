@@ -25,7 +25,7 @@ If you need to roll back to Swiper3, use version [v2.6.7](https://github.com/sur
 
 [Demo Page](https://surmon-china.github.io/vue-awesome-swiper)
 
-[CDN Example](https://jsfiddle.net/bL983fjt/)
+[CDN Example](https://zjcqoo.github.io/-----https://jsfiddle.net/bL983fjt/)
 
 [mobile fullpage example code](https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/44-mobile-fullpage-example.vue)
 

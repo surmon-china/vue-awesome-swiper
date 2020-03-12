@@ -9,7 +9,7 @@
       </div>
       <md-button class="md-icon-button"
                  target="_blank"
-                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/examples/30-thumbs-gallery.vue">
+                 href="https://github.com/surmon-china/vue-awesome-swiper/blob/master/trueExamples/30-thumbs-gallery.vue">
         <md-icon>code</md-icon>
       </md-button>
     </md-card-actions>
