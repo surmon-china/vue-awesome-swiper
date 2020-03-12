@@ -44,6 +44,7 @@
   // as of swiper 4.0.7
   // http://idangero.us/swiper/api/#events
   const DEFAULT_EVENTS = [
+    'init',
     'beforeDestroy',
     'slideChange',
     'slideChangeTransitionStart',
