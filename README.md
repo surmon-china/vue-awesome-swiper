@@ -37,7 +37,7 @@ If you need to roll back to Swiper3, use version [v2.6.7](https://github.com/sur
 #### CDN
 
 ``` html
-<link rel="stylesheet" href="path/to/swiper/dist/css/swiper.css"/>
+<link rel="stylesheet" href="path/to/swiper/css/swiper.css"/>
 <script type="text/javascript" src="path/to/swiper.js"></script>
 <script type="text/javascript" src="path/to/vue.min.js"></script>
 <script type="text/javascript" src="path/to/dist/vue-awesome-swiper.js"></script>
@@ -61,7 +61,7 @@ import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // require styles
-import 'swiper/dist/css/swiper.css'
+import 'swiper/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 ```
@@ -70,7 +70,7 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 ```javascript
 // require styles
-import 'swiper/dist/css/swiper.css'
+import 'swiper/css/swiper.css'
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
@@ -238,7 +238,7 @@ Swiper.use({
         console.log('banners update')
       }, 3000)
       console.log(
-        'This is current swiper instance object', this.mySwiper, 
+        'This is current swiper instance object', this.mySwiper,
         'It will slideTo banners 3')
       this.mySwiper.slideTo(3, 1000, false)
     }
