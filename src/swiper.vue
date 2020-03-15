@@ -1,116 +1,81 @@
 <template>
-  <div class="swiper-container">
-    <slot name="parallax-bg"></slot>
-    <div :class="classes.wrapperClass">
-      <slot></slot>
+  <div class="swiper-container" @click="handleSwiperClick($event)">
+    <slot name="parallax-bg" />
+    <div :class="wrapperClass">
+      <slot />
     </div>
-    <slot name="pagination"></slot>
-    <slot name="button-prev"></slot>
-    <slot name="button-next"></slot>
-    <slot name="scrollbar"></slot>
+    <slot name="pagination" />
+    <slot name="button-prev" />
+    <slot name="button-next" />
+    <slot name="scrollbar" />
   </div>
 </template>
 
-<script>
-  // require sources
-  import _Swiper from 'swiper/js/swiper.js'
-  const Swiper = window.Swiper || _Swiper
+<script lang="ts">
+  import Vue, { PropType } from 'vue'
+  import Swiper, { SwiperOptions } from 'swiper'
+  import { SWIPER_EVENTS, SWIPER_COMPONENT_NAME, DEFAULT_CLASSES, SWIPER_INSTANCE_NAME, ComponentPropNames, ComponentEvents } from './constants'
+  import { kebabcase } from './utils'
 
-  // pollfill
-  if (typeof Object.assign != 'function') {
-    Object.defineProperty(Object, 'assign', {
-      value(target, varArgs) {
-        if (target == null) {
-          throw new TypeError('Cannot convert undefined or null to object')
-        }
-        const to = Object(target)
-        for (let index = 1; index < arguments.length; index++) {
-          const nextSource = arguments[index]
-          if (nextSource != null) {
-            for (const nextKey in nextSource) {
-              if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-                to[nextKey] = nextSource[nextKey]
-              }
-            }
-          }
-        }
-        return to
-      },
-      writable: true,
-      configurable: true
-    })
-  }
-
-  // as of swiper 4.0.7
-  // http://idangero.us/swiper/api/#events
-  const DEFAULT_EVENTS = [
-    'beforeDestroy',
-    'slideChange',
-    'slideChangeTransitionStart',
-    'slideChangeTransitionEnd',
-    'slideNextTransitionStart',
-    'slideNextTransitionEnd',
-    'slidePrevTransitionStart',
-    'slidePrevTransitionEnd',
-    'transitionStart',
-    'transitionEnd',
-    'touchStart',
-    'touchMove',
-    'touchMoveOpposite',
-    'sliderMove',
-    'touchEnd',
-    'click',
-    'tap',
-    'doubleTap',
-    'imagesReady',
-    'progress',
-    'reachBeginning',
-    'reachEnd',
-    'fromEdge',
-    'setTranslate',
-    'setTransition',
-    'resize'
-  ]
-
-  // export
-  export default {
-    name: 'swiper',
+  export default Vue.extend({
+    name: SWIPER_COMPONENT_NAME,
     props: {
-      options: {
-        type: Object,
-        default: () => ({})
-      },
-      globalOptions: {
-        type: Object,
+      defaultOptions: {
+        type: Object as PropType<SwiperOptions>,
         required: false,
-        default: () => ({})
+        default: () => ({} as SwiperOptions)
+      },
+      options: {
+        type: Object as PropType<SwiperOptions>,
+        required: false,
+        default: () => ({} as SwiperOptions)
+      },
+      [ComponentPropNames.AutoUpdate]: {
+        type: Boolean,
+        default: true
+      },
+      // https://github.com/surmon-china/vue-awesome-swiper/pull/550/files
+      [ComponentPropNames.AutoDestroy]: {
+        type: Boolean,
+        default: true
+      },
+      // https://github.com/surmon-china/vue-awesome-swiper/pull/388
+      [ComponentPropNames.DeleteInstanceOnDestroy]: {
+        type: Boolean,
+        required: false,
+        default: true
+      },
+      [ComponentPropNames.CleanupStylesOnDestroy]: {
+        type: Boolean,
+        required: false,
+        default: true
       }
     },
     data() {
       return {
-        swiper: null,
-        classes: {
-          wrapperClass: 'swiper-wrapper'
-        }
+        [SWIPER_INSTANCE_NAME]: null as Swiper | null
       }
     },
-    ready() {
-      if (!this.swiper) {
-        this.mountInstance()
+    computed: {
+      swiperInstance: {
+        cache: false,
+        set(swiper: Swiper) {
+          this[SWIPER_INSTANCE_NAME] = swiper
+        },
+        get(): Swiper | null {
+          return this[SWIPER_INSTANCE_NAME]
+        }
+      },
+      swiperOptions(): SwiperOptions {
+        return this.options || this.defaultOptions
+      },
+      wrapperClass(): string {
+        return this.swiperOptions.wrapperClass || DEFAULT_CLASSES.wrapperClass
       }
     },
     mounted() {
-      if (!this.swiper) {
-        let setClassName = false
-        for(const className in this.classes) {
-          if (this.classes.hasOwnProperty(className)) {
-            if (this.options[className]) {
-              setClassName = true
-              this.classes[className] = this.options[className]
-            }
-          }
-        }
-        setClassName ? this.$nextTick(this.mountInstance) : this.mountInstance()
+      if (!this.swiperInstance) {
+        this.initSwiper()
       }
     },
     activated() {
@@ -120,37 +85,65 @@
       this.update()
     },
     beforeDestroy() {
-      this.$nextTick(function() {
-        if (this.swiper) {
-          this.swiper.destroy && this.swiper.destroy()
-          delete this.swiper
+      this.$nextTick(() => {
+        if (this[ComponentPropNames.AutoDestroy] && this.swiperInstance) {
+          this.swiperInstance?.destroy?.(
+            this[ComponentPropNames.DeleteInstanceOnDestroy],
+            this[ComponentPropNames.CleanupStylesOnDestroy]
+          )
         }
       })
     },
     methods: {
-      update() {
-        if (this.swiper) {
-          this.swiper.update && this.swiper.update()
-          this.swiper.navigation && this.swiper.navigation.update()
-          this.swiper.pagination && this.swiper.pagination.render()
-          this.swiper.pagination && this.swiper.pagination.update()
+      // Feature: click event
+      handleSwiperClick(event: MouseEvent) {
+        const swiper = this.swiperInstance
+        if (swiper && Array.from(swiper.slides).includes(event.target)) {
+          const reallyIndex = Number(swiper.clickedSlide?.dataset?.swiperSlideIndex)
+          this.$emit(
+            ComponentEvents.ClickSlide,
+            swiper.clickedIndex,
+            Number.isInteger(reallyIndex) ? reallyIndex : null
+          )
         }
       },
-      mountInstance() {
-        const swiperOptions = Object.assign({}, this.globalOptions, this.options)
-        this.swiper = new Swiper(this.$el, swiperOptions)
-        this.bindEvents()
-        this.$emit('ready', this.swiper)
+      autoReLoop() {
+        if (this.swiperInstance && this.swiperOptions.loop) {
+          // https://github.com/surmon-china/vue-awesome-swiper/issues/544
+          const swiper = this.swiperInstance as any
+          swiper?.loopDestroy?.()
+          swiper?.loopCreate?.()
+        }
       },
-      bindEvents() {
-        const vm = this
-        DEFAULT_EVENTS.forEach(eventName => {
-          this.swiper.on(eventName, function() {
-            vm.$emit(eventName, ...arguments)
-            vm.$emit(eventName.replace(/([A-Z])/g, '-$1').toLowerCase(), ...arguments)
+      update() {
+        if (this[ComponentPropNames.AutoUpdate] && this.swiperInstance) {
+          this.autoReLoop()
+          this.swiperInstance?.update?.()
+          this.swiperInstance.navigation?.update?.()
+          this.swiperInstance.pagination?.render?.()
+          this.swiperInstance.pagination?.update?.()
+        }
+      },
+      bindEvents(swiper: Swiper) {
+        SWIPER_EVENTS.forEach(eventName => {
+          swiper.on(eventName, (...args: any[]) => {
+            this.$emit(eventName, ...args)
+            const kebabcaseName = kebabcase(eventName)
+            if (kebabcaseName) {
+              this.$emit(kebabcaseName, ...args)
+            }
           })
         })
+      },
+      initSwiper() {
+        const swiper = new Swiper(
+          this.$el as HTMLElement,
+          this.swiperOptions
+        )
+        this.swiperInstance = swiper
+        this.bindEvents(swiper)
+        this.$emit(ComponentEvents.Ready, swiper)
       }
     }
-  }
+  })
 </script>

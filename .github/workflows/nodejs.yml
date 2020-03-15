@@ -1,0 +1,80 @@
+name: Node CI
+
+# TODO
+# on: [push, pull_request]
+
+# jobs:
+#   default:
+#     strategy:
+#       matrix:
+#         node: [12]
+#         os: [macOS-latest, ubuntu-latest]
+#     runs-on: ${{ matrix.os }}
+#     steps:
+#       - uses: actions/checkout@master
+
+#       - uses: actions/setup-node@master
+#         with:
+#           node-version: ${{ matrix.node }}
+
+#       - name: Setup yarn
+#         run: |
+#           curl -o- -L https://yarnpkg.com/install.sh | bash
+#           export PATH="$HOME/.yarn/bin:$PATH"
+
+#       - name: Get yarn cache
+#         id: yarn-cache
+#         run: echo "::set-output name=dir::$(yarn cache dir)"
+
+#       - uses: actions/cache@v1
+#         with:
+#           path: ${{ steps.yarn-cache.outputs.dir }}
+#           key: ${{ matrix.os }}-${{ matrix.node }}-yarn-${{ hashFiles('**/yarn.lock') }}
+#           restore-keys: |
+#             ${{ matrix.os }}-${{ matrix.node }}-yarn-
+
+#       - name: Install Dependencies
+#         run: yarn --frozen-lockfile
+#         env:
+#           CI: 'true'
+
+#       - name: Build, Lint and Test
+#         run: |
+#           yarn build
+#           yarn lint
+#         env:
+#           EFF_NO_LINK_RULES: 'true'
+#           PARSER_NO_WATCH: 'true'
+
+#       # - name: Codecov
+#       #   if: matrix.os == 'macOS-latest'
+#       #   run: |
+#       #     yarn global add codecov codacy-coverage
+#       #     codecov
+#       #     cat ./coverage/lcov.info | codacy-coverage -u JounQin -n vue-dynamic
+#       #   env:
+#       #     CI: 'true'
+#       #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+#       #     CODACY_ACCOUNT_TOKEN: ${{ secrets.CODACY_ACCOUNT_TOKEN }}
+#       #     CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
+#       - name: Code Checks
+#         if: matrix.os == 'macOS-latest' && github.event_name == 'push'
+#         run: |
+#           yarn global add @codechecks/client @codechecks/build-size-watcher
+#           codechecks
+#         env:
+#           CI: 'true'
+#           CC_SECRET: ${{ secrets.CC_SECRET }}
+
+#       - name: Publish GitHub Release and npm Package
+#         if: matrix.os == 'macOS-latest' && github.event_name == 'push' && github.ref	== 'refs/heads/master'
+#         run: |
+#           git remote set-url origin "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+#           npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
+#           git checkout master
+#           bash scripts/deploy.sh
+#         env:
+#           CI: 'true'
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

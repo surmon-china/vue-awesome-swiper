@@ -6,7 +6,10 @@
  * @author Surmon <https://github.com/surmon-china>
  */
 
-(function(g,f){typeof exports==='object'&&typeof module!=='undefined'?f(exports,require('swiper'),require('vue')):typeof define==='function'&&define.amd?define(['exports','swiper','vue'],f):(g=g||self,f(g.VueAwesomeSwiper={},g.Swiper,g.Vue));}(this,(function(exports, Swiper$1, Vue){'use strict';Swiper$1=Swiper$1&&Object.prototype.hasOwnProperty.call(Swiper$1,'default')?Swiper$1['default']:Swiper$1;Vue=Vue&&Object.prototype.hasOwnProperty.call(Vue,'default')?Vue['default']:Vue;/**
+import Swiper$1 from 'swiper';
+import Vue from 'vue';
+
+/**
  * @file vue-awesome-swiper
  * @module constants
  * @author Surmon <https://github.com/surmon-china>
@@ -64,7 +67,9 @@ var SWIPER_EVENTS = [
     'observerUpdate',
     'beforeLoopFix',
     'loopFix'
-];/*! *****************************************************************************
+];
+
+/*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
@@ -85,7 +90,9 @@ function __spreadArrays() {
         for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
             r[k] = a[j];
     return r;
-}/**
+}
+
+/**
  * @file vue-awesome-swiper
  * @module utils
  * @author Surmon <https://github.com/surmon-china>
@@ -95,7 +102,9 @@ var kebabcase = function (string) {
         .replace(/([a-z])([A-Z])/g, '$1-$2')
         .replace(/\s+/g, '-')
         .toLowerCase();
-};/**
+};
+
+/**
  * @file vue-awesome-swiper
  * @module directive
  * @author Surmon <https://github.com/surmon-china>
@@ -227,7 +236,9 @@ function getDirectiveByOptions(globalOptions) {
             }
         }
     };
-}var _a;
+}
+
+var _a;
 var script = Vue.extend({
     name: SWIPER_COMPONENT_NAME,
     props: (_a = {
@@ -360,7 +371,9 @@ var script = Vue.extend({
             this.$emit(ComponentEvents.Ready, swiper);
         }
     }
-});function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+});
+
+function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
     if (typeof shadowMode !== 'boolean') {
         createInjectorSSR = createInjector;
         createInjector = shadowMode;
@@ -433,7 +446,9 @@ var script = Vue.extend({
         }
     }
     return script;
-}/* script */
+}
+
+/* script */
 var __vue_script__ = script;
 
 /* template */
@@ -467,7 +482,9 @@ var __vue_staticRenderFns__ = [];
     undefined,
     undefined,
     undefined
-  );var script$1 = Vue.extend({
+  );
+
+var script$1 = Vue.extend({
     name: SWIPER_SLIDE_COMPONENT_NAME,
     computed: {
         slideClass: function () {
@@ -487,7 +504,9 @@ var __vue_staticRenderFns__ = [];
             (_b = (_a = this.$parent) === null || _a === void 0 ? void 0 : _a.$swiper) === null || _b === void 0 ? void 0 : _b.update();
         }
     }
-});/* script */
+});
+
+/* script */
 var __vue_script__$1 = script$1;
 
 /* template */
@@ -521,7 +540,9 @@ var __vue_staticRenderFns__$1 = [];
     undefined,
     undefined,
     undefined
-  );/**
+  );
+
+/**
  * @file vue-awesome-swiper
  * @module entry
  * @author Surmon <https://github.com/surmon-china>
@@ -545,4 +566,7 @@ var index = {
     directive: directive,
     Swiper: __vue_component__,
     SwiperSlide: __vue_component__$1
-};exports.Swiper=Swiper;exports.SwiperSlide=SwiperSlide;exports.default=index;exports.directive=directive;exports.install=install;Object.defineProperty(exports,'__esModule',{value:true});})));
+};
+
+export default index;
+export { Swiper, SwiperSlide, directive, install };

@@ -1,54 +1,62 @@
 
 ## CHANGELOG
 
-### v3.1.3
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-fixed bug with swiper inside transition. #276
+### v4.0.0 (2020-03-16)
+
+**Breaking change**
+- remove vue1 support
+- Update to Swiper5 TODO
+- Merge SSR (Directive) to the core
+- Update the component name
+- Does not merge options object
+
+**Features**
+- TODO
+
+**Bug Fixes**
+- TODO
+- Loop...
+
+### v3.1.3
+- fixed bug with swiper inside transition. #276
 
 ### v3.1.2
-
-update webpack config and rebuild.
+- update webpack config and rebuild.
 
 ### v3.1.1
-
-fix emit event in browser
+- fix emit event in browser
 
 ### v3.1.0
-
-1. fix loop bug
-2. [bind swiper events to vuejs events](https://github.com/surmon-china/vue-awesome-swiper/pull/238)
+- fix loop bug
+- [bind swiper events to vuejs events](https://github.com/surmon-china/vue-awesome-swiper/pull/238)
 
 ### v3.0.7
-
-1. remove reloop function
-2. update ssr example
+- remove reloop function
+- update ssr example
 
 ### v3.0.5
-
-1. update swiper version to v4.0.7
+- update swiper version to v4.0.7
 
 ### v3.0.4
-
-1. fix object assign in spa
+- fix object assign in spa
 
 ### v3.0.3
-
-1. fix reLoop method [#205](https://github.com/surmon-china/vue-awesome-swiper/issues/205)
+- fix reLoop method [#205](https://github.com/surmon-china/vue-awesome-swiper/issues/205)
 
 ### v3.0.2
-
-1. fix ssr build bug
+- fix ssr build bug
 
 ### v3.0.1
-
-1. fix the es module export issue
+- fix the es module export issue
 
 ### v3.0.0
 
 #### use
-1. add global default options
-2. update the options assign logic
-3. Update to [Swiper4](http://www.swiper.com.cn)
+- add global default options
+- update the options assign logic
+- Update to [Swiper4](http://www.swiper.com.cn)
 
 #### project
 - add brower support

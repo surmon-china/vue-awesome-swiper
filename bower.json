@@ -4,8 +4,7 @@
   "main": "./dist/vue-awesome-swiper.js",
   "author": {
     "name": "Surmon",
-    "email": "surmon@foxmail.com",
-    "url": "http://surmon.me"
+    "url": "https://surmon.me"
   },
   "license": "MIT",
   "keywords": [
