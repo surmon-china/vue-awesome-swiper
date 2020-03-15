@@ -21,7 +21,7 @@ export const install: InstallFunction = (Vue: typeof _Vue, globalOptions?: Swipe
   install.installed = true
 
   if (globalOptions) {
-    (SwiperComponent as any).props.defaultOptions.default = () => globalOptions
+    (SwiperComponent as any).options.props.defaultOptions.default = () => globalOptions
   }
 
   Vue.component(SWIPER_COMPONENT_NAME, SwiperComponent)

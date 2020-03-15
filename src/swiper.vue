@@ -25,10 +25,10 @@
         required: false,
         default: () => ({} as SwiperOptions)
       },
+      // eslint-disable-next-line vue/require-default-prop
       options: {
         type: Object as PropType<SwiperOptions>,
-        required: false,
-        default: () => ({} as SwiperOptions)
+        required: false
       },
       [ComponentPropNames.AutoUpdate]: {
         type: Boolean,

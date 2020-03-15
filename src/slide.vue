@@ -23,7 +23,7 @@
     },
     methods: {
       update() {
-        (this.$parent as any)?.$swiper?.update()
+        (this.$parent as any)?.swiperInstance?.update()
       }
     }
   })

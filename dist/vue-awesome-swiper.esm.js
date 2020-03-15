@@ -247,10 +247,10 @@ var script = Vue.extend({
                 required: false,
                 default: function () { return ({}); }
             },
+            // eslint-disable-next-line vue/require-default-prop
             options: {
                 type: Object,
-                required: false,
-                default: function () { return ({}); }
+                required: false
             }
         },
         _a[ComponentPropNames.AutoUpdate] = {
@@ -501,7 +501,7 @@ var script$1 = Vue.extend({
     methods: {
         update: function () {
             var _a, _b;
-            (_b = (_a = this.$parent) === null || _a === void 0 ? void 0 : _a.$swiper) === null || _b === void 0 ? void 0 : _b.update();
+            (_b = (_a = this.$parent) === null || _a === void 0 ? void 0 : _a.swiperInstance) === null || _b === void 0 ? void 0 : _b.update();
         }
     }
 });
@@ -552,7 +552,7 @@ var install = function (Vue, globalOptions) {
         { return; }
     install.installed = true;
     if (globalOptions) {
-        __vue_component__.props.defaultOptions.default = function () { return globalOptions; };
+        __vue_component__.options.props.defaultOptions.default = function () { return globalOptions; };
     }
     Vue.component(SWIPER_COMPONENT_NAME, __vue_component__);
     Vue.component(SWIPER_SLIDE_COMPONENT_NAME, __vue_component__$1);

@@ -39,13 +39,12 @@
   ],
   "types": "./types/index.d.ts",
   "scripts": {
-    "serve": "vue-cli-service serve dev/serve.ts",
     "cleanup": "rm -rf ./dist/* && rm -rf ./types/*",
-    "build": "npm run cleanup && cross-env NODE_ENV=production vcb",
-    "lint": "eslint --ext .ts,.vue src tests/unit/specs",
-    "test": "cross-env BABEL_ENV=test NODE_ENV=testing karma start tests/unit/karma.conf.js --single-run",
-    "finish": "npm run lint && npm test && npm run build",
-    "publish": "git push && git push --tags && npm publish"
+    "build": "npm run cleanup && cross-env NODE_ENV=production abc build",
+    "lint": "abc lint --ext .ts,.vue src tests/unit/specs",
+    "test": "abc test",
+    "test:watch": "abc test --watch -i",
+    "finish": "npm run lint && npm test && npm run build"
   },
   "peerDependencies": {
     "swiper": "^5.2.0",
@@ -53,13 +52,11 @@
   },
   "devDependencies": {
     "@types/swiper": "^5.2.1",
-    "@typescript-eslint/parser": "^2.23.0",
+    "abc-factory": "https://github.com/surmon-china/abc-factory.git",
     "cross-env": "^6.0.3",
-    "eslint": "^6.8.0",
     "swiper": "^5.2.0",
-    "typescript": "^3.7.3",
-    "vue": "^2.6.10",
-    "vue-component-bundler": "https://github.com/surmon-china/vue-component-bundler.git"
+    "typescript": "^3.7.5",
+    "vue": "^2.6.10"
   },
   "engines": {
     "node": ">=8"

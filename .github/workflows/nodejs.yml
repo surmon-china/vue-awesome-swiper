@@ -68,7 +68,7 @@ name: Node CI
 #           CC_SECRET: ${{ secrets.CC_SECRET }}
 
 #       - name: Publish GitHub Release and npm Package
-#         if: matrix.os == 'macOS-latest' && github.event_name == 'push' && github.ref	== 'refs/heads/master'
+#         if: matrix.os == 'macOS-latest' && github.event_name == 'push' && github.ref == 'refs/heads/master'
 #         run: |
 #           git remote set-url origin "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
 #           npm set //registry.npmjs.org/:_authToken $NPM_TOKEN

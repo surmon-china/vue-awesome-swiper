@@ -25,7 +25,7 @@ If you need roll back to old Swiper, use target version:
 - [Nuxt.js example code](https://github.com/surmon-china/surmon-china.github.io/tree/source/projects/vue-awesome-swiper/nuxt)
 
 
-#### Install
+### Install
 
 **npm**
 
@@ -195,6 +195,8 @@ Swiper.use({
     // Swiper callbacks...
   }
 })
+
+// Your swiper bussniess component...
 ```
 
 ### Swiper Component API

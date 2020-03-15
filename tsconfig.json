@@ -1,28 +1,8 @@
 {
+  "extends": "./node_modules/abc-factory/config/tsconfig/vue",
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "strict": true,
     "declaration": true,
     "declarationDir": "types",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
-      "vue"
-    ],
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
   },
   "exclude": [
     "node_modules",
