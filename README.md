@@ -1,44 +1,69 @@
-[![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
-[![Build Status](https://travis-ci.org/surmon-china/vue-awesome-swiper.svg?branch=master)](https://travis-ci.org/surmon-china/vue-awesome-swiper)
-[![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/issues)
-[![GitHub forks](https://img.shields.io/github/forks/surmon-china/vue-awesome-swiper.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper/network)
-[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/surmon-china/vue-awesome-swiper)
-
-[![NPM](https://nodei.co/npm/vue-awesome-swiper.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-awesome-swiper/)
-[![NPM](https://nodei.co/npm-dl/vue-awesome-swiper.png?months=9&height=3)](https://nodei.co/npm/vue-awesome-swiper/)
-
+<p align="center">
+</p>
 
 # vue-awesome-swiper
-**[Swiper](https://swiperjs.com)** component for Vue (SSR).
+[![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/release/master?style=for-the-badge)
+[![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
 
-基于 **[Swiper](https://www.swiper.com.cn)**、适用于 Vue 的轮播组件，支持服务端渲染和单页应用。
+[![NPM](https://nodei.co/npm/vue-awesome-swiper.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-awesome-swiper/)
 
-If you need roll back to old Swiper, use target version:
+**[Swiper](https://swiperjs.com)** component for Vue.
+
+Old versions:
 - Swiper4: [v3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
 - Swiper3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) 
 
 
 ### Example
-- [Demo Page](https://github.surmon.me/vue-awesome-swiper)
-- TODO: [CDN Example](https://jsfiddle.net/bL983fjt/)
-- [Nuxt.js example code](https://github.com/surmon-china/surmon-china.github.io/tree/source/projects/vue-awesome-swiper/nuxt)
+- [Online examples](https://github.surmon.me/vue-awesome-swiper)
+- ~~TODO: [CDN Example](https://jsfiddle.net/bL983fjt/)~~
+- ~~TODO: [Nuxt.js example code](https://github.com/surmon-china/surmon-china.github.io/tree/source/projects/vue-awesome-swiper/nuxt)~~
+- ~~TODO: [Vue TypeScript & composition-api example code](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/examples/00-typescript-composition-api.vue)~~
 
+---
 
 ### Install
 
-**npm**
-
 ``` bash
 npm install swiper vue-awesome-swiper --save
-```
 
-**yarn**
-``` bash
+# or
 yarn add swiper vue-awesome-swiper
 ```
 
-**CDN**
+### Global Registration
+
+``` javascript
+import Vue from 'vue'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// import style
+import 'swiper/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
+```
+
+### Local Registration
+
+```javascript
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+
+export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
+  }
+}
+```
+
+### CDN
 
 ``` html
 <link rel="stylesheet" href="path/to/swiper.css"/>
@@ -50,43 +75,18 @@ yarn add swiper vue-awesome-swiper
 </script>
 ```
 
-### Mount
+---
 
-**Mount with global**
+### Difference with usage
 
-``` javascript
-import Vue from 'vue'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+**Directive and the only difference in the use of the Component:**
+- `component` find Swiper instance by [`ref attribute`](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements).
+- `directive` find Swiper instance by [`directive arg`](https://vuejs.org/v2/guide/custom-directive.html#Dynamic-Directive-Arguments).
 
-// import style
-import 'swiper/css/swiper.css'
+Other configurations, events are the same. 
 
-// you can custom the global component options and it's default options is global components
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
-```
+The effect of the two ways and the difference in the applicable environment [is here](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/nuxt/).
 
-**Mount with component**
-
-```javascript
-// import styles
-import 'swiper/css/swiper.css'
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide
-  }
-}
-```
-
-### Difference with use
-
-**SSR and the only difference in the use of the SPA:**
-- SPA worked by the `component`, find swiper instance by `ref attribute`.
-- SSR worked by the `directive`, find swiper instance by `directive arg`.
-- Other configurations, events are the same.
-- The effect difference between the two way [is here](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/nuxt/README.md).
 
 ### Component
 
@@ -94,19 +94,15 @@ export default {
 <template>
   <swiper
     ref="mySwiper"
-    :options="swiperOption"
-    @someSwiperEvent="callback"
+    :options="swiperOptions"
+    @some-swiper-event="callback"
   >
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
     <swiper-slide>Slide 4</swiper-slide>
     <swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide>
-    <swiper-slide>Slide 7</swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
-    <div class="swiper-button-prev" slot="button-prev"></div>
-    <div class="swiper-button-next" slot="button-next"></div>
   </swiper>
 </template>
 
@@ -115,7 +111,7 @@ export default {
     name: 'carrousel',
     data() {
       return {
-        swiperOption: {
+        swiperOptions: {
           pagination: {
             el: '.swiper-pagination'
           },
@@ -125,7 +121,7 @@ export default {
     },
     computed: {
       swiper() {
-        return this.$refs.mySwiper.swiper
+        return this.$refs.mySwiper.$swiper
       }
     },
     mounted() {
@@ -141,7 +137,7 @@ export default {
 
 ```vue
 <template>
-  <div v-swiper:mySwiper="swiperOption" @someSwiperEvent="callback">
+  <div v-swiper:mySwiper="swiperOption" @some-swiper-event="callback">
     <div class="swiper-wrapper">
       <div class="swiper-slide" :key="banner" v-for="banner in banners">
         <img :src="banner">
@@ -160,22 +156,66 @@ export default {
           pagination: {
             el: '.swiper-pagination'
           },
-          // some swiper options...
+          // ...
         }
       }
     },
     mounted() {
-      console.log(
-        'This is current Swiper instance object',
-        this.mySwiper,
-        'It will slideTo banners 3'
-      )
+      console.log('Current Swiper instance object', this.mySwiper)
       this.mySwiper.slideTo(3, 1000, false)
     }
   }
 </script>
 ```
 
+---
+
+### Swiper component API
+
+```html
+<swiper
+  :options="swiperOptionsObject"
+  :auto-update="true"
+  :auto-destroy="true"
+  :delete-instance-on-destroy="true"
+  :cleanup-styles-on-destroy="true"
+  @ready="handleSwiperReadied"
+  @click-slide="handleClickSlide"
+  @some-swiper-event="doSomethingWhenSwiperEventTriggered"
+/>
+```
+```ts
+interface IProps {
+  // Auto update swiper when vue component `updated`
+  autoUpdate?: boolean // default: true
+  // Auto destroy swiper when vue component 'beforeDestroy'
+  autoDestroy?: boolean // default: true
+
+  // swiper.destroy's params
+  // swiper.destroy(deleteInstanceOnDestroy, cleanupStylesOnDestroy)
+  deleteInstanceOnDestroy?: boolean // default: true
+  cleanupStylesOnDestroy?: boolean // default: true
+}
+
+// `@ready` event will emit when the Swiper instance mounted
+function handleSwiperReadied(swiper: Swiper) {
+  console.log('Swiper was munted!', swiper)
+}
+
+// `@click-slide` event has special treatment for Swiper's loop mode, which is still available in loop mode
+function handleClickSlide(index: number, reallyIndex: number | null) {
+  console.log('click slide!', index, reallyIndex)
+}
+```
+
+### Swiper API
+Swiper's API and configuration can be used.
+
+- [EN Swiper events](https://swiperjs.com/api/#events)
+- [EN Swiper documentation](https://swiperjs.com/api/)
+- [ZH Swiper documentation](https://www.swiper.com.cn/api/index.html)
+
+---
 
 ### Custom Swiper plugin
 
@@ -192,20 +232,18 @@ Swiper.use({
       if (!this.params.pluginSwitch) return
       console.log('init')
     },
-    // Swiper callbacks...
+    // ...
   }
 })
 
-// Your swiper bussniess component...
+// Your Swiper or App bussiness component...
 ```
+---
 
-### Swiper Component API
+### Changelog
 
-`
-TODO
-`
+Detailed changes for each release are documented in the [release notes](https://github.com/surmon-china/vue-awesome-swiper/blob/master/CHANGELOG.md).
 
-### Swiper API
-Swiper's API and configuration can be used.
-- [EN Swiper documents](https://swiperjs.com/api/)
-- [CN Swiper documents](https://www.swiper.com.cn/api/index.html)
+### License
+
+[MIT](https://github.com/surmon-china/vue-awesome-swiper/blob/master/LICENSE)

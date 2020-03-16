@@ -44,10 +44,11 @@
   "scripts": {
     "cleanup": "rm -rf ./dist/* && rm -rf ./types/*",
     "build": "npm run cleanup && cross-env NODE_ENV=production abc build",
-    "lint": "abc lint --ext .ts,.vue src tests/unit/specs",
+    "lint": "abc lint --ext .ts,.vue src test",
     "test": "abc test",
     "test:watch": "abc test --watch -i",
-    "finish": "npm run lint && npm test && npm run build"
+    "rebirth": "npm run lint && npm test && npm run build",
+    "release": ". ./scripts/release.sh"
   },
   "peerDependencies": {
     "swiper": "^5.2.0",

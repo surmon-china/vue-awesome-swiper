@@ -1,3 +1,1 @@
-build/*.js
 dist/*.js
-dev/*
