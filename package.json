@@ -1,7 +1,7 @@
 {
   "name": "vue-awesome-swiper",
   "description": "Swiper component for Vue",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "keywords": [
     "vue-awesome-swiper",
     "vue awesome swiper",
@@ -18,6 +18,9 @@
   },
   "bugs": "https://github.com/surmon-china/vue-awesome-swiper/issues",
   "homepage": "https://github.com/surmon-china/vue-awesome-swiper#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": {
     "name": "Surmon",
     "url": "https://github.com/surmon-china"
