@@ -1,23 +1,33 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [4.0.1-rc.0](https://github.com/surmon-china/vue-awesome-swiper/compare/v3.1.3...v4.0.1-rc.0) (2020-03-16)
+
 
 ## CHANGELOG
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### v4.0.0 (2020-03-16)
+### v4.0.0.rc-0 (2020-03-16)
 
 **Breaking change**
-- remove vue1 support
-- Update to Swiper5 TODO
-- Merge SSR (Directive) to the core
+- Remove vue1 support
+- Upgrade to Swiper5
+- Move Swiper dependencie to `peerDependencies`
+- Merge SSR (Directive) file to the lib core
 - Update the component name
+  - `swiper` to `Swiper`
+  - `swiperSlide` to `SwiperSlide`
 - Does not merge options object
 
 **Features**
-- TODO
+- Add `@click-slide` event
+- Add `directive`
+- Add prop ``
 
 **Bug Fixes**
-- TODO
-- Loop...
+- 
 
 ### v3.1.3
 - fixed bug with swiper inside transition. #276
