@@ -5,6 +5,9 @@ npm-debug.log
 selenium-debug.log
 npm-debug.log*
 
+# output
+dist/*
+
 # System
 .DS_Store
 
