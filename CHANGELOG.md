@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.1](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.1-rc.1...v4.0.1) (2020-03-16)
+
 ### [4.0.1-rc.1](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.1-rc.0...v4.0.1-rc.1) (2020-03-16)
 
 ### [4.0.1-rc.0](https://github.com/surmon-china/vue-awesome-swiper/compare/v3.1.3...v4.0.1-rc.0) (2020-03-16)
