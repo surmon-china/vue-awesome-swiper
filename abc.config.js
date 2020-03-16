@@ -2,8 +2,10 @@
 module.exports = {
   entry: 'src/index.ts',
   minisize: false,
-  eslint: {},
   resolve: ['.vue', '.ts'],
+  targets: ['umd', 'esm'],
+  parser: 'babel',
+  eslint: {},
   external: [
     'swiper',
     'vue',
