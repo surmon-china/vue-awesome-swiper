@@ -1,5 +1,8 @@
 name: Test
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
@@ -19,8 +22,10 @@ jobs:
         run: npm install yarn -g
       - name: Install Dependencies
         run: yarn --force
-      - name: Rebirth
-        run: yarn rebirth
+      - name: Lint
+        run: yarn lint
+      - name: Test
+        run: yarn test
         env:
           CI: true
           NODE_ENV: production

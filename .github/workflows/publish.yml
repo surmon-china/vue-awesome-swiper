@@ -13,18 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: borales/actions-yarn@v2.0.0
         with:
-          node-version: 12
-      - name: Install yarn
-        run: npm install yarn -g
-      - name: Install Dependencies
-        run: yarn --force
-      - name: Rebirth
-        run: yarn rebirth
-        env:
-          CI: true
-          NODE_ENV: production
+          cmd: install
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: rebirth
+          env:
+            CI: true
+            NODE_ENV: production
 
   publish-npm:
     needs: build
@@ -48,7 +45,6 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          # TODO: 
           scope: '@surmon-china'
       - run: npm publish
         env:
