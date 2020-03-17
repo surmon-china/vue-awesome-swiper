@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 **Breaking change**
 - Remove vue1 support
+- Remove bower support
 - Upgrade to Swiper5
 - Move Swiper dependencie to `peerDependencies`
 - Merge SSR (Directive) file to the lib core
