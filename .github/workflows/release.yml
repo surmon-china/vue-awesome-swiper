@@ -1,20 +1,28 @@
-name: Release
+# https://github.com/actions/create-release
+
 on:
-  pull:
-    branches:
-      - master
+  push:
+    tags:
+      - 'v*'
+
+name: Create Release
 
 jobs:
-  deploy:
-    name: Publish GitHub Release
+  build:
+    name: Create Release
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/setup-node@v1
-      - name: Publish GitHub Release
-        run: |
-          git remote set-url origin "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-          git checkout master
-          npm run release
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
         env:
-          CI: 'true'
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false

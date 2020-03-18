@@ -110,6 +110,7 @@
       },
       autoReLoop() {
         if (this.swiperInstance && this.swiperOptions.loop) {
+          // https://github.com/surmon-china/vue-awesome-swiper/issues/593
           // https://github.com/surmon-china/vue-awesome-swiper/issues/544
           // https://github.com/surmon-china/vue-awesome-swiper/pull/545/files
           const swiper = this.swiperInstance as any

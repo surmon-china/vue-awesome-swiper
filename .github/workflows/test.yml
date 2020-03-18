@@ -26,6 +26,8 @@ jobs:
         run: yarn lint
       - name: Test
         run: yarn test
+      - name: Buile test
+        run: yarn build
         env:
           CI: true
           NODE_ENV: production

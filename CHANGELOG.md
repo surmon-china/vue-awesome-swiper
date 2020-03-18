@@ -2,10 +2,6 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-
-# Changelog
-All notable changes to this project will be documented in this file.
-
 ### v4.0.0.rc-0 (2020-03-16)
 
 **Breaking change**
@@ -20,16 +16,28 @@ All notable changes to this project will be documented in this file.
 - Does not merge options object
 
 **Features**
-- Add `@click-slide` event
+- Add `@click-slide` event (For `loop` mode)
 - Add `directive`
 - Add prop `autoUpdate`
 - Add prop `autoDestroy`
 - Add prop `deleteInstanceOnDestroy`
-- Add prop `cleanupStylesOnDestroy`
+- Add prop `cleanupStylesOnDestroy` [PR #388](https://github.com/surmon-china/vue-awesome-swiper/pull/388)
 
 **Fixed**
-- TODO: 
-- Fix [#]()
+
+Loop mode:
+- [#593](https://github.com/surmon-china/vue-awesome-swiper/issues/593)
+- [#544](https://github.com/surmon-china/vue-awesome-swiper/issues/544)
+- [PR #545](https://github.com/surmon-china/vue-awesome-swiper/pull/545)
+
+Destory:
+- [PR #593](https://github.com/surmon-china/vue-awesome-swiper/pull/550)
+- [PR #341](https://github.com/surmon-china/vue-awesome-swiper/pull/341)
+- [PR #388](https://github.com/surmon-china/vue-awesome-swiper/pull/388)
+- [#340](https://github.com/surmon-china/vue-awesome-swiper/issues/340)
+
+Event:
+- [PR #377](https://github.com/surmon-china/vue-awesome-swiper/pull/377)
 
 ### v3.1.3
 - fixed bug with swiper inside transition. #276
