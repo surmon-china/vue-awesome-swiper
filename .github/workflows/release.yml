@@ -1,13 +1,11 @@
 name: Release
 on:
-  pull_request:
-    types: [closed]
+  pull:
     branches:
-      - release
+      - master
 
 jobs:
   deploy:
-    if: github.event.pull_request.merged == true
     name: Publish GitHub Release
     runs-on: ubuntu-latest
     steps:
@@ -16,9 +14,7 @@ jobs:
         run: |
           git remote set-url origin "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
           git checkout master
-          npm i global standard-version
-          standard-version
-          git push --follow-tags origin master
+          npm run release
         env:
           CI: 'true'
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
