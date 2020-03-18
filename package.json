@@ -36,15 +36,16 @@
     "format": "esm"
   },
   "files": [
-    "dist/*",
-    "src/*",
-    "types/*"
+    "src",
+    "dist/*.js",
+    "types/*.d.ts"
   ],
-  "types": "./types/index.d.ts",
+  "typings": "types/index.d.ts",
+  "types": "types/index.d.ts",
   "scripts": {
     "cleanup": "rm -rf ./dist/* && rm -rf ./types/*",
     "build": "npm run cleanup && cross-env NODE_ENV=production abc build",
-    "lint": "abc lint --ext .ts,.vue src test",
+    "lint": "abc lint --ext .ts,.vue src tests",
     "test": "abc test",
     "test:watch": "abc test --watch -i",
     "rebirth": "npm run lint && npm test && npm run build",

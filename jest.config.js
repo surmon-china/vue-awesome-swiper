@@ -1,6 +1,10 @@
 
-const abcJestConfig = require('./node_modules/abc-factory/config/jest/vue.typescript')
 module.exports = {
-  ...abcJestConfig,
-  testRegex: "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
+  ...require('abc-factory/config/jest/vue.typescript'),
+  globals: {
+    'ts-jest': {
+      // https://kulshekhar.github.io/ts-jest/user/config/isolatedModules
+      isolatedModules: true
+    }
+  }
 }

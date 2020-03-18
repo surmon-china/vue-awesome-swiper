@@ -2,11 +2,11 @@
   "extends": "./node_modules/abc-factory/config/tsconfig/vue",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "types",
+    "declarationDir": "types"
   },
   "exclude": [
     "node_modules",
     "dist",
-    "test"
+    "tests"
   ]
 }
