@@ -18,9 +18,6 @@
   },
   "bugs": "https://github.com/surmon-china/vue-awesome-swiper/issues",
   "homepage": "https://github.com/surmon-china/vue-awesome-swiper#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "author": {
     "name": "Surmon",
     "url": "https://github.com/surmon-china"
@@ -40,7 +37,6 @@
     "dist/*.js",
     "types/*.d.ts"
   ],
-  "typings": "types/index.d.ts",
   "types": "types/index.d.ts",
   "scripts": {
     "cleanup": "rm -rf ./dist/* && rm -rf ./types/*",
@@ -56,8 +52,8 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
+    "@surmon-china/abc-factory": "^0.2.9",
     "@types/swiper": "^5.2.1",
-    "abc-factory": "https://github.com/surmon-china/abc-factory.git",
     "cross-env": "^6.0.3",
     "swiper": "^5.2.0",
     "typescript": "^3.7.5",

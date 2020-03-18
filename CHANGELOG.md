@@ -1,3 +1,7 @@
+
+# Changelog
+All notable changes to this project will be documented in this file.
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
@@ -22,6 +26,8 @@ All notable changes to this project will be documented in this file. See [standa
 - Add prop `autoDestroy`
 - Add prop `deleteInstanceOnDestroy`
 - Add prop `cleanupStylesOnDestroy`
+
+**Fixed**
 
 ### v3.1.3
 - fixed bug with swiper inside transition. #276
