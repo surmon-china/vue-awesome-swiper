@@ -20,7 +20,7 @@ export type SwiperClassKey = keyof typeof DEFAULT_CLASSES
 
 export enum ComponentEvents {
   Ready = 'ready',
-  ClickSlide = 'click-slide',
+  ClickSlide = 'clickSlide',
 }
 
 export enum ComponentPropNames {

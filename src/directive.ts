@@ -7,7 +7,8 @@
 import { DirectiveOptions, VNode } from 'vue'
 import { DirectiveBinding } from 'vue/types/options'
 import Swiper, { SwiperOptions } from 'swiper'
-import { SWIPER_EVENTS, SWIPER_INSTANCE_NAME, DEFAULT_CLASSES, ComponentEvents, ComponentPropNames } from './constants'
+import { SWIPER_INSTANCE_NAME, DEFAULT_CLASSES, ComponentEvents, ComponentPropNames } from './constants'
+import { handleClickSlideEvent, bindSwiperEvents } from './event'
 import { kebabcase } from './utils'
 
 const INSTANCE_NAME_KEY = 'instanceName'
@@ -32,9 +33,9 @@ export function getDirectiveByOptions (globalOptions?: SwiperOptions): Directive
     )
   }
 
-  const getSwiperInstance = (element: HTMLElement, binding: DirectiveBinding, vnode: VNode): Swiper | void => {
+  const getSwiperInstance = (element: HTMLElement, binding: DirectiveBinding, vnode: VNode): Swiper | null => {
     const instanceName = getSwiperInstanceName(element, binding, vnode)
-    return (vnode.context as any)[instanceName]
+    return (vnode.context as any)[instanceName] || null
   }
 
   const getSwipeOptions = (binding: DirectiveBinding): SwiperOptions => {
@@ -67,14 +68,7 @@ export function getDirectiveByOptions (globalOptions?: SwiperOptions): Directive
       element.addEventListener('click', event => {
         const emitEvent = getEventEmiter(vnode)
         const swiper = getSwiperInstance(element, binding, vnode)
-        if (swiper && Array.from(swiper.slides).includes(event.target)) {
-          const reallyIndex = Number(swiper.clickedSlide?.dataset?.swiperSlideIndex)
-          emitEvent(
-            ComponentEvents.ClickSlide,
-            swiper.clickedIndex,
-            Number.isInteger(reallyIndex) ? reallyIndex : null
-          )
-        }
+        handleClickSlideEvent(swiper, event, emitEvent)
       })
     },
     // DOM inserted
@@ -90,19 +84,9 @@ export function getDirectiveByOptions (globalOptions?: SwiperOptions): Directive
       if (!swiper) {
         swiper = new Swiper(element, swiperOptions)
         vueContext[instanceName] = swiper
-
-        SWIPER_EVENTS.forEach(eventName => {
-          swiper.on(eventName, (...args: any[]) => {
-           emitEvent(eventName, ...args)
-           const kebabcaseName = kebabcase(eventName)
-            if (kebabcaseName !== eventName) {
-             emitEvent(kebabcaseName, ...args)
-            }
-          })
-        })
+        bindSwiperEvents(swiper, emitEvent)
+        emitEvent(ComponentEvents.Ready, swiper)
       }
-
-      emitEvent(ComponentEvents.Ready, swiper)
     },
     // On options changed or DOM updated
     componentUpdated(element, binding, vnode) {
@@ -137,7 +121,7 @@ export function getDirectiveByOptions (globalOptions?: SwiperOptions): Directive
       )
       if (getBooleanValueByInput(autoDestroy)) {
         const swiper = getSwiperInstance(element, binding, vnode)
-        if (swiper) {
+        if (swiper && (swiper as any).initialized) {
           swiper?.destroy?.(
             getBooleanValueByInput(
               getStandardisedOptionByAttrs(

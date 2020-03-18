@@ -14,8 +14,8 @@
 <script lang="ts">
   import Vue, { PropType } from 'vue'
   import Swiper, { SwiperOptions } from 'swiper'
-  import { SWIPER_EVENTS, SWIPER_COMPONENT_NAME, DEFAULT_CLASSES, SWIPER_INSTANCE_NAME, ComponentPropNames, ComponentEvents } from './constants'
-  import { kebabcase } from './utils'
+  import { SWIPER_COMPONENT_NAME, DEFAULT_CLASSES, SWIPER_INSTANCE_NAME, ComponentPropNames, ComponentEvents } from './constants'
+  import { handleClickSlideEvent, bindSwiperEvents } from './event'
 
   export default Vue.extend({
     name: SWIPER_COMPONENT_NAME,
@@ -87,31 +87,31 @@
     beforeDestroy() {
       // https://github.com/surmon-china/vue-awesome-swiper/commit/2924a9d4d3d1cf51c0d46076410b1f804b2b8a43#diff-7f4e0261ac562c0f354cb91a1ca8864f
       this.$nextTick(() => {
-        // https://github.com/surmon-china/vue-awesome-swiper/pull/341
         if (this[ComponentPropNames.AutoDestroy] && this.swiperInstance) {
-          this.swiperInstance?.destroy?.(
-            this[ComponentPropNames.DeleteInstanceOnDestroy],
-            this[ComponentPropNames.CleanupStylesOnDestroy]
-          )
+          // https://github.com/surmon-china/vue-awesome-swiper/pull/341
+          // https://github.com/surmon-china/vue-awesome-swiper/issues/340
+          if ((this.swiperInstance as any).initialized) {
+            this.swiperInstance?.destroy?.(
+              this[ComponentPropNames.DeleteInstanceOnDestroy],
+              this[ComponentPropNames.CleanupStylesOnDestroy]
+            )
+          }
         }
       })
     },
     methods: {
       // Feature: click event
       handleSwiperClick(event: MouseEvent) {
-        const swiper = this.swiperInstance
-        if (swiper && Array.from(swiper.slides).includes(event.target)) {
-          const reallyIndex = Number(swiper.clickedSlide?.dataset?.swiperSlideIndex)
-          this.$emit(
-            ComponentEvents.ClickSlide,
-            swiper.clickedIndex,
-            Number.isInteger(reallyIndex) ? reallyIndex : null
-          )
-        }
+        handleClickSlideEvent(
+          this.swiperInstance,
+          event,
+          this.$emit.bind(this)
+        )
       },
       autoReLoop() {
         if (this.swiperInstance && this.swiperOptions.loop) {
           // https://github.com/surmon-china/vue-awesome-swiper/issues/544
+          // https://github.com/surmon-china/vue-awesome-swiper/pull/545/files
           const swiper = this.swiperInstance as any
           swiper?.loopDestroy?.()
           swiper?.loopCreate?.()
@@ -126,24 +126,19 @@
           this.swiperInstance.pagination?.update?.()
         }
       },
-      bindEvents(swiper: Swiper) {
-        SWIPER_EVENTS.forEach(eventName => {
-          swiper.on(eventName, (...args: any[]) => {
-            this.$emit(eventName, ...args)
-            const kebabcaseName = kebabcase(eventName)
-            if (kebabcaseName !== eventName) {
-              this.$emit(kebabcaseName, ...args)
-            }
-          })
-        })
-      },
       initSwiper() {
         this.swiperInstance = new Swiper(
           this.$el as HTMLElement,
           this.swiperOptions
         )
-        this.bindEvents(this.swiperInstance)
-        this.$emit(ComponentEvents.Ready, this.swiperInstance)
+        bindSwiperEvents(
+          this.swiperInstance,
+          this.$emit.bind(this)
+        )
+        this.$emit(
+          ComponentEvents.Ready,
+          this.swiperInstance
+        )
       }
     }
   })
