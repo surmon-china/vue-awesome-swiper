@@ -1,5 +1,4 @@
 
-import Vue from 'vue'
 import SwiperClass from 'swiper'
 import VueAwesomeSwiper, { Swiper as SwiperComponent, SwiperSlide as SlideComponent, install, directive } from '../src'
 import { SWIPER_COMPONENT_NAME, SWIPER_SLIDE_COMPONENT_NAME, ComponentPropNames, DEFAULT_CLASSES, SWIPER_INSTANCE_NAME } from '../src/constants'
