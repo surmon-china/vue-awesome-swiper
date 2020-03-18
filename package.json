@@ -45,6 +45,7 @@
     "test": "abc test",
     "test:watch": "abc test --watch -i",
     "rebirth": "npm run lint && npm test && npm run build",
+    "ver": ". ./scripts/version.sh",
     "release": ". ./scripts/release.sh"
   },
   "peerDependencies": {
