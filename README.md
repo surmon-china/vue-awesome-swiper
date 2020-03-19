@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://swiperjs.com" target="_blank">
-    <img width="60px" src="https://github.surmon.me/images/common/swiper-logo.svg" />
+    <img width="66px" src="https://github.surmon.me/images/common/swiper-logo.svg" />
   </a>
-  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <a href="https://vuejs.org" target="_blank">
-    <img width="60px" src="https://github.surmon.me/images/common/vue-logo.png" />
+    <img width="66px" src="https://github.surmon.me/images/common/vue-logo.png" />
   </a>
 </p>
 
