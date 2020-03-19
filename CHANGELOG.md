@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 - Remove bower support
 - Upgrade to Swiper5
 - Move Swiper dependencie to `peerDependencies`
+- Replace Swiper instance name to `$swiper`
 - Merge SSR (Directive) file to the lib core
 - Update the component name
   - `swiper` to `Swiper`
