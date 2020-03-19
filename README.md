@@ -3,7 +3,7 @@
 
 # vue-awesome-swiper
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/Publish?style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/Publish?label=publish&style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
