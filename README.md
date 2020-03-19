@@ -1,4 +1,11 @@
 <p align="center">
+  <a href="https://swiperjs.com" target="_blank">
+    <img width="60px" src="https://github.surmon.me/images/common/swiper-logo.svg" />
+  </a>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <a href="https://vuejs.org" target="_blank">
+    <img width="60px" src="https://github.surmon.me/images/common/vue-logo.png" />
+  </a>
 </p>
 
 # vue-awesome-swiper
@@ -6,7 +13,6 @@
 ![npm](https://img.shields.io/npm/v/vue-awesome-swiper?style=for-the-badge)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/Publish?label=publish&style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/issues)
-[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
 
 [![NPM](https://nodei.co/npm/vue-awesome-swiper.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-awesome-swiper/)
@@ -14,8 +20,8 @@
 **[Swiper](https://swiperjs.com)** component for Vue.
 
 Old versions:
-- Swiper4: [v3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
-- Swiper3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) 
+- Swiper 4: [v3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
+- Swiper 3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) 
 
 
 ### Example
