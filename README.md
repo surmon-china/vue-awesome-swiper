@@ -97,13 +97,9 @@ The effect of the two ways and the difference in the applicable environment [is 
 
 ### Component
 
-```vue
+```html
 <template>
-  <swiper
-    ref="mySwiper"
-    :options="swiperOptions"
-    @some-swiper-event="callback"
-  >
+  <swiper ref="mySwiper" :options="swiperOptions">
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
@@ -122,7 +118,7 @@ The effect of the two ways and the difference in the applicable environment [is 
           pagination: {
             el: '.swiper-pagination'
           },
-          // Some Swiper options/callbacks...
+          // Some Swiper option/callback...
         }
       }
     },
@@ -142,9 +138,9 @@ The effect of the two ways and the difference in the applicable environment [is 
 
 ### Directive
 
-```vue
+```html
 <template>
-  <div v-swiper:mySwiper="swiperOption" @some-swiper-event="callback">
+  <div v-swiper:mySwiper="swiperOption">
     <div class="swiper-wrapper">
       <div class="swiper-slide" :key="banner" v-for="banner in banners">
         <img :src="banner">
@@ -180,6 +176,7 @@ The effect of the two ways and the difference in the applicable environment [is 
 ### Swiper component API
 
 ```html
+<!-- All events/props support camelCase or kebab-case name. -->
 <swiper
   :options="swiperOptionsObject"
   :auto-update="true"
@@ -188,7 +185,15 @@ The effect of the two ways and the difference in the applicable environment [is 
   :cleanup-styles-on-destroy="true"
   @ready="handleSwiperReadied"
   @click-slide="handleClickSlide"
-  @some-swiper-event="doSomethingWhenSwiperEventTriggered"
+/>
+
+<!-- vue-awesome-swiper converts all Swiper events into component/directive events, like: -->
+<swiper
+  @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
+  @slideChangeTransitionStart="onSwiperSlideChangeTransitionStart"
+  @slideChangeTransitionEnd="..."
+  @transitionStart="..."
+  ...
 />
 ```
 ```ts
@@ -211,7 +216,27 @@ function handleSwiperReadied(swiper: Swiper) {
 
 // `@click-slide` event has special treatment for Swiper's loop mode, which is still available in loop mode
 function handleClickSlide(index: number, reallyIndex: number | null) {
-  console.log('click slide!', index, reallyIndex)
+  console.log('Click slide!', index, reallyIndex)
+}
+```
+
+### Swiper directive API
+
+Based on the exact same as the component API, it is difficult to specify dynamically due to the `directive` `arg`.
+and in the `directive` mode, the Swiper instance will be mounted in the parent's component context with the default name`$swiper`.
+In order to implement multiple swappers in a context, the `directive` has an additional name called `instanceName` API, through this API, you can easily control the name of each swiper mount context.
+
+```html
+<div v-swiper="swiperOptionsObject" />
+<div v-swiper:mySwiper="swiperOptionsObject" />
+<div v-swiper="swiperOptionsObject" instance-name="firstSwiper" />
+<div v-swiper="swiperOptionsObject" instance-name="secondSwiper" />
+```
+```ts
+export dafault {
+  mounted() {
+    console.log('Swiper instances:', this.$swiper, this.mySwiper, this.firstSwiper, this.secondSwiper)
+  }
 }
 ```
 
