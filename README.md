@@ -223,7 +223,9 @@ function handleClickSlide(index: number, reallyIndex: number | null) {
 ### Swiper directive API
 
 Based on the exact same as the component API, it is difficult to specify dynamically due to the `directive` `arg`.
+
 and in the `directive` mode, the Swiper instance will be mounted in the parent's component context with the default name`$swiper`.
+
 In order to implement multiple swappers in a context, the `directive` has an additional name called `instanceName` API, through this API, you can easily control the name of each swiper mount context.
 
 ```html
