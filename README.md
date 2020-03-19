@@ -27,7 +27,7 @@ Old versions:
 ### Example
 - [Online examples](https://github.surmon.me/vue-awesome-swiper)
 - [CDN example](https://jsfiddle.net/surmon/hsnmeyct/)
-- [Nuxt.js example code](https://github.com/surmon-china/surmon-china.github.io/tree/source/projects/vue-awesome-swiper/nuxt)
+- [SSR example code](https://github.com/surmon-china/surmon-china.github.io/tree/source/projects/vue-awesome-swiper/nuxt)
 - [TypeScript & composition-api example code](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/examples/00-typescript-composition-api.vue)
 
 ---
@@ -224,9 +224,9 @@ function handleClickSlide(index: number, reallyIndex: number | null) {
 
 Based on the exact same as the component API.
 
-It is difficult to specify dynamically due to the `directive` `arg`. and in the `directive` mode, the Swiper instance will be mounted in the parent's component context with the default name`$swiper`.
+It is difficult to specify dynamically due to the `directive` `arg`. and in the `directive` mode, the Swiper instance will be mounted in the parent's component context use the default name`$swiper`.
 
-In order to implement multiple swappers in a context, the `directive` has an additional name called `instanceName` API, through this API, you can easily control the name of each swiper mount context.
+In order to implement multiple swipers in a context, the `directive` has an additional name called `instanceName` API, through this API, you can easily control the name of each swiper mount context.
 
 ```html
 <div v-swiper="swiperOptionsObject" />
