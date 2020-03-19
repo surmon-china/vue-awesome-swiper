@@ -1,38 +1,30 @@
 <template>
   <div :class="slideClass">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'swiper-slide',
-    data() {
-      return {
-        slideClass: 'swiper-slide'
+<script lang="ts">
+  import Vue from 'vue'
+  import { SWIPER_SLIDE_COMPONENT_NAME, DEFAULT_CLASSES } from './constants'
+
+  export default Vue.extend({
+    name: SWIPER_SLIDE_COMPONENT_NAME,
+    computed: {
+      slideClass(): string {
+        return (this.$parent as any)?.swiperOptions?.slideClass || DEFAULT_CLASSES.slideClass
       }
-    },
-    ready() {
-      this.update()
     },
     mounted() {
       this.update()
-      if (this.$parent && this.$parent.options && this.$parent.options.slideClass) {
-        this.slideClass = this.$parent.options.slideClass
-      }
     },
     updated() {
       this.update()
     },
-    attached() {
-      this.update()
-    },
     methods: {
       update() {
-        if (this.$parent && this.$parent.swiper) {
-          this.$parent.update()
-        }
+        (this.$parent as any)?.swiperInstance?.update()
       }
     }
-  }
+  })
 </script>
