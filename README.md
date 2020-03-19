@@ -224,20 +224,25 @@ function handleClickSlide(index: number, reallyIndex: number | null) {
 
 Based on the exact same as the component API.
 
-It is difficult to specify dynamically due to the `directive` `arg`. and in the `directive` mode, the Swiper instance will be mounted in the parent's component context use the default name`$swiper`.
+In the `directive` mode, the Swiper instance will be mounted in the parent's component context use the default name`$swiper`.
 
 In order to implement multiple swipers in a context, the `directive` has an additional name called `instanceName` API, through this API, you can easily control the name of each swiper mount context.
 
 ```html
 <div v-swiper="swiperOptionsObject" />
-<div v-swiper:mySwiper="swiperOptionsObject" />
-<div v-swiper="swiperOptionsObject" instance-name="firstSwiper" />
-<div v-swiper="swiperOptionsObject" instance-name="secondSwiper" />
+<div v-swiper:secondSwiper="swiperOptionsObject" />
+<div v-swiper:[dynamicSwiper]="swiperOptionsObject" />
+<div v-swiper="swiperOptionsObject" instance-name="fourthSwiper" />
 ```
 ```ts
 export dafault {
+  data() {
+    return {
+      dynamicSwiper: 'thirdSwiper'
+    }
+  },
   mounted() {
-    console.log('Swiper instances:', this.$swiper, this.mySwiper, this.firstSwiper, this.secondSwiper)
+    console.log('Swiper instances:', this.$swiper, this.secondSwiper, this.thirdSwiper, this.fourthSwiper)
   }
 }
 ```
