@@ -22,9 +22,6 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: rebirth
-          env:
-            CI: true
-            NODE_ENV: production
 
   publish-npm:
     needs: build
