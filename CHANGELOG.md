@@ -16,6 +16,9 @@ All notable changes to this project will be documented in this file.
   - `swiperSlide` to `SwiperSlide`
 - Does not merge options object
 
+**Removed**
+- Move examples to [github.surmon.me](https://github.surmon.me/vue-awesome-swiper/)
+
 **Features**
 - Add `@click-slide` event (For `loop` mode)
 - Add `directive`

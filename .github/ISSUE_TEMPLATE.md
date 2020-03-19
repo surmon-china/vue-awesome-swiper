@@ -11,7 +11,7 @@
 
 #### Reproduction Link
 - A minimal JSBin, JSFiddle, Codepen, or a GitHub repository that can reproduce the bug.
-- You could start with this template:  TODO: https://jsfiddle.net/surmon/fpojgkmy/
+- You could start with this template:  https://jsfiddle.net/surmon/hsnmeyct/
 
 #### Steps to reproduce
 

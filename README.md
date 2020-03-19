@@ -3,6 +3,7 @@
 
 # vue-awesome-swiper
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
+![npm](https://img.shields.io/npm/v/vue-awesome-swiper?style=for-the-badge)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/Publish?label=publish&style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
@@ -19,7 +20,7 @@ Old versions:
 
 ### Example
 - [Online examples](https://github.surmon.me/vue-awesome-swiper)
-- ~~TODO: [CDN Example](https://jsfiddle.net/bL983fjt/)~~
+- [CDN example](https://jsfiddle.net/surmon/hsnmeyct/)
 - [Nuxt.js example code](https://github.com/surmon-china/surmon-china.github.io/tree/source/projects/vue-awesome-swiper/nuxt)
 - [TypeScript & composition-api example code](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/examples/00-typescript-composition-api.vue)
 
