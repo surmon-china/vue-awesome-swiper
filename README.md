@@ -1,21 +1,21 @@
 <p align="center">
   <a href="https://swiperjs.com" target="_blank">
-    <img width="66px" src="https://github.surmon.me/images/common/swiper-logo.svg" />
+    <img width="77px" src="https://github.surmon.me/images/common/swiper-logo.svg" />
   </a>
   <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <a href="https://vuejs.org" target="_blank">
-    <img width="66px" src="https://github.surmon.me/images/common/vue-logo.png" />
+    <img width="77px" src="https://github.surmon.me/images/common/vue-logo.png" />
   </a>
 </p>
 
 # vue-awesome-swiper
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
-![npm](https://img.shields.io/npm/v/vue-awesome-swiper?style=for-the-badge)
+[![npm](https://img.shields.io/npm/v/vue-awesome-swiper?style=for-the-badge)](https://www.npmjs.com/package/vue-awesome-swiper)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/Publish?label=publish&style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/issues)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
 
-[![NPM](https://nodei.co/npm/vue-awesome-swiper.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-awesome-swiper/)
+[![NPM](https://nodei.co/npm/vue-awesome-swiper.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-awesome-swiper)
 
 **[Swiper](https://swiperjs.com)** component for Vue.
 
