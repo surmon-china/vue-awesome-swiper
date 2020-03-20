@@ -79,25 +79,14 @@
       }
     },
     activated() {
-      this.update()
+      this.updateSwiper()
     },
     updated() {
-      this.update()
+      this.updateSwiper()
     },
     beforeDestroy() {
       // https://github.com/surmon-china/vue-awesome-swiper/commit/2924a9d4d3d1cf51c0d46076410b1f804b2b8a43#diff-7f4e0261ac562c0f354cb91a1ca8864f
-      this.$nextTick(() => {
-        if (this[ComponentPropNames.AutoDestroy] && this.swiperInstance) {
-          // https://github.com/surmon-china/vue-awesome-swiper/pull/341
-          // https://github.com/surmon-china/vue-awesome-swiper/issues/340
-          if ((this.swiperInstance as any).initialized) {
-            this.swiperInstance?.destroy?.(
-              this[ComponentPropNames.DeleteInstanceOnDestroy],
-              this[ComponentPropNames.CleanupStylesOnDestroy]
-            )
-          }
-        }
-      })
+      this.$nextTick(this.destroySwiper)
     },
     methods: {
       // Feature: click event
@@ -108,7 +97,7 @@
           this.$emit.bind(this)
         )
       },
-      autoReLoop() {
+      autoReLoopSwiper() {
         if (this.swiperInstance && this.swiperOptions.loop) {
           // https://github.com/surmon-china/vue-awesome-swiper/issues/593
           // https://github.com/surmon-china/vue-awesome-swiper/issues/544
@@ -118,13 +107,25 @@
           swiper?.loopCreate?.()
         }
       },
-      update() {
+      updateSwiper() {
         if (this[ComponentPropNames.AutoUpdate] && this.swiperInstance) {
-          this.autoReLoop()
+          this.autoReLoopSwiper()
           this.swiperInstance?.update?.()
           this.swiperInstance.navigation?.update?.()
           this.swiperInstance.pagination?.render?.()
           this.swiperInstance.pagination?.update?.()
+        }
+      },
+      destroySwiper() {
+        if (this[ComponentPropNames.AutoDestroy] && this.swiperInstance) {
+          // https://github.com/surmon-china/vue-awesome-swiper/pull/341
+          // https://github.com/surmon-china/vue-awesome-swiper/issues/340
+          if ((this.swiperInstance as any).initialized) {
+            this.swiperInstance?.destroy?.(
+              this[ComponentPropNames.DeleteInstanceOnDestroy],
+              this[ComponentPropNames.CleanupStylesOnDestroy]
+            )
+          }
         }
       },
       initSwiper() {
