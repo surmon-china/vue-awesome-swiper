@@ -19,7 +19,7 @@ describe('vue-awesome-swiper', () => {
     expect(swiperWrapper.is('div')).toBeTruthy()
     expect(swiperWrapper.contains('div')).toBeTruthy()
     expect(vm.swiperInstance).toBeInstanceOf(SwiperClass)
-    expect(typeof vm.update).toBe('function')
+    expect(typeof vm.updateSwiper).toBe('function')
     expect(Object.keys(swiperWrapper.props())).toContain(ComponentPropNames.AutoUpdate)
     expect(Object.keys(swiperWrapper.props())).toContain(ComponentPropNames.CleanupStylesOnDestroy)
     expect(swiperWrapper.props()[ComponentPropNames.AutoUpdate]).toBeTruthy()
