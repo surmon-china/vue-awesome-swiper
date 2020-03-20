@@ -1,4 +1,3 @@
-
 module.exports = {
   entry: 'src/index.ts',
   minisize: false,
