@@ -176,7 +176,7 @@ The effect of the two ways and the difference in the applicable environment [is 
 ### Swiper component API
 
 ```html
-<!-- All events/props support camelCase or kebab-case name. -->
+<!-- All events/props support camelCase or kebab-case. -->
 <swiper
   :options="swiperOptionsObject"
   :auto-update="true"
@@ -187,7 +187,7 @@ The effect of the two ways and the difference in the applicable environment [is 
   @click-slide="handleClickSlide"
 />
 
-<!-- vue-awesome-swiper converts all Swiper events into component/directive events, like: -->
+<!-- vue-awesome-swiper converts all Swiper events into component/directive events, e.g.: -->
 <swiper
   @slide-change-transition-start="onSwiperSlideChangeTransitionStart"
   @slideChangeTransitionStart="onSwiperSlideChangeTransitionStart"
