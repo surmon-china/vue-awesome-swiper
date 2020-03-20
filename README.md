@@ -11,7 +11,7 @@
 # vue-awesome-swiper
 ![vue](https://img.shields.io/badge/MADE%20WITH-VUE-%2342a97a?style=for-the-badge&labelColor=35495d)
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
-[![npm](https://img.shields.io/npm/v/vue-awesome-swiper?color=%23EA2039&label=npm&style=for-the-badge)](https://www.npmjs.com/package/vue-awesome-swiper)
+[![npm](https://img.shields.io/npm/v/vue-awesome-swiper?color=%23c7343a&label=npm&style=for-the-badge)](https://www.npmjs.com/package/vue-awesome-swiper)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/Publish?label=publish&style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/actions?query=workflow%3APublish)
 [![GitHub issues](https://img.shields.io/github/issues-raw/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/issues)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/blob/master/LICENSE)
