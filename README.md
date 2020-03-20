@@ -27,7 +27,7 @@ Old versions:
 
 ### Example
 - [Online examples](https://github.surmon.me/vue-awesome-swiper)
-- [CDN example](https://jsfiddle.net/surmon/hsnmeyct/)
+- [CDN example](https://jsfiddle.net/surmon/kLtj6h3p/)
 - [SSR example code](https://github.com/surmon-china/surmon-china.github.io/tree/source/projects/vue-awesome-swiper/nuxt)
 - [TypeScript & composition-api example code](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/examples/00-typescript-composition-api.vue)
 
