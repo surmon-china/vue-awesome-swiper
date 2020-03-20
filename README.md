@@ -10,7 +10,7 @@
 
 # vue-awesome-swiper
 [![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/stargazers)
-[![npm](https://img.shields.io/npm/v/vue-awesome-swiper?style=for-the-badge)](https://www.npmjs.com/package/vue-awesome-swiper)
+[![npm](https://img.shields.io/npm/v/vue-awesome-swiper?color=%23EA2039&label=npm&style=for-the-badge)](https://www.npmjs.com/package/vue-awesome-swiper)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/surmon-china/vue-awesome-swiper/Publish?label=publish&style=for-the-badge)
 [![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-awesome-swiper.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper/issues)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)](https://github.com/surmon-china/vue-awesome-swiper)
