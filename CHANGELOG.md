@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ### [4.0.1](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0...v4.0.1) (2020-03-20)
 
-## [4.0.0](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0-rc.1...v4.0.0) (2020-03-20)
+**Fixed**
+- Publish CI scripts `build`
 
-## [4.0.0-rc.1](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0-rc.0...v4.0.0-rc.1) (2020-03-20)
+### [4.0.0](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0-rc.1...v4.0.0) (2020-03-20)
+
+### [4.0.0-rc.1](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0-rc.0...v4.0.0-rc.1) (2020-03-20)
 
 **Fixed**
 - `@clicks-lide` get event path from `event.composedPath()` ~~`event.path`~~
@@ -16,7 +19,7 @@ All notable changes to this project will be documented in this file.
 - Rename `destroy` to `destroySwiper`
 - Rename `autoReLoop` to `autoReLoopSwiper`
 
-## [4.0.0-rc.0](https://github.com/surmon-china/vue-awesome-swiper/compare/v3.1.3...v4.0.0-rc.0) (2020-03-19)
+### [4.0.0-rc.0](https://github.com/surmon-china/vue-awesome-swiper/compare/v3.1.3...v4.0.0-rc.0) (2020-03-19)
 
 **Breaking change**
 - Remove vue1 support
