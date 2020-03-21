@@ -78,6 +78,7 @@
         this.initSwiper()
       }
     },
+    // Update swiper when the parent component activated with `keep-alive`.
     activated() {
       this.updateSwiper()
     },

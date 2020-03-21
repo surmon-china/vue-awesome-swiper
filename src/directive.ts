@@ -81,11 +81,14 @@ export function getDirectiveByOptions (globalOptions?: SwiperOptions): Directive
       const vueContext = context as any
       let swiper: Swiper = vueContext?.[instanceName]
 
-      if (!swiper) {
+      // Swiper will destroy but not delete instance, when used <keep-alive>
+      if (!swiper || (swiper as any).destroyed) {
         swiper = new Swiper(element, swiperOptions)
         vueContext[instanceName] = swiper
         bindSwiperEvents(swiper, emitEvent)
         emitEvent(ComponentEvents.Ready, swiper)
+        // MARK: Reinstance when the nexttick with <keep-alive>
+        // Vue.nextTick(instancing) | setTimeout(instancing)
       }
     },
     // On options changed or DOM updated
