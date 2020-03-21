@@ -4,8 +4,6 @@ All notable changes to this project will be documented in this file.
 
 ### [4.0.3](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.2...v4.0.3) (2020-03-21)
 
-### [4.0.3](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.2...v4.0.3) (2020-03-21)
-
 **Fixed**
 - Directive instancing when `swiper.destroyed`
 
