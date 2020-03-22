@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ### [4.0.4](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.3...v4.0.4) (2020-03-22)
 
+### [4.0.4](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.3...v4.0.4) (2020-03-22)
+
 **Fixed**
 - Event `click-slide` condition with `!swiper.destroyed`
 
