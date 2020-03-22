@@ -4,19 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ### [4.0.4](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.3...v4.0.4) (2020-03-22)
 
+**Fixed**
+- Event `click-slide` condition with `!swiper.destroyed`
+
 ### [4.0.3](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.2...v4.0.3) (2020-03-21)
 
 **Fixed**
 - Directive instancing when `swiper.destroyed`
 
-### [4.0.2](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.1...v4.0.2) (2020-03-20)
-
 ### [4.0.1](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0...v4.0.1) (2020-03-20)
 
 **Fixed**
 - Publish CI scripts `build`
-
-### [4.0.0](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0-rc.1...v4.0.0) (2020-03-20)
 
 ### [4.0.0-rc.1](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.0-rc.0...v4.0.0-rc.1) (2020-03-20)
 
