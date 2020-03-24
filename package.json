@@ -53,7 +53,7 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@surmon-china/abc-factory": "^0.2.9",
+    "@surmon-china/abc-factory": "^0.3.0",
     "@types/swiper": "^5.2.1",
     "cross-env": "^6.0.3",
     "swiper": "^5.2.0",
