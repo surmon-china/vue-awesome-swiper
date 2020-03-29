@@ -2,6 +2,22 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+### [4.1.0] (2020-03-29)
+
+**Update**
+- Upgrade abc-factory
+- Update test spec
+- Vue SFC component to `render`
+- Move `types` to `dist`
+
+**Features**
+- Support Custom build with Swiper
+
+**Fixed**
+- [#422](https://github.com/surmon-china/vue-awesome-swiper/issues/422)
+- [#527](https://github.com/surmon-china/vue-awesome-swiper/issues/527)
+- [#621](https://github.com/surmon-china/vue-awesome-swiper/issues/621)
+
 ### [4.0.4](https://github.com/surmon-china/vue-awesome-swiper/compare/v4.0.3...v4.0.4) (2020-03-22)
 
 **Fixed**

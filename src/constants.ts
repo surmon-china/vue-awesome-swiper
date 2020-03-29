@@ -6,10 +6,12 @@
 
 import { CommonEvent } from 'swiper'
 
-export const SWIPER_COMPONENT_NAME = 'Swiper'
-export const SWIPER_SLIDE_COMPONENT_NAME = 'SwiperSlide'
-export const SWIPER_DIRECTIVE_NAME = 'swiper'
-export const SWIPER_INSTANCE_NAME = '$swiper'
+export enum CoreNames {
+  SwiperComponent = 'Swiper',
+  SwiperSlideComponent = 'SwiperSlide',
+  SwiperDirective = 'swiper',
+  SwiperInstance = '$swiper'
+}
 
 export const DEFAULT_CLASSES = Object.freeze({
   containerClass: 'swiper-container',

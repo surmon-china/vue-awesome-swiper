@@ -1,11 +1,10 @@
 {
   "name": "vue-awesome-swiper",
   "description": "Swiper component for Vue",
-  "version": "4.0.4",
+  "version": "4.1.0",
   "keywords": [
-    "vue-awesome-swiper",
-    "vue awesome swiper",
     "vue swiper",
+    "vue awesome swiper",
     "vue carrousel",
     "carrousel",
     "swiper"
@@ -34,26 +33,24 @@
   },
   "files": [
     "src",
-    "dist/*.js",
-    "types/*.d.ts"
+    "dist"
   ],
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "cleanup": "rm -rf ./dist/* && rm -rf ./types/*",
+    "cleanup": "rm -rf ./dist/*",
     "build": "npm run cleanup && cross-env NODE_ENV=production abc build",
     "lint": "abc lint --ext .ts,.vue src tests",
     "test": "abc test",
     "test:watch": "abc test --watch -i",
     "rebirth": "npm run lint && npm test && npm run build",
-    "ver": ". ./scripts/version.sh",
     "release": ". ./scripts/release.sh"
   },
   "peerDependencies": {
     "swiper": "^5.2.0",
-    "vue": "^2.6.10"
+    "vue": "2.x"
   },
   "devDependencies": {
-    "@surmon-china/abc-factory": "^0.3.0",
+    "@surmon-china/abc-factory": "^0.3.3",
     "@types/swiper": "^5.2.1",
     "cross-env": "^6.0.3",
     "swiper": "^5.2.0",
