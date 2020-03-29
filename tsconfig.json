@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "declarationDir": "types",
+    "declarationDir": "dist",
     "sourceMap": true,
     "baseUrl": ".",
     "types": [

@@ -1,7 +1,7 @@
 
 import SwiperClass from 'swiper'
 import VueAwesomeSwiper, { Swiper as SwiperComponent, SwiperSlide as SlideComponent, install, directive } from '../src'
-import { SWIPER_COMPONENT_NAME, SWIPER_SLIDE_COMPONENT_NAME, ComponentPropNames, DEFAULT_CLASSES, SWIPER_INSTANCE_NAME } from '../src/constants'
+import { CoreNames, ComponentPropNames, DEFAULT_CLASSES } from '../src/constants'
 import { mount, shallowMount, createLocalVue, Wrapper } from '@vue/test-utils'
 
 const Swiper = SwiperComponent as any
@@ -12,7 +12,7 @@ describe('vue-awesome-swiper', () => {
 
   const testWithSwiper = (swiperWrapper: Wrapper<Vue>) => {
     const vm = swiperWrapper.vm as any
-    expect(swiperWrapper.name()).toBe(SWIPER_COMPONENT_NAME)
+    expect(swiperWrapper.name()).toBe(CoreNames.SwiperComponent)
     expect(swiperWrapper.classes()).toContain(DEFAULT_CLASSES.containerClass)
     expect(swiperWrapper.isVisible()).toBeTruthy()
     expect(swiperWrapper.isVueInstance()).toBeTruthy()
@@ -28,8 +28,8 @@ describe('vue-awesome-swiper', () => {
   // Deconstruction
   it('Can get the object with es module', () => {
     expect(typeof install).toBe('function')
-    expect(Swiper.options.name).toBe(SWIPER_COMPONENT_NAME)
-    expect(SwiperSlide.options.name).toBe(SWIPER_SLIDE_COMPONENT_NAME)
+    expect(Swiper.options.name).toBe(CoreNames.SwiperComponent)
+    expect(SwiperSlide.options.name).toBe(CoreNames.SwiperSlideComponent)
     expect(typeof Swiper).toBe('function')
     expect(typeof SwiperSlide).toBe('function')
     expect(typeof directive).toBe('object')
@@ -89,7 +89,7 @@ describe('vue-awesome-swiper', () => {
         localVue
       })
       const vm = wrapper.vm as any
-      const swiperInstance = vm.$refs.swiper?.[SWIPER_INSTANCE_NAME]
+      const swiperInstance = vm.$refs.swiper?.[CoreNames.SwiperInstance]
       expect(wrapper.findAll(swiperSlideSelecter).length).toBe(3)
       expect(swiperInstance).toBeInstanceOf(SwiperClass)
       expect(swiperInstance?.params?.spaceBetween).toBe(forgerGlobalOptions.spaceBetween)
@@ -110,7 +110,7 @@ describe('vue-awesome-swiper', () => {
           </local-swiper>
         `
       })
-      const swiperInstance = (wrapper.vm.$refs.swiper as any)?.[SWIPER_INSTANCE_NAME]
+      const swiperInstance = (wrapper.vm.$refs.swiper as any)?.[CoreNames.SwiperInstance]
       expect(wrapper.findAll(swiperSlideSelecter).length).toBe(2)
       expect(swiperInstance).toBeInstanceOf(SwiperClass)
       expect(swiperInstance?.params?.spaceBetween).toBe(localOptionsSpaceBetween)
@@ -151,7 +151,7 @@ describe('vue-awesome-swiper', () => {
         localVue
       })
       const vm = wrapper.vm as any
-      const swiperInstance = vm?.[SWIPER_INSTANCE_NAME]
+      const swiperInstance = vm?.[CoreNames.SwiperInstance]
       expect(wrapper.classes()).toContain(DEFAULT_CLASSES.containerClass)
       expect(swiperInstance).toBeInstanceOf(SwiperClass)
       expect(swiperInstance?.params?.spaceBetween).toBe(forgerGlobalOptions.spaceBetween)
