@@ -282,8 +282,6 @@ export default {
 }
 ```
 
----
-
 ### Custom Swiper plugin
 
 ```javascript
