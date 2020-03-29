@@ -8,8 +8,6 @@ npm-debug.log*
 # output
 dist
 dist/*
-types
-types/*
 
 # System
 .DS_Store
