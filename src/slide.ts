@@ -5,7 +5,7 @@
  */
 
 import Vue, { VNode, CreateElement } from 'vue'
-import { CoreNames, DEFAULT_CLASSES } from './constants'
+import { CoreNames, DEFAULT_CLASSES, ComponentPropNames } from './constants'
 
 export default Vue.extend({
   name: CoreNames.SwiperSlideComponent,
@@ -16,7 +16,11 @@ export default Vue.extend({
   },
   methods: {
     update() {
-      (this.$parent as any)?.swiperInstance?.update()
+      const parent = this.$parent as any
+      // https://github.com/surmon-china/vue-awesome-swiper/issues/632
+      if (parent[ComponentPropNames.AutoUpdate]) {
+        parent?.swiperInstance?.update()
+      }
     }
   },
   mounted() {

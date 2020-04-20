@@ -2,7 +2,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-### [4.1.0] (2020-03-29)
+### 4.1.1 (2020-04-21)
+
+**Fixed**
+- [#632](https://github.com/surmon-china/vue-awesome-swiper/issues/632) Slide component auto update when `SwiperComponent.autuUpdate`
+
+### 4.1.0 (2020-03-29)
 
 **Update**
 - Upgrade abc-factory
