@@ -22,7 +22,7 @@
 
 Old versions:
 - Swiper 4: [v3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
-- Swiper 3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) 
+- Swiper 3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7)
 
 
 ### Example
@@ -50,6 +50,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // import style
 import 'swiper/css/swiper.css'
+// If you use Swiper 6.0.0 or higher
+import 'swiper/swiper-bundle.css'
 
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ```
@@ -59,6 +61,8 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ```javascript
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+// If you use Swiper 6.0.0 or higher
+import 'swiper/swiper-bundle.css'
 
 export default {
   components: {
@@ -91,7 +95,7 @@ export default {
 - `component` find Swiper instance by [`ref attribute`](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements).
 - `directive` find Swiper instance by [`directive arg`](https://vuejs.org/v2/guide/custom-directive.html#Dynamic-Directive-Arguments).
 
-Other configurations, events are the same. 
+Other configurations, events are the same.
 
 The effect of the two ways and the difference in the applicable environment [is here](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/nuxt/).
 
@@ -260,6 +264,9 @@ Swiper's API and configuration can be used.
 ```ts
 import Vue from 'vue'
 import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/js/swiper.esm'
+// If you use Swiper 6.0.0 or higher
+import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/core'
+
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
 
 // Swiper modules
