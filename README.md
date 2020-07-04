@@ -22,7 +22,7 @@
 
 Old versions:
 - Swiper 4: [v3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
-- Swiper 3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7)
+- Swiper 3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) 
 
 
 ### Example
@@ -95,7 +95,7 @@ export default {
 - `component` find Swiper instance by [`ref attribute`](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-Child-Component-Instances-amp-Child-Elements).
 - `directive` find Swiper instance by [`directive arg`](https://vuejs.org/v2/guide/custom-directive.html#Dynamic-Directive-Arguments).
 
-Other configurations, events are the same.
+Other configurations, events are the same. 
 
 The effect of the two ways and the difference in the applicable environment [is here](https://github.com/surmon-china/surmon-china.github.io/blob/source/projects/vue-awesome-swiper/nuxt/).
 
