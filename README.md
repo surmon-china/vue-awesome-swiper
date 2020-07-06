@@ -50,6 +50,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // import style
 import 'swiper/css/swiper.css'
+// If you use Swiper 6.0.0 or higher
+import 'swiper/swiper-bundle.css'
 
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ```
@@ -59,6 +61,8 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ```javascript
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
+// If you use Swiper 6.0.0 or higher
+import 'swiper/swiper-bundle.css'
 
 export default {
   components: {
@@ -260,6 +264,9 @@ Swiper's API and configuration can be used.
 ```ts
 import Vue from 'vue'
 import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/js/swiper.esm'
+// If you use Swiper 6.0.0 or higher
+import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/core'
+
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
 
 // Swiper modules
