@@ -141,6 +141,7 @@ export default function getSwiperComponent(SwiperClass: typeof Swiper) {
     updated() {
       this.updateSwiper()
     },
+    // eslint-disable-next-line vue/no-deprecated-destroyed-lifecycle
     beforeDestroy() {
       // https://github.com/surmon-china/vue-awesome-swiper/commit/2924a9d4d3d1cf51c0d46076410b1f804b2b8a43#diff-7f4e0261ac562c0f354cb91a1ca8864f
       this.$nextTick(this.destroySwiper)
@@ -154,13 +155,18 @@ export default function getSwiperComponent(SwiperClass: typeof Swiper) {
           }
         },
         [
+          // eslint-disable-next-line vue/require-slots-as-functions
           this.$slots[SlotNames.ParallaxBg],
           createElement('div', {
             class: this.wrapperClass
           }, this.$slots.default),
+          // eslint-disable-next-line vue/require-slots-as-functions
           this.$slots[SlotNames.Pagination],
+          // eslint-disable-next-line vue/require-slots-as-functions
           this.$slots[SlotNames.PrevButton],
+          // eslint-disable-next-line vue/require-slots-as-functions
           this.$slots[SlotNames.NextButton],
+          // eslint-disable-next-line vue/require-slots-as-functions
           this.$slots[SlotNames.Scrollbar]
         ]
       )
