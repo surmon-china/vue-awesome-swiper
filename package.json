@@ -42,6 +42,7 @@
     "lint": "abc lint --ext .ts,.vue src tests",
     "test": "abc test",
     "test:watch": "abc test --watch -i",
+    "coverage": "abc test --coverage",
     "rebirth": "npm run lint && npm test && npm run build",
     "release": ". ./scripts/release.sh"
   },

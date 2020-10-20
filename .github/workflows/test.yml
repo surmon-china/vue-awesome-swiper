@@ -35,7 +35,17 @@ jobs:
         with:
           cmd: test
 
-      - name: Buile test
+      - name: Build test
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build
+
+      - name: Generate coverage report
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: coverage
+          
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage/clover.xml    
