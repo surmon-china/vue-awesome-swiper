@@ -63,7 +63,11 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ### Local Registration
 
 ```javascript
+// import version (>= vue-awesome-swiper 4.x)
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+
+// import version (<= vue-awesome-swiper 3.x)
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 // import style (>= Swiper 6.x)
 import 'swiper/swiper-bundle.css'
