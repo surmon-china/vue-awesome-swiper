@@ -40,6 +40,9 @@ npm install swiper vue-awesome-swiper --save
 
 # or
 yarn add swiper vue-awesome-swiper
+
+# Swiper5 is recommended
+yarn add swiper@5.x vue-awesome-swiper
 ```
 
 ### Global Registration
@@ -48,10 +51,11 @@ yarn add swiper vue-awesome-swiper
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
-// import style
-import 'swiper/css/swiper.css'
-// If you use Swiper 6.0.0 or higher
+// import style (>= Swiper 6.x)
 import 'swiper/swiper-bundle.css'
+
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ```
@@ -60,9 +64,12 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
 ```javascript
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
-// If you use Swiper 6.0.0 or higher
+
+// import style (>= Swiper 6.x)
 import 'swiper/swiper-bundle.css'
+
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css'
 
 export default {
   components: {
@@ -263,8 +270,9 @@ Swiper's API and configuration can be used.
 
 ```ts
 import Vue from 'vue'
+// Swiper 5.x
 import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/js/swiper.esm'
-// If you use Swiper 6.0.0 or higher
+// Swiper 6.x
 import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/core'
 
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
