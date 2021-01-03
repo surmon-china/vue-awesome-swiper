@@ -65,11 +65,11 @@ import 'swiper/swiper-bundle.css'
 
 // import style of only use module (>= Swiper 6.x)
 // only core Swiper styles
-import 'swiper/swiper.scss';
+import 'swiper/swiper.min.css';
 // styles required for Navigation component
-import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/navigation/navigation.min.css';
 // styles required for Pagination component
-import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/pagination/pagination.min.css';
 
 // import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
@@ -95,11 +95,11 @@ import 'swiper/swiper-bundle.css'
 
 // import style of only use module (>= Swiper 6.x)
 // only core Swiper styles
-import 'swiper/swiper.scss';
+import 'swiper/swiper.min.css';
 // styles required for Navigation component
-import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/navigation/navigation.min.css';
 // styles required for Pagination component
-import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/pagination/pagination.min.css';
 
 // import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
