@@ -49,10 +49,27 @@ yarn add swiper@5.x vue-awesome-swiper
 
 ``` javascript
 import Vue from 'vue'
+
+// import core version + navigation, pagination modules（>= Swiper 6.x）
+import SwiperClass, { Navigation, Pagination, /* add some modules if you need */ } from "swiper";
+// configure Swiper to use modules
+SwiperClass.use([Navigation, Pagination]);
+
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
-// import style (>= Swiper 6.x)
+// ----------------------------------------------------------------------------------------
+// import style of all modules (>= Swiper 6.x)
+// all Swiper styles including all components styles (like Navigation, Pagination, etc.)
+// ----------------------------------------------------------------------------------------
 import 'swiper/swiper-bundle.css'
+
+// import style of only use module (>= Swiper 6.x)
+// only core Swiper styles
+import 'swiper/swiper.scss';
+// styles required for Navigation component
+import 'swiper/components/navigation/navigation.scss';
+// styles required for Pagination component
+import 'swiper/components/pagination/pagination.scss';
 
 // import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
@@ -63,10 +80,26 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ### Local Registration
 
 ```javascript
+// import core version + navigation, pagination modules（>= Swiper 6.x）
+import SwiperClass, { Navigation, Pagination, /* add some modules if you need */ } from "swiper";
+// configure Swiper to use modules
+SwiperClass.use([Navigation, Pagination]);
+
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 
-// import style (>= Swiper 6.x)
+// ----------------------------------------------------------------------------------------
+// import style of all modules (>= Swiper 6.x)
+// all Swiper styles including all components styles (like Navigation, Pagination, etc.)
+// ----------------------------------------------------------------------------------------
 import 'swiper/swiper-bundle.css'
+
+// import style of only use module (>= Swiper 6.x)
+// only core Swiper styles
+import 'swiper/swiper.scss';
+// styles required for Navigation component
+import 'swiper/components/navigation/navigation.scss';
+// styles required for Pagination component
+import 'swiper/components/pagination/pagination.scss';
 
 // import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
@@ -81,6 +114,33 @@ export default {
   }
 }
 ```
+### Registration Appendix
+
+From Swiper 6.x, by default exports only core version without additional modules (like Navigation, Pagination etc.)  
+So you need to import and configure them too.
+
+| Module Name | Import Module | Import Module Style<br/>(can use type ".min.css", ".less" and ".scss") |
+|:---|:---|:---|
+| Virtual Slides | Virtual | - |
+| Keyboard Control | Keyboard | - |
+| Mousewheel Control | Mousewheel |- | 
+| Navigation | Navigation | components/navigation/navigation.min.css |
+| Pagination | Pagination | components/pagination/pagination.min.css |
+| Scrollbar | Scrollbar | components/scrollbar/scrollbar.min.css |
+| Parallax | Parallax | - |
+| Zoom | Zoom | components/zoom/zoom.min.css |
+| Lazy | Lazy | components/lazy/lazy.min.css |
+| Controller | Controller | - |
+| Accessibility | A11y | components/controller/controller.min.css<br/>components/a11y/a11y.min.css |
+| History Navigation | History | - |
+| Hash Navigation | HashNavigation | - |
+| Autoplay | Autoplay | - |
+| Fade Effect | EffectFade | components/effect-fade/effect-fade.min.css |
+| Cube Effect | EffectCube | components/effect-cube/effect-cube.min.css |
+| Flip Effect | EffectFlip | components/effect-flip/effect-flip.min.css |
+| Coverflow Effect | EffectCoverflow | components/effect-coverflow/effect-coverflow.min.css |
+| Thumbs | Thumbs | components/thumbs/thumbs.min.css |
+||||
 
 ### CDN
 
