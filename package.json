@@ -46,7 +46,7 @@
     "release": ". ./scripts/release.sh"
   },
   "peerDependencies": {
-    "swiper": "^5.2.0",
+    "swiper": "^5.2.0 || ^6.4.5",
     "vue": "2.x"
   },
   "devDependencies": {
