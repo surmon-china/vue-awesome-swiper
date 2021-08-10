@@ -46,29 +46,32 @@ yarn add swiper@5.x vue-awesome-swiper
 ```
 
 ### Global Registration
-
+#### For Swiper 5.x
 ``` javascript
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-
-// import style (>= Swiper 6.x)
-import 'swiper/swiper-bundle.css'
-
-// import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 ```
 
+#### For Swiper 6.x
+``` javascript
+import Vue from 'vue'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
+```
+
+
+
 ### Local Registration
+
+#### For Swiper 5.x
 
 ```javascript
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-
-// import style (>= Swiper 6.x)
-import 'swiper/swiper-bundle.css'
-
-// import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
 
 export default {
@@ -81,6 +84,23 @@ export default {
   }
 }
 ```
+
+#### For Swiper 6.x
+```javascript
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+
+export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  directives: {
+    swiper: directive
+  }
+}
+```
+
 
 ### CDN
 
