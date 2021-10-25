@@ -1144,11 +1144,6 @@
   resolved "https://registry.npm.taobao.org/@types/strip-json-comments/download/@types/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha1-mqMMBNshKpoGSdaub9UKzMQHSKE=
 
-"@types/swiper@^5.2.1":
-  version "5.2.1"
-  resolved "https://registry.npm.taobao.org/@types/swiper/download/@types/swiper-5.2.1.tgz#889ab9c9041007c27ffa3220097303b6b1670608"
-  integrity sha1-iJq5yQQQB8J/+jIgCXMDtrFnBgg=
-
 "@types/yargs-parser@*":
   version "15.0.0"
   resolved "https://registry.npm.taobao.org/@types/yargs-parser/download/@types/yargs-parser-15.0.0.tgz#cb3f9f741869e20cce330ffbeb9271590483882d"
@@ -2827,12 +2822,12 @@ dom-walk@^0.1.0:
   resolved "https://registry.npm.taobao.org/dom-walk/download/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
   integrity sha1-ZyIm3HTI95mtNTB9+TaroRrNYBg=
 
-dom7@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.npm.taobao.org/dom7/download/dom7-2.1.3.tgz#a736f9c3bfbc4ca039a81cd095f97d1d7f3de19c"
-  integrity sha1-pzb5w7+8TKA5qBzQlfl9HX894Zw=
+dom7@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.nlark.com/dom7/download/dom7-3.0.0.tgz?cache=0&sync_timestamp=1629879522531&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdom7%2Fdownload%2Fdom7-3.0.0.tgz#b861ce5d67a6becd7aaa3ad02942ff14b1240331"
+  integrity sha1-uGHOXWemvs16qjrQKUL/FLEkAzE=
   dependencies:
-    ssr-window "^1.0.1"
+    ssr-window "^3.0.0-alpha.1"
 
 domelementtype@1:
   version "1.3.1"
@@ -7976,10 +7971,10 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
-ssr-window@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/ssr-window/download/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
-  integrity sha1-MHUqakZm53Z/C35qpvwv29DZs2k=
+ssr-window@^3.0.0, ssr-window@^3.0.0-alpha.1:
+  version "3.0.0"
+  resolved "https://registry.nlark.com/ssr-window/download/ssr-window-3.0.0.tgz?cache=0&sync_timestamp=1629879176260&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fssr-window%2Fdownload%2Fssr-window-3.0.0.tgz#fd5b82801638943e0cc704c4691801435af7ac37"
+  integrity sha1-/VuCgBY4lD4MxwTEaRgBQ1r3rDc=
 
 ssri@^6.0.0, ssri@^6.0.1:
   version "6.0.1"
@@ -8271,13 +8266,13 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swiper@^5.2.0:
-  version "5.3.6"
-  resolved "https://registry.npm.taobao.org/swiper/download/swiper-5.3.6.tgz#102b7f8145d734ec4c30e04602160382356b5948"
-  integrity sha1-ECt/gUXXNOxMMOBGAhYDgjVrWUg=
+swiper@^6.8.4:
+  version "6.8.4"
+  resolved "https://registry.npmmirror.com/swiper/download/swiper-6.8.4.tgz?cache=0&sync_timestamp=1633340478825&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fswiper%2Fdownload%2Fswiper-6.8.4.tgz#938fed4144f4d7952fbf9c44e5832d133a4de794"
+  integrity sha1-k4/tQUT015Uvv5xE5YMtEzpN55Q=
   dependencies:
-    dom7 "^2.1.3"
-    ssr-window "^1.0.1"
+    dom7 "^3.0.0"
+    ssr-window "^3.0.0"
 
 symbol-tree@^3.2.2:
   version "3.2.4"

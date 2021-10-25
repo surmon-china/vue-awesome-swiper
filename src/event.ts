@@ -9,13 +9,13 @@ import { SWIPER_EVENTS, ComponentEvents } from './constants'
 import { kebabcase } from './utils'
 
 export const handleClickSlideEvent = (swiper: Swiper | null, event: MouseEvent, emit: any): void => {
-  if (swiper && !((swiper as any).destroyed)) {
+  if (swiper && !(swiper.destroyed)) {
     const eventPath = event.composedPath?.() || (event as any).path
     if (event?.target && eventPath) {
       const slides = Array.from(swiper.slides)
       const paths = Array.from(eventPath)
       // Click slide || slide[children]
-      if (slides.includes(event.target) || paths.some(item => slides.includes(item))) {
+      if (slides.includes(event.target as Element) || paths.some(item => slides.includes(item as Element))) {
         const clickedIndex = swiper.clickedIndex
         const reallyIndex = Number(swiper.clickedSlide?.dataset?.swiperSlideIndex)
         const reallyIndexValue = Number.isInteger(reallyIndex) ? reallyIndex : null

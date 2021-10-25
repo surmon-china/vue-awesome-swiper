@@ -46,14 +46,13 @@
     "release": ". ./scripts/release.sh"
   },
   "peerDependencies": {
-    "swiper": "^5.2.0",
+    "swiper": "^6.8.4",
     "vue": "2.x"
   },
   "devDependencies": {
     "@surmon-china/abc-factory": "^0.3.3",
-    "@types/swiper": "^5.2.1",
     "cross-env": "^6.0.3",
-    "swiper": "^5.2.0",
+    "swiper": "^6.8.4",
     "typescript": "^3.7.5",
     "vue": "^2.6.10"
   },

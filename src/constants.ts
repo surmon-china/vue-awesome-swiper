@@ -4,7 +4,7 @@
  * @author Surmon <https://github.com/surmon-china>
  */
 
-import { CommonEvent } from 'swiper'
+import { SwiperEvents } from 'swiper/types'
 
 export enum CoreNames {
   SwiperComponent = 'Swiper',
@@ -33,6 +33,7 @@ export enum ComponentPropNames {
 }
 
 // https://swiperjs.com/api/#events
+type CommonEvent = keyof SwiperEvents
 export const SWIPER_EVENTS: CommonEvent[] = [
   'init',
   'beforeDestroy',
