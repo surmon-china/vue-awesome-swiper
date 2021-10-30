@@ -140,6 +140,7 @@ export default function getSwiperComponent(SwiperClass: typeof Swiper) {
     },
     updated() {
       this.updateSwiper()
+      this.$nextTick(this.initSwiper)
     },
     beforeDestroy() {
       // https://github.com/surmon-china/vue-awesome-swiper/commit/2924a9d4d3d1cf51c0d46076410b1f804b2b8a43#diff-7f4e0261ac562c0f354cb91a1ca8864f
