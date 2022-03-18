@@ -1,3 +1,4 @@
+<p></p>
 <p align="center">
   <a href="https://swiperjs.com" target="_blank">
     <img width="77px" src="/presses/swiper-logo.svg" />
