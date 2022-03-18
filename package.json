@@ -1,7 +1,7 @@
 {
   "name": "vue-awesome-swiper",
   "description": "Swiper component for Vue",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "keywords": [
     "vue swiper",
     "vue awesome swiper",
@@ -10,7 +10,6 @@
     "swiper"
   ],
   "license": "MIT",
-  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/surmon-china/vue-awesome-swiper"
@@ -21,43 +20,31 @@
     "name": "Surmon",
     "url": "https://github.com/surmon-china"
   },
-  "main": "dist/vue-awesome-swiper.js",
-  "module": "dist/vue-awesome-swiper.esm.js",
-  "browser": "dist/vue-awesome-swiper.js",
-  "jsdelivr": "dist/vue-awesome-swiper.js",
-  "unpkg": "dist/vue-awesome-swiper.js",
+  "types": "index.d.ts",
+  "module": "index.js",
+  "browser": "index.js",
+  "jsdelivr": "index.js",
+  "unpkg": "index.js",
+  "main": "index.js",
   "jspm": {
-    "main": "dist/vue-awesome-swiper.esm.js",
+    "main": "index.js",
     "registry": "npm",
     "format": "esm"
   },
   "files": [
-    "src",
-    "dist"
+    "index.d.ts",
+    "index.js"
   ],
-  "types": "dist/index.d.ts",
   "scripts": {
-    "cleanup": "rm -rf ./dist/*",
-    "build": "npm run cleanup && cross-env NODE_ENV=production abc build",
-    "lint": "abc lint --ext .ts,.vue src tests",
-    "test": "abc test",
-    "test:watch": "abc test --watch -i",
-    "rebirth": "npm run lint && npm test && npm run build",
     "release": ". ./scripts/release.sh"
   },
   "peerDependencies": {
-    "swiper": "^5.2.0",
-    "vue": "2.x"
+    "swiper": "^7.0.0  || ^8.0.0",
+    "vue": "3.x"
   },
   "devDependencies": {
-    "@surmon-china/abc-factory": "^0.3.3",
-    "@types/swiper": "^5.2.1",
-    "cross-env": "^6.0.3",
-    "swiper": "^5.2.0",
-    "typescript": "^3.7.5",
-    "vue": "^2.6.10"
-  },
-  "engines": {
-    "node": ">=8"
+    "swiper": "^8.0.0",
+    "vue": "^3.2.31",
+    "typescript": "^4.5.4"
   }
 }
