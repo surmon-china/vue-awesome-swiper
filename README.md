@@ -45,9 +45,9 @@ If you need to use an older version of vue-awesome-swiper, you can find the corr
 - [Swiper discussions](https://github.com/nolimits4web/swiper/discussions)
 
 ### Previous versions
-- Swiper 5-6: [v4.1.1](https://github.com/surmon-china/vue-awesome-swiper/tree/v4.1.1)
-- Swiper 4: [v3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
-- Swiper 3: [v2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7)
+- Swiper 5-6 [vue-awesome-swiper@4.1.1](https://github.com/surmon-china/vue-awesome-swiper/tree/v4.1.1)
+- Swiper 4.x [vue-awesome-swiper@3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
+- Swiper 3.x [vue-awesome-swiper@2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7)
 
 ---
 
