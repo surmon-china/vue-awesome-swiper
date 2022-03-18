@@ -41,6 +41,8 @@ If you need to use an older version of vue-awesome-swiper, you can find the corr
 - [Examples](https://github.surmon.me/vue-awesome-swiper)
 - [Swiper API](https://swiperjs.com/swiper-api)
 - [Swiper Vue](https://swiperjs.com/vue)
+- [Swiper issues](https://github.com/nolimits4web/swiper/issues?q=is%3Aissue+is%3Aopen+label%3AVue)
+- [Swiper discussions](https://github.com/nolimits4web/swiper/discussions)
 
 ### Previous versions
 - Swiper 5-6: [v4.1.1](https://github.com/surmon-china/vue-awesome-swiper/tree/v4.1.1)
@@ -127,9 +129,13 @@ app.use(VueAwesomeSwiper)
   @slide-change="..."
   ...
 >
-  <swiper-slide v-slot="{ isActive }">Slide 1 {{ isActive }}<swiper-slide>
-  <swiper-slide>Slide 2<swiper-slide>
+  <template #container-start><span>Container start</span></template>
+  <template #wrapper-start><span>Wrapper start</span></template>
+  <swiper-slide>Slide 1<swiper-slide>
+  <swiper-slide v-slot="{ isActive }">Slide 2 {{ isActive }}<swiper-slide>
   <swiper-slide>Slide 3<swiper-slide>
+  <template #wrapper-end><span>Wrapper end</span></template>
+  <template #container-end><span>Container end</span></template>
 </swiper>
 ```
 
