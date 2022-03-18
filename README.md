@@ -97,17 +97,17 @@ yarn add swiper vue-awesome-swiper
 
 #### global component
 
-``` javascript
+```javascript
 import { createApp } from 'vue'
-import SwiperClass, { Pagination } from 'Swiper'
+import SwiperClass, { /* swiper modules... */ } from 'Swiper'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // import swiper module styles
 import 'swiper/css'
-import 'swiper/css/pagination'
+// more module styles...
 
 // use swiper modules
-SwiperClass.use([Pagination])
+SwiperClass.use([/* swiper modules... */])
 
 const app = createApp()
 app.use(VueAwesomeSwiper)
