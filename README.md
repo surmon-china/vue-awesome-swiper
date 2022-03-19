@@ -37,7 +37,7 @@ import { Swiper, SwiperSlide, /* ...rest SwiperVue API */ } from 'vue-awesome-sw
 import { Swiper, SwiperSlide, /* ...rest SwiperVue API */ } from 'swiper/vue'
 ```
 
-If you need to use an older version of vue-awesome-swiper, you can find the corresponding version number below. feel free to fork our code and maintain your own copy.
+If you need to use older versions of `vue-awesome-swiper`, you can find the corresponding version number below. Feel free to fork our code and maintain your own copy.
 
 ### Documentation
 - [Examples](https://github.surmon.me/vue-awesome-swiper)
