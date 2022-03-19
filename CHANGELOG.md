@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 - Deprecated component
 - Bridge to `swiper/vue`
+- Upgrade to Vue3
 
 ### 4.1.1 (2020-04-21)
 
