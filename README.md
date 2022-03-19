@@ -245,7 +245,7 @@ In the `directive` mode, the Swiper instance will be mounted in the parent's com
 <div v-swiper="swiperOptionsObject" instance-name="fourthSwiper" />
 ```
 ```ts
-export dafault {
+export default {
   data() {
     return {
       dynamicSwiperName: 'thirdSwiper'
