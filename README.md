@@ -39,19 +39,19 @@ import { Swiper, SwiperSlide, /* Rest SwiperVue API... */ } from 'swiper/vue'
 
 If you need to use older versions of vue-awesome-swiper, you can find the corresponding version number below. Feel free to fork our code and maintain your own copy.
 
-### Documentation
-- [Examples](https://github.surmon.me/vue-awesome-swiper)
-- [Swiper API](https://swiperjs.com/swiper-api)
-- [Swiper Vue](https://swiperjs.com/vue)
-- [Swiper issues](https://github.com/nolimits4web/swiper/issues?q=is%3Aissue+is%3Aopen+label%3AVue)
-- [Swiper discussions](https://github.com/nolimits4web/swiper/discussions)
-
 ### Previous versions
 - Swiper 5-6 [vue-awesome-swiper@4.1.1](https://github.com/surmon-china/vue-awesome-swiper/tree/v4.1.1)
 - Swiper 4.x [vue-awesome-swiper@3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3)
 - Swiper 3.x [vue-awesome-swiper@2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7)
 
 ---
+
+### Documentation
+- [Examples](https://github.surmon.me/vue-awesome-swiper)
+- [Swiper API](https://swiperjs.com/swiper-api)
+- [Swiper Vue](https://swiperjs.com/vue)
+- [Swiper issues](https://github.com/nolimits4web/swiper/issues?q=is%3Aissue+is%3Aopen+label%3AVue)
+- [Swiper discussions](https://github.com/nolimits4web/swiper/discussions)
 
 ### How to use
 
