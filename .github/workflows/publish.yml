@@ -20,12 +20,6 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install
-      - uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: rebirth
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
