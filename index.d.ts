@@ -9,8 +9,8 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 export * from 'swiper/vue';
 
 declare const _default: {
-  Swiper: typeof Swiper,
-  SwiperSlide: typeof SwiperSlide,
+  Swiper: typeof Swiper;
+  SwiperSlide: typeof SwiperSlide;
   install(app: App): void;
 };
 
