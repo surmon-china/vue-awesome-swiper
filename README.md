@@ -25,7 +25,7 @@
 
 ### ⚠️ DEPRECATED
 
-[Swiper](https://swiperjs.com/) has released a mature and available [Vue component](https://swiperjs.com/vue) (TypeScript friendly), so the vue-awesome-swiper project will be discontinued and please gradually migrate to the official Vue plugin provided by Swiper.
+The `vue-awesome-swiper` project will be deprecated in favor of [Swiper Vue component](https://swiperjs.com/vue), a TypeScript friendly project which is a recent official release provided by [Swiper](https://swiperjs.com/). For better stability, please migrate as soon as possible.
 
 vue-awesome-swiper has released the last bridge version v5.0.0, which internally only passes through all the content of [`swiper/vue`](https://swiperjs.com/vue), which means that the following code is fully equivalent in vue-awesome-swiper@5.0.0
 
