@@ -83,7 +83,7 @@ yarn add swiper vue-awesome-swiper
   // import swiper module styles
   import 'swiper/css'
   import 'swiper/css/pagination'
-  // more module styles...
+  // import more module style...
 
   export default {
     components: {
@@ -108,7 +108,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // import swiper module styles
 import 'swiper/css'
-// more module styles...
+// import more module style...
 
 // use swiper modules
 SwiperClass.use([/* swiper modules... */])
