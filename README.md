@@ -127,8 +127,8 @@ app.use(VueAwesomeSwiper)
   :slides-per-view="1"
   :autoplay="{ delay: 3500, disableOnInteraction: false }"
   @swiper="..."
-  @transition-start="..."
   @slide-change="..."
+  @transition-start="..."
   ...
 >
   <template #container-start><span>Container start</span></template>
