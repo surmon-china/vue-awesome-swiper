@@ -32,9 +32,9 @@ The vue-awesome-swiper project will be deprecated in favor of [Swiper Vue compon
 vue-awesome-swiper released its last version v5.0.0 for transition. It's worth noting that APIs in this version are completely NOT compatible with that of previous version, it only re-exports [`swiper/vue`](https://swiperjs.com/vue), which means only functions of that component are available. For example, the following code is fully equivalent in `vue-awesome-swiper@5.0.0`. And if you want to check update catelog of Swiper API, please refer to [Swiper Changelog](https://swiperjs.com/changelog).
 
 ```ts
-import { Swiper, SwiperSlide, /* Rest SwiperVue API... */ } from 'vue-awesome-swiper'
+import { Swiper, SwiperSlide, /* rest swiper/vue API... */ } from 'vue-awesome-swiper'
 // exactly equivalent to
-import { Swiper, SwiperSlide, /* Rest SwiperVue API... */ } from 'swiper/vue'
+import { Swiper, SwiperSlide, /* rest swiper/vue API... */ } from 'swiper/vue'
 ```
 
 If you need to use older versions of vue-awesome-swiper, you can find the corresponding version number below. Feel free to fork our code and maintain your own copy.
@@ -83,7 +83,7 @@ yarn add swiper vue-awesome-swiper
   // import swiper module styles
   import 'swiper/css'
   import 'swiper/css/pagination'
-  // import more module style...
+  // more module style...
 
   export default {
     components: {
@@ -108,7 +108,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // import swiper module styles
 import 'swiper/css'
-// import more module style...
+// more module style...
 
 // use swiper modules
 SwiperClass.use([/* swiper modules... */])
