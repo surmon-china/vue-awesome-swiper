@@ -25,7 +25,7 @@
 
 ---
 
-### ⚠️ DEPRECATED
+### DEPRECATED ⚠️
 
 The **vue-awesome-swiper** project will be **deprecated** in favor of [Swiper Vue component](https://swiperjs.com/vue), a TypeScript friendly project which is a recent official release provided by [Swiper](https://swiperjs.com/). For better stability, please migrate as soon as possible.
 
