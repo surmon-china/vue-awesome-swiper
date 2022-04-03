@@ -78,7 +78,7 @@ yarn add swiper vue-awesome-swiper
 </template>
 
 <script>
-  import SwiperClass, { Pagination } from 'Swiper'
+  import SwiperClass, { Pagination } from 'swiper'
   import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
   // import swiper module styles
@@ -104,7 +104,7 @@ yarn add swiper vue-awesome-swiper
 
 ```javascript
 import { createApp } from 'vue'
-import SwiperClass, { /* swiper modules... */ } from 'Swiper'
+import SwiperClass, { /* swiper modules... */ } from 'swiper'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // import swiper module styles
