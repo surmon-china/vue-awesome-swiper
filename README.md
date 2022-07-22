@@ -40,9 +40,9 @@ import { Swiper, SwiperSlide, /* rest swiper/vue API... */ } from 'swiper/vue'
 If you need to use older versions of vue-awesome-swiper, you can find the corresponding version number below. Feel free to fork our code and maintain your own copy.
 
 ### Legacy versions
-- Swiper 5-6 [vue-awesome-swiper@4.1.1](https://github.com/surmon-china/vue-awesome-swiper/tree/v4.1.1) (vue2)
-- Swiper 4.x [vue-awesome-swiper@3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3) (vue2)
-- Swiper 3.x [vue-awesome-swiper@2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) (vue2)
+- Swiper 5-6 [vue-awesome-swiper@4.1.1](https://github.com/surmon-china/vue-awesome-swiper/tree/v4.1.1) (Vue2)
+- Swiper 4.x [vue-awesome-swiper@3.1.3](https://github.com/surmon-china/vue-awesome-swiper/tree/v3.1.3) (Vue2)
+- Swiper 3.x [vue-awesome-swiper@2.6.7](https://github.com/surmon-china/vue-awesome-swiper/tree/v2.6.7) (Vue2)
 
 ---
 
