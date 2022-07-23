@@ -2,6 +2,7 @@
   "name": "vue-awesome-swiper",
   "description": "Swiper component for Vue",
   "version": "5.0.0",
+  "author": "Surmon",
   "keywords": [
     "vue swiper",
     "vue awesome swiper",
@@ -16,10 +17,6 @@
   },
   "bugs": "https://github.com/surmon-china/vue-awesome-swiper/issues",
   "homepage": "https://github.surmon.me/vue-awesome-swiper",
-  "author": {
-    "name": "Surmon",
-    "url": "https://github.com/surmon-china"
-  },
   "type": "module",
   "types": "index.d.ts",
   "module": "index.js",
