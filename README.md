@@ -66,7 +66,7 @@ npm install swiper vue-awesome-swiper --save
 yarn add swiper vue-awesome-swiper
 ```
 
-#### local component
+#### Local component
 
 ```vue
 <template>
@@ -100,7 +100,7 @@ yarn add swiper vue-awesome-swiper
 </script>
 ```
 
-#### global component
+#### Global component
 
 ```javascript
 import { createApp } from 'vue'
