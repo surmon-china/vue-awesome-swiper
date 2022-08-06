@@ -5,7 +5,7 @@
   </a>
   <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
   <a href="https://vuejs.org" target="_blank">
-    <img width="77px" src="/presses/vue-logo.png" />
+    <img width="79px" src="/presses/vue-logo.png" />
   </a>
 </p>
 
@@ -27,9 +27,9 @@
 
 ### DEPRECATED ⚠️
 
-The **vue-awesome-swiper** project will be **deprecated** in favor of [Swiper Vue component](https://swiperjs.com/vue), a TypeScript friendly project which is a recent official release provided by [Swiper](https://swiperjs.com/). For better stability, please migrate as soon as possible.
+The **vue-awesome-swiper** project has been **deprecated** and superseded by [Swiper Vue component](https://swiperjs.com/vue), a TypeScript friendly project which is a recent official release provided by [Swiper](https://swiperjs.com/). For better stability, please migrate as soon as possible.
 
-**vue-awesome-swiper** released its last version **v5.0.0** for (bridge) transition. It's worth noting that APIs in this version are completely **NOT compatible** with that of previous version, it only [re-exports](/index.js) [`swiper/vue`](https://swiperjs.com/vue) and **only supports Vue3**, which means only functions of `swiper/vue` are available. For example, the following code is fully equivalent in `vue-awesome-swiper@5.0.0`. And if you want to check update catelog of Swiper API, please refer to [Swiper Changelog](https://swiperjs.com/changelog).
+**vue-awesome-swiper** released its last version **v5** for (bridge) transition. It's worth noting that APIs in this version are completely **NOT compatible** with that of previous version, it only [re-exports](/index.js) [`swiper/vue`](https://swiperjs.com/vue) and **only supports Vue3**, which means only functions of `swiper/vue` are available. For example, the following code is fully equivalent in `vue-awesome-swiper@5`. And if you want to check update catelog of Swiper API, please refer to [Swiper Changelog](https://swiperjs.com/changelog).
 
 ```ts
 import { Swiper, SwiperSlide, /* rest swiper/vue API... */ } from 'vue-awesome-swiper'
